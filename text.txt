@@ -1,67 +1,68 @@
 <section class="evaluation" id="evaluation">
   <div class="container">
-    <div class="evaluation__inner">
+    <div class="evaluation__type-options" style="margin-bottom: 32px; justify-content: flex-start; gap: 20px;">
+      <label class="evaluation__type-label">
+        <input type="radio" name="eval_toggle" value="watches" class="evaluation__type-input" checked />
+        <span class="evaluation__type-btn">Годинники</span>
+      </label>
+      <label class="evaluation__type-label">
+        <input type="radio" name="eval_toggle" value="jewelry" class="evaluation__type-input" />
+        <span class="evaluation__type-btn">Прикраси</span>
+      </label>
+      <label class="evaluation__type-label">
+        <input type="radio" name="eval_toggle" value="diamonds" class="evaluation__type-input" />
+        <span class="evaluation__type-btn">Діаманти</span>
+      </label>
+    </div>
+
+    <div id="eval-watches" class="evaluation__inner eval-content-block active">
       <div class="evaluation__left">
-        <img src="assets/img/evaluation_left.png" alt="evaluation img" class="evaluation__left-img" />
+        <img src="assets/img/evaluation_left.png" alt="watches" class="evaluation__left-img" />
       </div>
       <div class="evaluation__right">
-        <h2 class="evaluation__title">Онлайн оцінка</h2>
-        <p class="evaluation__subtitle">Дізнайтесь реальну ціну вашого товару вже сьогодні без зайвих зобов’язань</p>
-        
-        <div class="evaluation__group">
-          <p class="evaluation__label-title">Тип оцінки</p>
-          <div class="evaluation__type-options">
-            <label class="evaluation__type-label">
-              <input type="radio" name="eval_type_toggle" value="watches" class="evaluation__type-input" checked />
-              <span class="evaluation__type-btn">
-                <img src="assets/img/header_bottom_watches.svg" alt="watches" class="evaluation__type-icon" /> Годинники
-              </span>
-            </label>
-            <label class="evaluation__type-label">
-              <input type="radio" name="eval_type_toggle" value="jewelry" class="evaluation__type-input" />
-              <span class="evaluation__type-btn">
-                <img src="assets/img/header_bottom_jewerly.svg" alt="jewerly" class="evaluation__type-icon" /> Прикраси
-              </span>
-            </label>
-            <label class="evaluation__type-label">
-              <input type="radio" name="eval_type_toggle" value="diamonds" class="evaluation__type-input" />
-              <span class="evaluation__type-btn">
-                <img src="assets/img/header_bottom_diamonds.svg" alt="diamonds" class="evaluation__type-icon" /> Діаманти
-              </span>
-            </label>
-          </div>
-        </div>
-
-        <form id="form-watches" class="evaluation__form eval-form-active">
+        <form class="evaluation__form">
           <div class="evaluation__grid">
-            <label class="evaluation__label"><span class="evaluation__label-title">Бренд годинника</span>
-              <input type="text" class="evaluation__input" placeholder="Наприклад: Rolex" /></label>
-            <label class="evaluation__label"><span class="evaluation__label-title">Модель/REF</span>
-              <input type="text" class="evaluation__input" placeholder="Якщо немає, обов'язково фото" /></label>
-            </div>
-          <button type="submit" class="evaluation__submit">ВІДПРАВИТИ ГОДИННИК</button>
-        </form>
-
-        <form id="form-jewelry" class="evaluation__form" style="display: none;">
-          <div class="evaluation__grid">
-            <label class="evaluation__label"><span class="evaluation__label-title">Тип виробу</span>
-              <input type="text" class="evaluation__input" placeholder="Каблучка, сережки тощо" /></label>
-            <label class="evaluation__label"><span class="evaluation__label-title">Матеріал/Каміння</span>
-              <input type="text" class="evaluation__input" placeholder="Золото, платина..." /></label>
+            <label class="evaluation__label"><span>Бренд</span><input type="text" placeholder="Наприклад: Rolex" /></label>
+            <label class="evaluation__label"><span>Модель/REF</span><input type="text" placeholder="Якщо немає, фото з усіх боків" /></label>
+            <label class="evaluation__label"><span>Ім'я</span><input type="text" /></label>
+            <label class="evaluation__label"><span>Телефон</span><input type="tel" /></label>
           </div>
-          <button type="submit" class="evaluation__submit">ВІДПРАВИТИ ПРИКРАСУ</button>
+          <button type="submit" class="evaluation__submit">ВІДПРАВИТИ</button>
         </form>
+      </div>
+    </div>
 
-        <form id="form-diamonds" class="evaluation__form" style="display: none;">
+    <div id="eval-jewelry" class="evaluation__inner eval-content-block" style="display: none;">
+      <div class="evaluation__left">
+        <img src="assets/img/jewelry_form_img.png" alt="jewelry" class="evaluation__left-img" />
+      </div>
+      <div class="evaluation__right">
+        <form class="evaluation__form">
           <div class="evaluation__grid">
-            <label class="evaluation__label"><span class="evaluation__label-title">Вага в каратах</span>
-              <input type="text" class="evaluation__input" placeholder="Наприклад: 1.5" /></label>
-            <label class="evaluation__label"><span class="evaluation__label-title">Сертифікат</span>
-              <input type="text" class="evaluation__input" placeholder="GIA, HRD тощо" /></label>
+            <label class="evaluation__label"><span>Бренд</span><input type="text" placeholder="Наприклад: Pandora" /></label>
+            <label class="evaluation__label"><span>Вага (г)</span><input type="text" /></label>
+            <label class="evaluation__label"><span>Проба</span><input type="text" /></label>
+            <label class="evaluation__label"><span>Каратність</span><input type="text" /></label>
           </div>
-          <button type="submit" class="evaluation__submit">ВІДПРАВИТИ ДІАМАНТ</button>
+          <button type="submit" class="evaluation__submit">ВІДПРАВИТИ</button>
         </form>
+      </div>
+    </div>
 
+    <div id="eval-diamonds" class="evaluation__inner eval-content-block" style="display: none;">
+      <div class="evaluation__left">
+        <img src="assets/img/diamonds_form_img.png" alt="diamonds" class="evaluation__left-img" />
+      </div>
+      <div class="evaluation__right">
+        <form class="evaluation__form">
+          <div class="evaluation__grid">
+            <label class="evaluation__label"><span>Тип огранювання</span><select><option>Оберіть...</option></select></label>
+            <label class="evaluation__label"><span>Колір</span><input type="text" /></label>
+            <label class="evaluation__label"><span>Чистота</span><input type="text" /></label>
+            <label class="evaluation__label"><span>Ім'я</span><input type="text" /></label>
+          </div>
+          <button type="submit" class="evaluation__submit">ВІДПРАВИТИ</button>
+        </form>
       </div>
     </div>
   </div>
