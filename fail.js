@@ -1,11 +1,11 @@
 $(document).ready(function() {
-    $('input[name="eval_type_toggle"]').on('change', function() {
-        const targetFormId = 'form-' + $(this).val(); // отримуємо watches, jewelry або diamonds
+    $('input[name="eval_toggle"]').on('change', function() {
+        const target = '#eval-' + $(this).val();
         
-        // Ховаємо всі форми
-        $('.evaluation__form').hide();
+        // Ховаємо всі блоки контенту
+        $('.eval-content-block').hide();
         
-        // Показуємо потрібну з ефектом появи
-        $('#' + targetFormId).fadeIn(300);
+        // Показуємо потрібний
+        $(target).fadeIn(400);
     });
 });
