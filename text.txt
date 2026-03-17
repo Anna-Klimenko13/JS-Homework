@@ -1,19 +1,9 @@
-/* ПОВНЕ ПЕРЕЗАВАНТАЖЕННЯ ТОЧОК ЗА FIGMA */
-.card__img-counter {
-  position: static !important;  /* Це прибере накладання на фото */
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  height: 22px !important;       /* Як у Figma */
-  width: 100% !important;
-  background: #f8f8f8 !important; /* Колір фону картки */
-  padding-top: 8px !important;    /* Відступ зверху */
-  padding-bottom: 8px !important; /* Відступ знизу */
-  gap: 6px !important;           /* Відстань між точками */
-  margin: 0 !important;
-}
-
-.card__img {
-  margin-bottom: 0 !important;   /* Прибираємо конфліктні відступи */
-  display: block !important;
+/* Виправляємо зарізану рамку у відгуках */
+.review:hover, 
+.reviews-item:hover {
+  /* Замість звичайного border використовуємо outline всередині */
+  outline: 1px solid #ffd700 !important; 
+  outline-offset: -1px !important; /* Це зажене рамку ВСЕРЕДИНУ блоку */
+  border: none !important; /* Прибираємо старий бордер, якщо він був */
+  transition: 0.3s ease !important;
 }
