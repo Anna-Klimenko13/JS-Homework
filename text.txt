@@ -1,5 +1,15 @@
-/* Делаем отступ точек от фото в карточках товаров */
+/* Делаем точки в товарах строго по Figma */
 .card__img-counter {
-  margin-top: 15px !important; /* Отодвигаем точки вниз от картинки */
-  margin-bottom: 10px !important; /* Чтобы они не прилипали к тексту под ними */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: static !important; /* Убираем абсолютное позиционирование, если оно мешает */
+  padding-top: 8px !important;  /* Отступ сверху по макету */
+  padding-bottom: 8px !important; /* Отступ снизу по макету */
+  gap: 6px !important; /* Расстояние между точками по макету */
+  height: 22px !important; /* Фиксированная высота из Figma */
+}
+
+.card__img {
+  margin-bottom: 0 !important; /* Убираем лишний отступ у самой картинки */
 }
