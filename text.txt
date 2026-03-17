@@ -1,16 +1,18 @@
-/* Робимо точно за параметрами Figma */
+/* ІДЕАЛЬНІ точки за макетом Figma */
 .card__img-counter {
+  position: static !important;  /* ВАЖЛИВО: прибираємо накладання на фото */
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  position: relative !important; /* Міняємо з absolute на relative */
-  margin-top: 8px !important;    /* Відступ ВІД картинки (Top padding в Figma) */
-  margin-bottom: 8px !important; /* Відступ ДО тексту (Bottom padding в Figma) */
-  height: 22px !important;       /* Висота блоку з макету */
-  gap: 6px !important;          /* Відстань між точками (Gap в Figma) */
+  height: 22px !important;       /* Висота з макету Figma */
+  padding-top: 8px !important;    /* Відступ зверху від фото */
+  padding-bottom: 8px !important; /* Відступ знизу до тексту */
+  background: #f8f8f8 !important; /* Колір фону картки, щоб зливалося */
+  margin: 0 !important;
 }
 
-/* Прибираємо можливі конфлікти */
+/* Переконайся, що у картинки знизу немає зайвих відступів */
 .card__img {
   margin-bottom: 0 !important;
+  display: block !important;
 }
