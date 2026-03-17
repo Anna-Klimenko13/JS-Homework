@@ -1,23 +1,5 @@
-/* Виправлення пагінації головного банера */
-.hero__bottom-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  /* Додаємо це для впевненості у центруванні в мобільній версії, 
-     якщо батьківський блок має justify-content: space-between */
-}
-
-.hero__bottom-right-dots {
-  display: flex;
-  gap: 4px;
-  justify-content: center; /* Центруємо точки всередині їхнього контейнера */
-}
-
-/* Якщо ви використовуєте стандартну пагінацію Swiper, 
-   яка генерується автоматично, додайте це: */
-.hero .swiper-pagination-bullets {
-  left: 50% !important;
-  transform: translateX(-50%);
-  bottom: 40px !important;
-  width: auto !important;
+/* Делаем отступ точек от фото в карточках товаров */
+.card__img-counter {
+  margin-top: 15px !important; /* Отодвигаем точки вниз от картинки */
+  margin-bottom: 10px !important; /* Чтобы они не прилипали к тексту под ними */
 }
