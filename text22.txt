@@ -1,41 +1,55 @@
-/* ФИНАЛЬНОЕ ИСПРАВЛЕНИЕ ПОИСКА ПО МАКЕТУ */
+/* ============================================================
+   ФИНАЛЬНОЕ ИСПРАВЛЕНИЕ ПОИСКА ПО МАКЕТУ (ТОЧНО ПО FIGMA)
+   ============================================================ */
 
-/* Внешний контейнер (серая плашка) */
+/* Внешний контейнер (серая плашка на весь экран) */
 .search-block {
     width: 100% !important;        /* На всю ширину */
     max-width: 100% !important;
     height: auto !important;       /* Высота зависит от контента */
     padding: 32px 0 !important;    /* Отступы сверху/снизу всей панели */
     left: 0 !important;
-    transform: translate(0, 0) scale(1) !important; /* Убираем центрирование через transform */
+    transform: none !important;    /* Убираем старое центрирование */
     top: 100px !important;         /* Размещаем ровно под шапкой */
-    background: #F8F8F8 !important; /* Серый фон как в макете */
+    background: #F8F8F8 !important; /* Серый фон из Figma */
+    position: absolute !important;
+    z-index: 101;
 }
 
 /* Обертка для центрирования содержимого */
 .search-block_wrapper {
-    max-width: 1390px;             /* По ширине твоего контейнера */
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    justify-content: center;
+    width: 627px !important;       /* Ширина белого поля */
+    height: 42px !important;       /* Высота белого поля */
+    margin: 0 auto !important;     /* Центрируем белое поле на серой плашке */
+    position: relative !important; /* Для позиционирования лупы внутри */
 }
 
-/* Сама белая строка ввода (тот самый Frame 28634) */
+/* Сама белая строка ввода (инпут) */
 .search-block_input {
-    width: 627px !important;       /* Точная ширина из Figma */
-    height: 42px !important;       /* Точная высота из Figma */
+    width: 100% !important;        /* На всю ширину обертки (627px) */
+    height: 100% !important;       /* На всю высоту обертки (42px) */
     background: #FFFFFF !important; /* Белый фон */
-    padding: 9px 16px 9px 56px !important; /* Отступы из Figma + место под лупу */
+    padding: 9px 16px 9px 40px !important; /* Padding: Top 9, Left 40 (под лупу), Bottom 9, Right 16 */
     border: 1px solid #E0E0E0 !important;
     font-size: 14px !important;
     line-height: 24px !important;
+    color: #A0A0A0 !important;
     display: block;
+    text-align: left; /* Текст Search слева, но с отступом под лупу */
 }
 
-/* Иконка лупы внутри строки */
+/* Иконка лупы внутри строки (Frame 28634 -> Streamline-sharpering) */
 .search-block_wrapper::before {
-    left: calc(50% - 295px) !important; /* Позиционируем лупу точно внутри белого поля */
-    top: 9px !important;
+    content: "";
+    position: absolute !important;
+    left: 16px !important;         /* Отступ лупы слева из Figma */
+    top: 50% !important;
+    transform: translateY(-50%) !important; /* Центрируем лупу по вертикали */
+    width: 16px !important;        /* Размер иконки из Figma */
+    height: 16px !important;
+    background: url(../img/search_icon_figma.svg) center/contain no-repeat !important; /* Используем иконку, если она есть */
+    /* Если иконки нет, временно используем старую: */
+    /* background: url(../img/search_icon.png) center/contain no-repeat !important; */
     z-index: 5;
+    opacity: 0.5; /* Бледная как в макете */
 }
