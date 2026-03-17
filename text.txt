@@ -1,15 +1,16 @@
-/* Делаем точки в товарах строго по Figma */
+/* Робимо точно за параметрами Figma */
 .card__img-counter {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  position: static !important; /* Убираем абсолютное позиционирование, если оно мешает */
-  padding-top: 8px !important;  /* Отступ сверху по макету */
-  padding-bottom: 8px !important; /* Отступ снизу по макету */
-  gap: 6px !important; /* Расстояние между точками по макету */
-  height: 22px !important; /* Фиксированная высота из Figma */
+  position: relative !important; /* Міняємо з absolute на relative */
+  margin-top: 8px !important;    /* Відступ ВІД картинки (Top padding в Figma) */
+  margin-bottom: 8px !important; /* Відступ ДО тексту (Bottom padding в Figma) */
+  height: 22px !important;       /* Висота блоку з макету */
+  gap: 6px !important;          /* Відстань між точками (Gap в Figma) */
 }
 
+/* Прибираємо можливі конфлікти */
 .card__img {
-  margin-bottom: 0 !important; /* Убираем лишний отступ у самой картинки */
+  margin-bottom: 0 !important;
 }
