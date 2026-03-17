@@ -1,55 +1,57 @@
-/* ============================================================
-   ФИНАЛЬНОЕ ИСПРАВЛЕНИЕ ПОИСКА ПО МАКЕТУ (ТОЧНО ПО FIGMA)
-   ============================================================ */
+/* --- ФИНАЛЬНЫЙ РЕАНИМАТОР ПОИСКА (ТОЧНО ПО FIGMA) --- */
 
-/* Внешний контейнер (серая плашка на весь экран) */
+/* Весь блок поиска */
 .search-block {
-    width: 100% !important;        /* На всю ширину */
-    max-width: 100% !important;
-    height: auto !important;       /* Высота зависит от контента */
-    padding: 32px 0 !important;    /* Отступы сверху/снизу всей панели */
-    left: 0 !important;
-    transform: none !important;    /* Убираем старое центрирование */
-    top: 100px !important;         /* Размещаем ровно под шапкой */
-    background: #F8F8F8 !important; /* Серый фон из Figma */
-    position: absolute !important;
-    z-index: 101;
-}
-
-/* Обертка для центрирования содержимого */
-.search-block_wrapper {
-    width: 627px !important;       /* Ширина белого поля */
-    height: 42px !important;       /* Высота белого поля */
-    margin: 0 auto !important;     /* Центрируем белое поле на серой плашке */
-    position: relative !important; /* Для позиционирования лупы внутри */
-}
-
-/* Сама белая строка ввода (инпут) */
-.search-block_input {
-    width: 100% !important;        /* На всю ширину обертки (627px) */
-    height: 100% !important;       /* На всю высоту обертки (42px) */
-    background: #FFFFFF !important; /* Белый фон */
-    padding: 9px 16px 9px 40px !important; /* Padding: Top 9, Left 40 (под лупу), Bottom 9, Right 16 */
-    border: 1px solid #E0E0E0 !important;
-    font-size: 14px !important;
-    line-height: 24px !important;
-    color: #A0A0A0 !important;
-    display: block;
-    text-align: left; /* Текст Search слева, но с отступом под лупу */
-}
-
-/* Иконка лупы внутри строки (Frame 28634 -> Streamline-sharpering) */
-.search-block_wrapper::before {
-    content: "";
-    position: absolute !important;
-    left: 16px !important;         /* Отступ лупы слева из Figma */
+    position: fixed !important;    /* Фиксируем по центру экрана */
     top: 50% !important;
-    transform: translateY(-50%) !important; /* Центрируем лупу по вертикали */
-    width: 16px !important;        /* Размер иконки из Figma */
-    height: 16px !important;
-    background: url(../img/search_icon_figma.svg) center/contain no-repeat !important; /* Используем иконку, если она есть */
-    /* Если иконки нет, временно используем старую: */
-    /* background: url(../img/search_icon.png) center/contain no-repeat !important; */
-    z-index: 5;
-    opacity: 0.5; /* Бледная как в макете */
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important; /* Центрируем ровно */
+    width: 100% !important;        /* Растягиваем серый фон */
+    max-width: 100% !important;
+    height: auto !important;
+    padding: 32px 0 !important;
+    background: #F8F8F8 !important; /* Серый фон из макета */
+    z-index: 1000 !important;      /* Поверх всего */
+    display: none;                 /* Управляется через JS */
+}
+
+/* Белое поле ввода (Frame 28634) */
+.search-block_wrapper {
+    position: relative !important;
+    width: 627px !important;       /* Ширина из Figma */
+    height: 42px !important;       /* Высота из Figma */
+    margin: 0 auto !important;     /* Центрируем белое поле */
+    background: #FFFFFF !important;
+    border: 1px solid #E0E0E0 !important;
+}
+
+/* Инпут внутри */
+.search-block_input {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 16px 0 48px !important; /* Отступ слева под лупу */
+    font-size: 14px !important;
+    color: #262626 !important;
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+}
+
+/* Лупа внутри белого поля */
+.search-block_wrapper::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 20px !important;
+    height: 20px !important;
+    background: url(../img/search_icon.png) center/contain no-repeat !important; /* Твоя старая иконка */
+    opacity: 0.5 !important;
+    display: block !important;
+}
+
+/* Оверлей (фон под поиском) */
+.search-overlay {
+    z-index: 999 !important;
 }
