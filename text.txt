@@ -1,15 +1,23 @@
-    <script
-      src="https://code.jquery.com/jquery-4.0.0.min.js"
-      integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
-      crossorigin="anonymous"
-    ></script>
-    <script src="assets/js/main.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  </body>
-</html>
+/* Виправлення пагінації головного банера */
+.hero__bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* Додаємо це для впевненості у центруванні в мобільній версії, 
+     якщо батьківський блок має justify-content: space-between */
+}
 
+.hero__bottom-right-dots {
+  display: flex;
+  gap: 4px;
+  justify-content: center; /* Центруємо точки всередині їхнього контейнера */
+}
 
-
-
-
-https://docs.google.com/document/d/19gcFyzFrCBMAYxkGpSsMB0fE4UlwEtSZvSEHnR60gWg/edit?tab=t.q82h9ghlviwd#heading=h.vb1ze6z1wa74
+/* Якщо ви використовуєте стандартну пагінацію Swiper, 
+   яка генерується автоматично, додайте це: */
+.hero .swiper-pagination-bullets {
+  left: 50% !important;
+  transform: translateX(-50%);
+  bottom: 40px !important;
+  width: auto !important;
+}
