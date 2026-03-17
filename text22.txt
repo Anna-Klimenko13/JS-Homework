@@ -1,31 +1,29 @@
-/* ФІНАЛЬНЕ ВИПРАВЛЕННЯ БРЕНДІВ */
-
-/* 1. Стан за замовчуванням */
-.brands__item .brand-color {
-  display: none !important; /* Повністю прибираємо кольорову */
+/* Стили для переключения форм онлайн оценки */
+.eval-content-block {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    align-items: flex-start;
 }
 
-.brands__item .brand-gray {
-  display: block !important; /* Гарантуємо видимість сірої */
-  opacity: 1 !important;
-  margin: 0 auto !important;
+/* Фиксируем размер картинок, чтобы они были как в макете */
+.evaluation__left {
+    flex: 0 0 540px; /* Ширина картинки */
 }
 
-/* 2. Стан при наведенні (Hover) */
-.brands__item:hover {
-  border: 1px solid #262626 !important;
-  background-color: #ffffff !important;
+.evaluation__left img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.brands__item:hover .brand-gray {
-  display: none !important; /* Ховаємо сіру */
+.evaluation__right {
+    flex: 1;
 }
 
-.brands__item:hover .brand-color {
-  display: block !important;  /* Показуємо кольорову */
-  position: static !important; /* Вибиваємо її з absolute */
-  margin: 0 auto !important;
-  opacity: 1 !important;
-  width: auto !important;     /* Щоб не розтягувало */
-  max-height: 45px !important; /* Обмежуємо висоту як у макеті */
+/* Убедимся, что сетка полей не ломается */
+.evaluation__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 32px;
 }
