@@ -1,57 +1,36 @@
-/* --- ФИНАЛЬНЫЙ РЕАНИМАТОР ПОИСКА (ТОЧНО ПО FIGMA) --- */
-
-/* Весь блок поиска */
-.search-block {
-    position: fixed !important;    /* Фиксируем по центру экрана */
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important; /* Центрируем ровно */
-    width: 100% !important;        /* Растягиваем серый фон */
-    max-width: 100% !important;
-    height: auto !important;
-    padding: 32px 0 !important;
-    background: #F8F8F8 !important; /* Серый фон из макета */
-    z-index: 1000 !important;      /* Поверх всего */
-    display: none;                 /* Управляется через JS */
-}
-
-/* Белое поле ввода (Frame 28634) */
-.search-block_wrapper {
-    position: relative !important;
-    width: 627px !important;       /* Ширина из Figma */
-    height: 42px !important;       /* Высота из Figma */
-    margin: 0 auto !important;     /* Центрируем белое поле */
-    background: #FFFFFF !important;
-    border: 1px solid #E0E0E0 !important;
-}
-
-/* Инпут внутри */
-.search-block_input {
+/* ============================================================
+   ИСПРАВЛЕНИЕ ЦЕНТРИРОВАНИЯ В БЛОКЕ ЛОМБАРДА (100% ПО МАКЕТУ)
+   ============================================================ */
+.lombard-info {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 63px !important;
     width: 100% !important;
-    height: 100% !important;
-    padding: 0 16px 0 48px !important; /* Отступ слева под лупу */
-    font-size: 14px !important;
+    background: #f8f8f8 !important;
+    padding: 60px 20px !important;
+}
+
+.lombard-info-item {
+    display: flex !important;
+    flex-direction: column !important; /* Выстраиваем в колонку */
+    align-items: center !important;    /* Центрируем колонку */
+    text-align: center !important;
+    width: 300px !important;           /* Фиксируем ширину для ровности */
+}
+
+.lombard-info-item p:first-child {
+    display: flex !important;
+    justify-content: center !important; 
+    align-items: flex-end !important;
+    margin-bottom: 15px !important;
+    width: 100% !important;
+}
+
+.lombard-info-item p:last-child {
+    margin: 0 auto !important;
+    font-size: 20px !important;
+    line-height: 24px !important;
     color: #262626 !important;
-    border: none !important;
-    background: transparent !important;
-    outline: none !important;
-}
-
-/* Лупа внутри белого поля */
-.search-block_wrapper::before {
-    content: "" !important;
-    position: absolute !important;
-    left: 16px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: 20px !important;
-    height: 20px !important;
-    background: url(../img/search_icon.png) center/contain no-repeat !important; /* Твоя старая иконка */
-    opacity: 0.5 !important;
     display: block !important;
-}
-
-/* Оверлей (фон под поиском) */
-.search-overlay {
-    z-index: 999 !important;
 }
