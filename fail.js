@@ -1,11 +1,12 @@
 $(document).ready(function() {
-    $('input[name="eval_toggle"]').on('change', function() {
-        const target = '#eval-' + $(this).val();
+    $(document).on('change', 'input[name="eval_toggle"]', function() {
+        const targetValue = $(this).val(); 
+        const targetId = '#eval-' + targetValue;
         
-        // Ховаємо всі блоки контенту
+        // Прячем все блоки
         $('.eval-content-block').hide();
         
-        // Показуємо потрібний
-        $(target).fadeIn(400);
+        // Показываем нужный (с плавной анимацией)
+        $(targetId).fadeIn(400);
     });
 });
