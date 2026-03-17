@@ -1,11 +1,17 @@
-Для Rolex (шукай приблизно 436 рядок):
-Замість: src="assets/img/brand_rolex_hover.png"
-Напиши: src="assets/img/rolex.svg"
+/* Це магія, яка ховає кольорове і показує його тільки при наведенні */
+.brand-color {
+  display: none !important;
+}
 
-Для Omega (шукай 429 рядок):
-Замість: src="assets/img/brand_omega_hover.png"
-Напиши: src="assets/img/omega.svg"
+.brands__item:hover .brand-gray {
+  display: none !important;
+}
 
-Для Chanel (шукай 443 рядок):
-Замість: src="assets/img/brand_chanel_hover.png"
-Напиши: src="assets/img/chanel.svg"
+.brands__item:hover .brand-color {
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+.brands__item:hover {
+  border: 1px solid #262626 !important;
+}
