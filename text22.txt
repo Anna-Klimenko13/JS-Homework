@@ -1,29 +1,27 @@
-/* ПЕРЕМОЖНИЙ КОД ДЛЯ БРЕНДІВ */
+/* ЯДЕРНЫЙ ВАРИАНТ ДЛЯ БРЕНДОВ */
 
-/* 1. Ховаємо кольорові картинки за замовчуванням */
-.brands__item .brand-color {
+/* Прячем вторую картинку всегда */
+.brands__item img:nth-child(2) {
   display: none !important;
 }
 
-/* 2. Показуємо сірі картинки за замовчуванням */
-.brands__item .brand-gray {
+/* Показываем первую картинку всегда */
+.brands__item img:nth-child(1) {
   display: block !important;
   margin: 0 auto !important;
 }
 
-/* 3. Магія наведення (Hover) */
+/* ПРИ НАВЕДЕНИИ */
+.brands__item:hover img:nth-child(1) {
+  display: none !important; /* Прячем первую */
+}
+
+.brands__item:hover img:nth-child(2) {
+  display: block !important; /* Показываем вторую */
+  margin: 0 auto !important;
+}
+
 .brands__item:hover {
   border: 1px solid #262626 !important;
-  background-color: #ffffff !important;
-}
-
-/* При наведенні ховаємо сіре */
-.brands__item:hover .brand-gray {
-  display: none !important;
-}
-
-/* При наведенні показуємо кольорове */
-.brands__item:hover .brand-color {
-  display: block !important;
-  margin: 0 auto !important;
+  background-color: #fff !important;
 }
