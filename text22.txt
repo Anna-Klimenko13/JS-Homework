@@ -1,36 +1,27 @@
 /* ============================================================
-   ИСПРАВЛЕНИЕ ЦЕНТРИРОВАНИЯ В БЛОКЕ ЛОМБАРДА (100% ПО МАКЕТУ)
+   УДАЛЯЕМ ПУСТОТУ В СЛАЙДЕРЕ НА МОБИЛКАХ (100% ПО МАКЕТУ)
    ============================================================ */
-.lombard-info {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 63px !important;
-    width: 100% !important;
-    background: #f8f8f8 !important;
-    padding: 60px 20px !important;
-}
+@media screen and (max-width: 768px) {
+    /* Основной слайдер на главной */
+    .hero {
+        padding-top: 40px !important; /* Уменьшаем отступ сверху со 183px до 40px */
+        padding-bottom: 40px !important;
+    }
 
-.lombard-info-item {
-    display: flex !important;
-    flex-direction: column !important; /* Выстраиваем в колонку */
-    align-items: center !important;    /* Центрируем колонку */
-    text-align: center !important;
-    width: 300px !important;           /* Фиксируем ширину для ровности */
-}
+    /* Если слайды имеют внутренние стили (как в твоем HTML) */
+    .hero .swiper-slide {
+        padding-top: 40px !important; /* Исправляем inline-отступ 183px */
+        padding-bottom: 60px !important;
+    }
 
-.lombard-info-item p:first-child {
-    display: flex !important;
-    justify-content: center !important; 
-    align-items: flex-end !important;
-    margin-bottom: 15px !important;
-    width: 100% !important;
-}
+    /* Заголовок в мобильном слайдере (делаем чуть компактнее) */
+    .hero__title {
+        font-size: 36px !important; /* Размер под мобилку из Figma */
+        line-height: 42px !important;
+        margin-bottom: 16px !important;
+    }
 
-.lombard-info-item p:last-child {
-    margin: 0 auto !important;
-    font-size: 20px !important;
-    line-height: 24px !important;
-    color: #262626 !important;
-    display: block !important;
+    .hero__subtitle {
+        margin-bottom: 24px !important;
+    }
 }
