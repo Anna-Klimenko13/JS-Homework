@@ -5,19 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VipGold: Головна</title>
     <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   </head>
 
   <body class="home-page">
@@ -29,7 +21,6 @@
               <img src="assets/img/header_top_geo_icon.svg" alt="" />
               <span>Україна</span>
             </div>
-
             <div class="header-geo-dropdown">
               <ul>
                 <li><a href="#">Німеччина</a></li>
@@ -41,26 +32,14 @@
             </div>
           </div>
           <a href="callto:+380660000606" class="header__top-phone">
-            <img
-              src="assets/img/header_top_phone_icon.svg"
-              alt="phone icon"
-              class="header__top-phone-icon"
-            />
+            <img src="assets/img/header_top_phone_icon.svg" alt="phone icon" class="header__top-phone-icon" />
             <p>+38 (066) 000-06-06</p>
           </a>
           <a href="index.html" class="header__logo">
-            <img
-              src="assets/img/header_logo.png"
-              alt="logo vipgold"
-              class="header__logo-img"
-            />
+            <img src="assets/img/header_logo.png" alt="logo vipgold" class="header__logo-img" />
           </a>
           <div class="header__top-currency header__top-currency-pc">
-            <img
-              src="assets/img/header_top_currency_icon.svg"
-              alt="currency icon"
-              class="header__top-currency-icon"
-            />
+            <img src="assets/img/header_top_currency_icon.svg" alt="currency icon" class="header__top-currency-icon" />
             <p>USD</p>
             <div class="header-currency-dropdown">
               <ul>
@@ -71,11 +50,7 @@
             </div>
           </div>
           <div class="header__top-language">
-            <img
-              src="assets/img/header_top_language_icon.svg"
-              alt="language icon"
-              class="header__top-language-icon"
-            />
+            <img src="assets/img/header_top_language_icon.svg" alt="language icon" class="header__top-language-icon" />
             <p>UA</p>
             <div class="header-language-dropdown">
               <ul>
@@ -86,18 +61,10 @@
             </div>
           </div>
           <a href="#" class="header__top-search">
-            <img
-              src="assets/img/header_top_search_icon.svg"
-              alt="search icon"
-              class="header__top-search-icon"
-            />
+            <img src="assets/img/header_top_search_icon.svg" alt="search icon" class="header__top-search-icon" />
           </a>
           <div class="header__top-menu header__top-menu-pc">
-            <img
-              src="assets/img/header_top_menu_icon.svg"
-              alt="menu icon"
-              class="header__top-menu-icon header__top-menu-icon-pc"
-            />
+            <img src="assets/img/header_top_menu_icon.svg" alt="menu icon" class="header__top-menu-icon header__top-menu-icon-pc" />
             <div class="header-menu-dropdown header-menu-dropdown-pc">
               <ul>
                 <li><a href="#">ГОЛОВНА</a></li>
@@ -119,7 +86,6 @@
                 <img src="assets/img/header_top_geo_icon.svg" alt="" />
                 <span>Україна</span>
               </div>
-
               <div class="header-geo-dropdown">
                 <ul>
                   <li><a href="#">Німеччина</a></li>
@@ -131,11 +97,7 @@
               </div>
             </div>
             <div class="header__top-currency header__top-currency-mobile">
-              <img
-                src="assets/img/header_top_currency_icon.svg"
-                alt="currency icon"
-                class="header__top-currency-icon"
-              />
+              <img src="assets/img/header_top_currency_icon.svg" alt="currency icon" class="header__top-currency-icon" />
               <p>USD</p>
               <div class="header-currency-dropdown">
                 <ul>
@@ -146,11 +108,7 @@
               </div>
             </div>
             <div class="header__top-language">
-              <img
-                src="assets/img/header_top_language_icon.svg"
-                alt="language icon"
-                class="header__top-language-icon"
-              />
+              <img src="assets/img/header_top_language_icon.svg" alt="language icon" class="header__top-language-icon" />
               <p>UA</p>
               <div class="header-language-dropdown">
                 <ul>
@@ -161,11 +119,7 @@
               </div>
             </div>
             <div class="header__top-menu">
-              <img
-                src="assets/img/mobile_menu_close.png"
-                alt="menu icon"
-                class="header__top-menu-icon header__top-menu-icon-mobile"
-              />
+              <img src="assets/img/mobile_menu_close.png" alt="menu icon" class="header__top-menu-icon header__top-menu-icon-mobile" />
               <div class="header-menu-dropdown header-menu-dropdown-info">
                 <ul>
                   <li><a href="#">ГОЛОВНА</a></li>
@@ -178,1642 +132,255 @@
                   <li><a href="#">КОНТАКТИ</a></li>
                 </ul>
               </div>
-              <div class="header-menu-dropdown header-menu-dropdown-country">
-                <ul>
-                  <li><a href="#">Німеччина</a></li>
-                  <li><a href="#">США</a></li>
-                  <li><a href="#">Італія</a></li>
-                  <li><a href="#">Велика Британія</a></li>
-                  <li><a href="#">Австрія</a></li>
-                </ul>
-              </div>
-              <div class="header-menu-dropdown header-menu-dropdown-currency">
-                <ul>
-                  <li><a href="#">UAH</a></li>
-                  <li><a href="#">EUR</a></li>
-                  <li><a href="#">GBP</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="header__top-mobile-list">
-            <a href="#" class="header__bottom-item header__bottom-watches">
-              <img
-                src="assets/img/header_bottom_watches.svg"
-                alt="watches icon"
-                class="header__bottom-item-icon"
-              />
-              <p>Продаж годинники</p>
-            </a>
-            <a href="#" class="header__bottom-item header__bottom-jewerly">
-              <img
-                src="assets/img/header_bottom_jewerly.svg"
-                alt="jewerly icon"
-                class="header__bottom-item-icon"
-              />
-              <p>Продаж прикраси</p>
-            </a>
-            <a href="#" class="header__bottom-item header__bottom-diamonds">
-              <img
-                src="assets/img/header_bottom_diamonds.svg"
-                alt="diamonds icon"
-                class="header__bottom-item-icon"
-              />
-              <p>Продаж діаманти</p>
-            </a>
-            <a href="#" class="header__bottom-item header__bottom-stock">
-              <img
-                src="assets/img/lombard_menu_icon.png"
-                alt="stock icon"
-                class="header__bottom-item-icon"
-              />
-              <p>Ломбард</p>
-            </a>
-          </div>
-          <div class="mobile-accordion-block">
-            <div class="mobile-header-menu-item accordion-toggle">
-              Каталог товарів
-              <span class="accordion-arrow">▼</span>
-            </div>
-            <ul class="accordion-content">
-              <li><a href="watches.html">Годинники</a></li>
-              <li><a href="jewerly.html">Прикраси</a></li>
-              <li><a href="diamonds.html">Діаманти</a></li>
-            </ul>
-          </div>
-          <div class="mobile-accordion-block">
-            <div class="mobile-header-menu-item accordion-toggle">
-              Інформація
-              <span class="accordion-arrow">▼</span>
-            </div>
-            <ul class="accordion-content">
-              <li><a href="index.html">Головна</a></li>
-              <li><a href="lombard.html">Ломбард</a></li>
-              <li><a href="brands.html">Бренди</a></li>
-              <li><a href="#">Послуги</a></li>
-              <li><a href="reviews.html">Відгуки</a></li>
-              <li><a href="blog.html">Блог</a></li>
-              <li><a href="about.html">Про нас</a></li>
-            </ul>
-          </div>
-          <a href="#" class="mobile-header-menu-item">Контакти</a>
-          <div class="mobile-header-bottom">
-            <a href="#" class="mobile-header-bottom-phone"
-              ><img
-                src="assets/img/header_top_phone_icon.svg"
-                alt=""
-                class="mobile-header-bottom-phone-icon"
-              />+38 (066) 000-06-06</a
-            >
-            <div class="mobile-header-social">
-              <a href="#" class="mobile-header-social-item"
-                ><img
-                  src="assets/img/mobile_tiktok.png"
-                  alt=""
-                  class="mobile-header-social-item-icon" /></a
-              ><a href="#" class="mobile-header-social-item"
-                ><img
-                  src="assets/img/mobile_threads.png"
-                  alt=""
-                  class="mobile-header-social-item-icon" /></a
-              ><a href="#" class="mobile-header-social-item"
-                ><img
-                  src="assets/img/mobile_x.png"
-                  alt=""
-                  class="mobile-header-social-item-icon" /></a
-              ><a href="#" class="mobile-header-social-item"
-                ><img
-                  src="assets/img/mobile_fb.png"
-                  alt=""
-                  class="mobile-header-social-item-icon" /></a
-              ><a href="#" class="mobile-header-social-item"
-                ><img
-                  src="assets/img/mobile_tg.png"
-                  alt=""
-                  class="mobile-header-social-item-icon"
-              /></a>
             </div>
           </div>
         </div>
         <div class="header__bottom">
-          <a
-            href="watches.html"
-            class="header__bottom-item header__bottom-watches"
-          >
-            <img
-              src="assets/img/header_bottom_watches.svg"
-              alt="watches icon"
-              class="header__bottom-item-icon"
-            />
+          <a href="watches.html" class="header__bottom-item header__bottom-watches">
+            <img src="assets/img/header_bottom_watches.svg" alt="watches icon" class="header__bottom-item-icon" />
             <p>Продаж годинники</p>
           </a>
-          <a
-            href="jewerly.html"
-            class="header__bottom-item header__bottom-jewerly"
-          >
-            <img
-              src="assets/img/header_bottom_jewerly.svg"
-              alt="jewerly icon"
-              class="header__bottom-item-icon"
-            />
+          <a href="jewerly.html" class="header__bottom-item header__bottom-jewerly">
+            <img src="assets/img/header_bottom_jewerly.svg" alt="jewerly icon" class="header__bottom-item-icon" />
             <p>Продаж прикраси</p>
           </a>
-          <a
-            href="diamonds.html"
-            class="header__bottom-item header__bottom-diamonds"
-          >
-            <img
-              src="assets/img/header_bottom_diamonds.svg"
-              alt="diamonds icon"
-              class="header__bottom-item-icon"
-            />
+          <a href="diamonds.html" class="header__bottom-item header__bottom-diamonds">
+            <img src="assets/img/header_bottom_diamonds.svg" alt="diamonds icon" class="header__bottom-item-icon" />
             <p>Продаж діаманти</p>
           </a>
           <a href="#" class="header__bottom-item header__bottom-stock">
-            <img
-              src="assets/img/header_bottom_stock.svg"
-              alt="stock icon"
-              class="header__bottom-item-icon"
-            />
+            <img src="assets/img/header_bottom_stock.svg" alt="stock icon" class="header__bottom-item-icon" />
             <p>В наявності</p>
           </a>
         </div>
       </div>
     </header>
     <main class="main" id="main">
-      <section
-        class="hero swiper hero-swiper"
-        id="hero"
-        style="background: none; padding: 0"
-      >
+      <section class="hero swiper hero-swiper" id="hero" style="background: none; padding: 0">
         <div class="swiper-wrapper">
-          <div
-            class="swiper-slide"
-            style="
-              background: url(&quot;assets/img/hero_bg.png&quot;) center/cover
-                no-repeat;
-              padding-top: 183px;
-              padding-bottom: 220px;
-              box-sizing: border-box;
-            "
-          >
+          <div class="swiper-slide" style="background: url('assets/img/hero_bg.png') center/cover no-repeat; padding-top: 183px; padding-bottom: 220px; box-sizing: border-box;">
             <div class="hero__pretitle">
-              <img
-                src="assets/img/hero_pretitle-icon.png"
-                alt="icon"
-                class="hero__pretitle-icon"
-              />
+              <img src="assets/img/hero_pretitle-icon.png" alt="icon" class="hero__pretitle-icon" />
               <p>VIPGold - багатопрофільне ательє</p>
             </div>
             <h1 class="hero__title">Брендові Годинники</h1>
-            <p class="hero__subtitle">
-              Ми пропонуємо безкоштовну оцінку наручних годинників, діамантів,
-              ювелірних прикрас і антикваріату.
-            </p>
+            <p class="hero__subtitle">Ми пропонуємо безкоштовну оцінку наручних годинників, діамантів, ювелірних прикрас і антикваріату.</p>
             <a href="#" class="hero__btn">Безкоштовна Online Оцінка</a>
           </div>
-
-          <div
-            class="swiper-slide"
-            style="
-              background: url(&quot;assets/img/hero_bg.png&quot;) center/cover
-                no-repeat;
-              padding-top: 183px;
-              padding-bottom: 220px;
-              box-sizing: border-box;
-            "
-          >
+          <div class="swiper-slide" style="background: url('assets/img/hero_bg.png') center/cover no-repeat; padding-top: 183px; padding-bottom: 220px; box-sizing: border-box;">
             <div class="hero__pretitle">
-              <img
-                src="assets/img/hero_pretitle-icon.png"
-                alt="icon"
-                class="hero__pretitle-icon"
-              />
+              <img src="assets/img/hero_pretitle-icon.png" alt="icon" class="hero__pretitle-icon" />
               <p>VIPGold - багатопрофільне ательє</p>
             </div>
             <h1 class="hero__title">Елітні Прикраси</h1>
-            <p class="hero__subtitle">
-              Купівля та продаж ювелірних виробів найвищої якості за вигідними
-              цінами.
-            </p>
+            <p class="hero__subtitle">Купівля та продаж ювелірних виробів найвищої якості за вигідними цінами.</p>
             <a href="#" class="hero__btn">Безкоштовна Online Оцінка</a>
           </div>
         </div>
-
-        <div
-          class="hero__bottom"
-          style="
-            position: absolute;
-            bottom: 100px;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            margin-top: 0;
-          "
-        >
+        <div class="hero__bottom" style="position: absolute; bottom: 100px; left: 0; width: 100%; z-index: 100;">
           <a href="#evaluation" class="hero__bottom-scroll-down">Scroll Down</a>
           <div class="hero__bottom-right">
             <div class="hero__bottom-right-dots swiper-pagination"></div>
-
-            <p class="hero__bottom-right-counter">
-              <span class="swiper-current-num">1</span>/2
-            </p>
-
-            <img
-              src="assets/img/hero_bottom_arrow.svg"
-              alt="next"
-              class="hero__bottom-right-arrow swiper-button-next"
-              style="cursor: pointer"
-            />
+            <p class="hero__bottom-right-counter"><span class="swiper-current-num">1</span>/2</p>
+            <img src="assets/img/hero_bottom_arrow.svg" alt="next" class="hero__bottom-right-arrow swiper-button-next" style="cursor: pointer" />
           </div>
         </div>
       </section>
+
       <section class="advantages" id="advantages">
-        <h2 class="advantages__title title">
-          Викуп годинників у Києві та Дніпрі
-        </h2>
+        <h2 class="advantages__title title">Викуп годинників у Києві та Дніпрі</h2>
         <div class="advantages__list">
           <div class="advantages__item">
-            <img
-              src="assets/img/advantages_img_1.png"
-              alt=""
-              class="advantages__item-img"
-            />
-            <p class="advantages__item-text">
-              10-річний досвід у сфері оцінки ювелірних виробів
-            </p>
+            <img src="assets/img/advantages_img_1.png" alt="" class="advantages__item-img" />
+            <p class="advantages__item-text">10-річний досвід у сфері оцінки ювелірних виробів</p>
           </div>
           <div class="advantages__item">
-            <img
-              src="assets/img/advantages_img_2.png"
-              alt=""
-              class="advantages__item-img"
-            />
-            <p class="advantages__item-text">
-              Зручна онлайн-оцінка професіоналами
-            </p>
+            <img src="assets/img/advantages_img_2.png" alt="" class="advantages__item-img" />
+            <p class="advantages__item-text">Зручна онлайн-оцінка професіоналами</p>
           </div>
           <div class="advantages__item">
-            <img
-              src="assets/img/advantages_img_3.png"
-              alt=""
-              class="advantages__item-img"
-            />
-            <p class="advantages__item-text">
-              Відділеня в Києві, Дніпрі та Запоріжжі
-            </p>
+            <img src="assets/img/advantages_img_3.png" alt="" class="advantages__item-img" />
+            <p class="advantages__item-text">Відділеня в Києві, Дніпрі та Запоріжжі</p>
           </div>
         </div>
       </section>
+
       <section class="arrivals">
         <h2 class="arrivals__title title">Нові надходження</h2>
         <div class="cards">
-          <div class="card">
-            <div
-              class="swiper card-swiper"
-              style="width: 293px; padding-bottom: 25px; margin-bottom: 12px"
-            >
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_1.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
+            <div class="card">
+                <div class="swiper card-swiper" style="width: 293px; padding-bottom: 25px; margin-bottom: 12px">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="assets/img/card_1.png" alt="card img" class="card__img" /></div>
+                    <div class="swiper-slide"><img src="assets/img/card_2.png" alt="card img" class="card__img" /></div>
+                  </div>
+                  <div class="swiper-pagination card__img-counter"></div>
                 </div>
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_2.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
+                <p class="card__stock">в наявності</p>
+                <h5 class="card__title">CARTIER 1895 SOLITAIRE</h5>
+                <p class="card__subtitle">Каблучка Сartier 1895 Solitare, Brilliant-cut Diamond (1872)</p>
+                <div class="card__bottom">
+                  <a href="#" class="card__bottom-details">Детальніше</a>
+                  <div class="card__price-row">
+                    <p class="card__price">5 600 USD</p>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="swiper-pagination card__img-counter"
-                style="position: absolute; bottom: 0"
-              ></div>
             </div>
-            <p class="card__stock">в наявності</p>
-            <h5 class="card__title">CARTIER 1895 SOLITAIRE</h5>
-            <p class="card__subtitle">
-              Каблучка Сartier 1895 Solitare, Brilliant-cut Diamond (1872)
-            </p>
-            <div class="card__bottom">
-              <a href="#" class="card__bottom-details">Детальніше</a>
-              <div class="card__price-row">
-                <p class="card__currency">USD</p>
-                <img
-                  src="assets/img/card_currency_icon.svg"
-                  alt="currency icon"
-                  class="card__currency-icon"
-                />
-                <p class="card__price">5 600</p>
-              </div>
             </div>
-          </div>
-          <div class="card">
-            <div
-              class="swiper card-swiper"
-              style="width: 293px; padding-bottom: 25px; margin-bottom: 12px"
-            >
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_2.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_3.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-              </div>
-              <div
-                class="swiper-pagination card__img-counter"
-                style="position: absolute; bottom: 0"
-              ></div>
-            </div>
-            <p class="card__stock">в наявності</p>
-            <h5 class="card__title">CARTIER 1895 SOLITAIRE</h5>
-            <p class="card__subtitle">
-              Каблучка Сartier 1895 Solitare, Brilliant-cut Diamond (1872)
-            </p>
-            <div class="card__bottom">
-              <a href="#" class="card__bottom-details">Детальніше</a>
-              <div class="card__price-row">
-                <p class="card__currency">USD</p>
-                <img
-                  src="assets/img/card_currency_icon.svg"
-                  alt="currency icon"
-                  class="card__currency-icon"
-                />
-                <p class="card__price">5 600</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div
-              class="swiper card-swiper"
-              style="width: 293px; padding-bottom: 25px; margin-bottom: 12px"
-            >
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_3.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_4.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-              </div>
-              <div
-                class="swiper-pagination card__img-counter"
-                style="position: absolute; bottom: 0"
-              ></div>
-            </div>
-            <p class="card__stock">в наявності</p>
-            <h5 class="card__title">CARTIER 1895 SOLITAIRE</h5>
-            <p class="card__subtitle">
-              Каблучка Сartier 1895 Solitare, Brilliant-cut Diamond (1872)
-            </p>
-            <div class="card__bottom">
-              <a href="#" class="card__bottom-details">Детальніше</a>
-              <div class="card__price-row">
-                <p class="card__currency">USD</p>
-                <img
-                  src="assets/img/card_currency_icon.svg"
-                  alt="currency icon"
-                  class="card__currency-icon"
-                />
-                <p class="card__price">5 600</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div
-              class="swiper card-swiper"
-              style="width: 293px; padding-bottom: 25px; margin-bottom: 12px"
-            >
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_4.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_1.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-              </div>
-              <div
-                class="swiper-pagination card__img-counter"
-                style="position: absolute; bottom: 0"
-              ></div>
-            </div>
-            <p class="card__stock">в наявності</p>
-            <h5 class="card__title">Audemars Piguet Royal Oak</h5>
-            <p class="card__subtitle">
-              Audemars Piguet Royal Oak, 41 mm, Automatic movement
-            </p>
-            <div class="card__bottom">
-              <a href="#" class="card__bottom-details">Детальніше</a>
-              <div class="card__price-row">
-                <p class="card__currency">USD</p>
-                <img
-                  src="assets/img/card_currency_icon.svg"
-                  alt="currency icon"
-                  class="card__currency-icon"
-                />
-                <p class="card__price">28 700</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div
-              class="swiper card-swiper"
-              style="width: 293px; padding-bottom: 25px; margin-bottom: 12px"
-            >
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_1.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_2.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-              </div>
-              <div
-                class="swiper-pagination card__img-counter"
-                style="position: absolute; bottom: 0"
-              ></div>
-            </div>
-            <p class="card__stock">в наявності</p>
-            <h5 class="card__title">CARTIER 1895 SOLITAIRE</h5>
-            <p class="card__subtitle">
-              Каблучка Сartier 1895 Solitare, Brilliant-cut Diamond (1872)
-            </p>
-            <div class="card__bottom">
-              <a href="#" class="card__bottom-details">Детальніше</a>
-              <div class="card__price-row">
-                <p class="card__currency">USD</p>
-                <img
-                  src="assets/img/card_currency_icon.svg"
-                  alt="currency icon"
-                  class="card__currency-icon"
-                />
-                <p class="card__price">5 600</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div
-              class="swiper card-swiper"
-              style="width: 293px; padding-bottom: 25px; margin-bottom: 12px"
-            >
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_2.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_3.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-              </div>
-              <div
-                class="swiper-pagination card__img-counter"
-                style="position: absolute; bottom: 0"
-              ></div>
-            </div>
-            <p class="card__stock">в наявності</p>
-            <h5 class="card__title">CARTIER 1895 SOLITAIRE</h5>
-            <p class="card__subtitle">
-              Каблучка Сartier 1895 Solitare, Brilliant-cut Diamond (1872)
-            </p>
-            <div class="card__bottom">
-              <a href="#" class="card__bottom-details">Детальніше</a>
-              <div class="card__price-row">
-                <p class="card__currency">USD</p>
-                <img
-                  src="assets/img/card_currency_icon.svg"
-                  alt="currency icon"
-                  class="card__currency-icon"
-                />
-                <p class="card__price">5 600</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div
-              class="swiper card-swiper"
-              style="width: 293px; padding-bottom: 25px; margin-bottom: 12px"
-            >
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_3.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_4.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-              </div>
-              <div
-                class="swiper-pagination card__img-counter"
-                style="position: absolute; bottom: 0"
-              ></div>
-            </div>
-            <p class="card__stock">в наявності</p>
-            <h5 class="card__title">CARTIER 1895 SOLITAIRE</h5>
-            <p class="card__subtitle">
-              Каблучка Сartier 1895 Solitare, Brilliant-cut Diamond (1872)
-            </p>
-            <div class="card__bottom">
-              <a href="#" class="card__bottom-details">Детальніше</a>
-              <div class="card__price-row">
-                <p class="card__currency">USD</p>
-                <img
-                  src="assets/img/card_currency_icon.svg"
-                  alt="currency icon"
-                  class="card__currency-icon"
-                />
-                <p class="card__price">5 600</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div
-              class="swiper card-swiper"
-              style="width: 293px; padding-bottom: 25px; margin-bottom: 12px"
-            >
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_4.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/card_1.png"
-                    alt="card img"
-                    class="card__img"
-                    style="margin-bottom: 0"
-                  />
-                </div>
-              </div>
-              <div
-                class="swiper-pagination card__img-counter"
-                style="position: absolute; bottom: 0"
-              ></div>
-            </div>
-            <p class="card__stock">в наявності</p>
-            <h5 class="card__title">Audemars Piguet Royal Oak</h5>
-            <p class="card__subtitle">
-              Audemars Piguet Royal Oak, 41 mm, Automatic movement
-            </p>
-            <div class="card__bottom">
-              <a href="#" class="card__bottom-details">Детальніше</a>
-              <div class="card__price-row">
-                <p class="card__currency">USD</p>
-                <img
-                  src="assets/img/card_currency_icon.svg"
-                  alt="currency icon"
-                  class="card__currency-icon"
-                />
-                <p class="card__price">28 700</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
-      <section class="our_social" id="our_social">
-        <h2 class="our_social__title title">Ми в соціальних мережах</h2>
-        <p class="our_social__subtitle">
-          Підписуйтесь, щоб першими дізнаватися про новини, акції та залаштунки
-          нашої роботи.
-        </p>
-        s
-        <div class="our_social__list">
-          <a href="#" class="our_social__list-item">
-            <img
-              src="assets/img/footer_tiktok_icon.png"
-              alt="tiktok icon"
-              class="our_social__item-icon"
-            />
-            <p>Tik Tok</p>
-          </a>
-          <a href="#" class="our_social__list-item">
-            <img
-              src="assets/img/footer_threads_icon.png"
-              alt="threads icon"
-              class="our_social__item-icon"
-            />
-            <p>Threads</p>
-          </a>
-          <a href="#" class="our_social__list-item">
-            <img
-              src="assets/img/footer_twitter_icon.png"
-              alt="twitter icon"
-              class="our_social__item-icon"
-            />
-            <p>X (Twitter)</p>
-          </a>
-          <a href="#" class="our_social__list-item">
-            <img
-              src="assets/img/footer_facebook_icon.png"
-              alt="facebook icon"
-              class="our_social__item-icon"
-            />
-            <p>Facebook</p>
-          </a>
-          <a href="#" class="our_social__list-item">
-            <img
-              src="assets/img/footer_telegram_icon.png"
-              alt="telegram icon"
-              class="our_social__item-icon"
-            />
-            <p>Telegram</p>
-          </a>
-        </div>
-      </section>
-      <section class="about" id="about">
-        <div class="container">
-          <h5 class="about__title">Про нас</h5>
-          <p class="about__text">
-            Ми спеціалізуємося на роботі з брендами преміального сегменту і
-            зможемо гідно оцінити такий виріб, запропонувавши кращу ціну за
-            наручний годинник в ломбарді.
-          </p>
-          <div class="about__inner">
-            <div class="about__left">
-              <img
-                src="assets/img/about_left_img.png"
-                alt=""
-                class="about__left-img"
-              />
-            </div>
-            <div class="about__right">
-              <div class="about__right-images">
-                <div class="about__right-image">
-                  <img src="assets/img/about_right_img.png" alt="" />
-                </div>
-                <img
-                  src="assets/img/about_right_two_img.png"
-                  alt=""
-                  class="about__right-image-two"
-                />
-              </div>
-              <div class="about_mobile_images">
-                <img src="assets/img/about_right_img.png" alt="" />
-                <img
-                  src="assets/img/about_left_img.png"
-                  alt=""
-                  class="about__left-img"
-                />
-              </div>
-              <p class="about__right-text">
-                Наша компанія пропонує повний спектр робіт з вторинним ринком
-                коштовностей – це викуп годинників і ювелірних виробів, продаж,
-                професійна оцінка, ремонт, реставрація та репассаж.
-              </p>
-              <b class="about__right-title">Наші основні переваги:</b>
-              <ul class="about__right-list">
-                <li class="about__right-list-item">
-                  Зручна і безкоштовна оцінка виробів.
-                </li>
-                <li class="about__right-list-item">
-                  Гарантія конфіденційності клієнта.
-                </li>
-                <li class="about__right-list-item">Консультація фахівця.</li>
-                <li class="about__right-list-item">
-                  Орієнтація на преміальні годинники бу.
-                </li>
-                <li class="about__right-list-item">Оперативна угода.</li>
-              </ul>
-              <a href="#" class="about__right-read">Читати повністю</a>
-            </div>
-          </div>
-        </div>
-      </section>
+
       <section class="brands" id="brands">
-        <h5 class="brands__title">
-          Відкрийте для себе бренди від майстрів, чиї імена не потребують
-          представлення. Ваш вибір — ваша історія.
-        </h5>
+        <h5 class="brands__title">Відкрийте для себе бренди від майстрів, чиї імена не потребують представлення. Ваш вибір — ваша історія.</h5>
         <div class="brands__list">
           <a href="#" class="brands__item brands__item--omega">
-            <img
-              src="assets/img/brand_omega.png"
-              alt="omega logo"
-              class="brands__item-img brand-img brand-gray"
-            />
-            <img
-              src="assets/img/omega.svg"
-              alt="omega logo"
-              class="brands__item-img brand-img brand-color"
-            />
+            <img src="assets/img/brand_omega.png" class="brand-gray" alt="omega" />
+            <img src="assets/img/omega.svg" class="brand-color" alt="omega color" />
           </a>
           <a href="#" class="brands__item brands__item--rolex">
-            <img
-              src="assets/img/brand_rolex.png"
-              alt="rolex logo"
-              class="brands__item-img brand-img brand-gray"
-            />
-            <img
-              src="assets/img/rolex.svg"
-              alt="rolex logo"
-              class="brands__item-img brand-img brand-color"
-            />
+            <img src="assets/img/brand_rolex.png" class="brand-gray" alt="rolex" />
+            <img src="assets/img/rolex.svg" class="brand-color" alt="rolex color" />
           </a>
           <a href="#" class="brands__item brands__item--chanel">
-            <img
-              src="assets/img/brand_chanel.png"
-              alt="chanel logo"
-              class="brands__item-img brand-img brand-gray"
-            />
-            <img
-              src="assets/img/chanel.svg"
-              alt="chanel logo"
-              class="brands__item-img brand-img brand-color"
-            />
+            <img src="assets/img/brand_chanel.png" class="brand-gray" alt="chanel" />
+            <img src="assets/img/chanel.svg" class="brand-color" alt="chanel color" />
           </a>
-          <a href="#" class="brands__item brands__item--omega"
-            ><img
-              src="assets/img/brand_omega.png"
-              alt="omega logo"
-              class="brands__item-img brand-img brand-gray" />
-            <img
-              src="assets/img/omega.svg"
-              alt="omega logo"
-              class="brands__item-img brand-img brand-color"
-          /></a>
-          <a href="#" class="brands__item brands__item--chanel"
-            ><img
-              src="assets/img/brand_chanel.png"
-              alt="chanel logo"
-              class="brands__item-img brand-img brand-gray" />
-            <img
-              src="assets/img/chanel.svg"
-              alt="chanel logo"
-              class="brands__item-img brand-img brand-color"
-          /></a>
+          <a href="#" class="brands__item brands__item--omega">
+            <img src="assets/img/brand_omega.png" class="brand-gray" alt="omega" />
+            <img src="assets/img/omega.svg" class="brand-color" alt="omega color" />
+          </a>
+          <a href="#" class="brands__item brands__item--chanel">
+            <img src="assets/img/brand_chanel.png" class="brand-gray" alt="chanel" />
+            <img src="assets/img/chanel.svg" class="brand-color" alt="chanel color" />
+          </a>
         </div>
         <a href="#" class="brands__see-all">Переглянути всі</a>
       </section>
-      <section class="faq" id="faq">
-        <div class="container">
-          <h2 class="faq__title title">
-            Відповіді на питання, що часто ставляться:
-          </h2>
-          <div class="faq__item">
-            <h5 class="faq__item-title">
-              Де можна швидко продати годинник у Києві?
-            </h5>
-            <p class="faq__item-text">
-              Термінова скупка наручних годинників доступна у Vipgold з офісом у
-              Києві. Ви можете звернутися без попереднього запису та отримати
-              попередню оцінку вже в день звернення. Процес продажу максимально
-              швидкий і прозорий.
-            </p>
-          </div>
-          <div class="faq__item">
-            <h5 class="faq__item-title">Де можна оцінити годинник онлайн?</h5>
-            <p class="faq__item-text">
-              На сайті Vipgold доступний онлайн-інструмент для попередньої
-              оцінки годинників та коштовностей. Достатньо заповнити форму та
-              додати фото виробу, щоб отримати орієнтовну вартість. Це зручно і
-              не потребує особистого візиту.
-            </p>
-          </div>
-          <div class="faq__item">
-            <h5 class="faq__item-title">Як безпечно продати свій годинник?</h5>
-            <p class="faq__item-text">
-              Компанія Vipgold забезпечує всі умови для безпечних угод. Оцінка
-              проводиться фахівцями, а всі етапи продажу відбуваються відкрито
-              та без прихованих комісій. Ваші персональні дані та умови угоди
-              залишаються конфіденційними.
-            </p>
-          </div>
-          <div class="faq__item">
-            <h5 class="faq__item-title">Який розрахунок під час продажу?</h5>
-            <p class="faq__item-text">
-              Розрахунок здійснюється одразу після погодження вартості
-              годинника. Ви можете обрати отримання коштів готівкою в
-              національній валюті або в доларах США. Усі виплати проводяться
-              швидко та без затримок.
-            </p>
-          </div>
-          <div class="faq__bottom">
-            <img
-              src="assets/img/faq_bottom_logo.png"
-              alt="logo"
-              class="faq__bottom-img"
-            />
-            <h6 class="faq__bottom-title">Все ще є питання?</h6>
-            <p class="faq__bottom-text">
-              Для отримання допомоги відвідайте нашу сторінку
-              <span>«Контакти»</span> або зателефонуйте на гарячу лінію служби
-              підтримки клієнтів за номером <span>(671) 555-0110</span>. Наша
-              віддана команда готова допомогти вам на шляху до більш
-              екологічного та сталого майбутнього.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="reviews" id="reviews">
-        <h2 class="reviews__title title">Відгуки нашіх клієнтів</h2>
-        <div class="swiper reviews-swiper" style="padding-bottom: 50px">
-          <div class="swiper-wrapper">
-            <div
-              class="swiper-slide review"
-              style="
-                display: block;
-                opacity: 1;
-                transform: none;
-                width: auto;
-                height: auto;
-              "
-            >
-              <div class="review__stars">
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-              </div>
-              <p class="review__text">
-                Продал свои старые ролексы. Доволен сделкой, мне обосновали
-                оценку, все прошло достаточно быстро, и удобно.
-              </p>
-              <b class="review__author">Евгений Викторович</b>
-              <p class="review__date">20.11.2025</p>
-            </div>
 
-            <div
-              class="swiper-slide review"
-              style="
-                display: block;
-                opacity: 1;
-                transform: none;
-                width: auto;
-                height: auto;
-              "
-            >
-              <div class="review__stars">
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-              </div>
-              <p class="review__text">
-                Продал свои старые ролексы. Доволен сделкой, мне обосновали
-                оценку, все прошло достаточно быстро, и удобно.
-              </p>
-              <b class="review__author">Евгений Викторович</b>
-              <p class="review__date">20.11.2025</p>
-            </div>
-
-            <div
-              class="swiper-slide review"
-              style="
-                display: block;
-                opacity: 1;
-                transform: none;
-                width: auto;
-                height: auto;
-              "
-            >
-              <div class="review__stars">
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-              </div>
-              <p class="review__text">
-                Продал свои старые ролексы. Доволен сделкой, мне обосновали
-                оценку, все прошло достаточно быстро, и удобно.
-              </p>
-              <b class="review__author">Евгений Викторович</b>
-              <p class="review__date">20.11.2025</p>
-            </div>
-
-            <div
-              class="swiper-slide review"
-              style="
-                display: block;
-                opacity: 1;
-                transform: none;
-                width: auto;
-                height: auto;
-              "
-            >
-              <div class="review__stars">
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-              </div>
-              <p class="review__text">
-                Продал свои старые ролексы. Доволен сделкой, мне обосновали
-                оценку, все прошло достаточно быстро, и удобно.
-              </p>
-              <b class="review__author">Евгений Викторович</b>
-              <p class="review__date">20.11.2025</p>
-            </div>
-
-            <div
-              class="swiper-slide review"
-              style="
-                display: block;
-                opacity: 1;
-                transform: none;
-                width: auto;
-                height: auto;
-              "
-            >
-              <div class="review__stars">
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-              </div>
-              <p class="review__text">
-                Продал свои старые ролексы. Доволен сделкой, мне обосновали
-                оценку, все прошло достаточно быстро, и удобно.
-              </p>
-              <b class="review__author">Евгений Викторович</b>
-              <p class="review__date">20.11.2025</p>
-            </div>
-
-            <div
-              class="swiper-slide review"
-              style="
-                display: block;
-                opacity: 1;
-                transform: none;
-                width: auto;
-                height: auto;
-              "
-            >
-              <div class="review__stars">
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-                <img
-                  src="assets/img/review_star.png"
-                  alt="star icon"
-                  class="review__star"
-                />
-              </div>
-              <p class="review__text">
-                Продал свои старые ролексы. Доволен сделкой, мне обосновали
-                оценку, все прошло достаточно быстро, и удобно.
-              </p>
-              <b class="review__author">Евгений Викторович</b>
-              <p class="review__date">20.11.2025</p>
-            </div>
-          </div>
-
-          <div
-            class="swiper-pagination review__dots"
-            style="position: absolute; bottom: 0"
-          ></div>
-        </div>
-      </section>
       <section class="evaluation" id="evaluation">
         <div class="container">
-          <div class="evaluation__inner">
-            <div class="evaluation__left">
-              <img
-                src="assets/img/evaluation_left.png"
-                alt="evaluation img"
-                class="evaluation__left-img"
-              />
+          <h2 class="evaluation__title">Онлайн оцінка</h2>
+          <p class="evaluation__subtitle">Дізнайтесь реальну ціну вашого товару вже сьогодні без зайвих зобов’язань</p>
+
+          <div class="evaluation__group">
+            <p class="evaluation__label-title">Тип оцінки</p>
+            <div class="evaluation__type-options">
+              <label class="evaluation__type-label">
+                <input type="radio" name="eval_toggle" value="watches" class="evaluation__type-input" checked />
+                <span class="evaluation__type-btn">
+                    <img src="assets/img/header_bottom_watches.svg" class="evaluation__type-icon" alt="" /> Годинники
+                </span>
+              </label>
+              <label class="evaluation__type-label">
+                <input type="radio" name="eval_toggle" value="jewelry" class="evaluation__type-input" />
+                <span class="evaluation__type-btn">
+                    <img src="assets/img/header_bottom_jewerly.svg" class="evaluation__type-icon" alt="" /> Прикраси
+                </span>
+              </label>
+              <label class="evaluation__type-label">
+                <input type="radio" name="eval_toggle" value="diamonds" class="evaluation__type-input" />
+                <span class="evaluation__type-btn">
+                    <img src="assets/img/header_bottom_diamonds.svg" class="evaluation__type-icon" alt="" /> Діаманти
+                </span>
+              </label>
             </div>
+          </div>
+
+          <div id="eval-watches" class="evaluation__inner eval-content-block">
+            <div class="evaluation__left"><img src="assets/img/eval_watches.jpg" class="evaluation__left-img" alt="" /></div>
             <div class="evaluation__right">
-              <h2 class="evaluation__title">Онлайн оцінка</h2>
-              <p class="evaluation__subtitle">
-                Дізнайтесь реальну ціну вашого товару вже сьогодні без зайвих
-                зобов’язань
-              </p>
-              <img
-                src="assets/img/evaluation_mob.png"
-                alt=""
-                class="evaluation_mob_img"
-              />
-              <form action="" method="POST" class="evaluation__form">
-                <div class="evaluation__group">
-                  <p class="evaluation__label-title">Тип оцінки</p>
-                  <div class="evaluation__type-options">
-                    <label class="evaluation__type-label">
-                      <input
-                        type="radio"
-                        name="eval_type"
-                        value="watches"
-                        class="evaluation__type-input"
-                        checked
-                      />
-                      <span class="evaluation__type-btn">
-                        <img
-                          src="assets/img/header_bottom_watches.svg"
-                          alt="watches"
-                          class="evaluation__type-icon"
-                        />
-                        Годинники
-                      </span>
-                    </label>
-                    <label class="evaluation__type-label">
-                      <input
-                        type="radio"
-                        name="eval_type"
-                        value="jewelry"
-                        class="evaluation__type-input"
-                      />
-                      <span class="evaluation__type-btn">
-                        <img
-                          src="assets/img/header_bottom_jewerly.svg"
-                          alt="jewerly"
-                          class="evaluation__type-icon"
-                        />
-                        Прикраси
-                      </span>
-                    </label>
-                    <label class="evaluation__type-label">
-                      <input
-                        type="radio"
-                        name="eval_type"
-                        value="diamonds"
-                        class="evaluation__type-input"
-                      />
-                      <span class="evaluation__type-btn">
-                        <img
-                          src="assets/img/header_bottom_diamonds.svg"
-                          alt="diamonds"
-                          class="evaluation__type-icon"
-                        />
-                        Діаманти
-                      </span>
-                    </label>
-                  </div>
-                </div>
-
+              <form class="evaluation__form">
                 <div class="evaluation__grid">
-                  <label class="evaluation__label">
-                    <span class="evaluation__label-title">Бренд</span>
-                    <input
-                      type="text"
-                      class="evaluation__input"
-                      placeholder="Наприклад: Rolex"
-                    />
-                  </label>
-                  <label class="evaluation__label">
-                    <span class="evaluation__label-title">Модель/REF</span>
-                    <input
-                      type="text"
-                      class="evaluation__input"
-                      placeholder="Якщо немає, обов'язково фото з усіх боків"
-                    />
-                  </label>
-
-                  <label class="evaluation__label">
-                    <span class="evaluation__label-title">Ім'я</span>
-                    <input
-                      type="text"
-                      class="evaluation__input"
-                      placeholder="Вкажіть, як до вас звертатись"
-                    />
-                  </label>
-                  <label class="evaluation__label">
-                    <span class="evaluation__label-title">Номер телефону</span>
-                    <input
-                      type="tel"
-                      class="evaluation__input"
-                      placeholder="+38 (000) 000 00 00"
-                    />
-                  </label>
-
-                  <label class="evaluation__label">
-                    <span class="evaluation__label-title">Email</span>
-                    <input
-                      type="email"
-                      class="evaluation__input"
-                      placeholder="На яку адресу надіслати відповідь"
-                    />
-                  </label>
-                  <label class="evaluation__label">
-                    <span class="evaluation__label-title"
-                      >В якій країні ви перебуваєте?</span
-                    >
-                    <div class="evaluation__select-wrapper">
-                      <select class="evaluation__input evaluation__select">
-                        <option value="ua">Україна</option>
-                        <option value="pl">Польща</option>
-                        <option value="other">Інша</option>
-                      </select>
-                    </div>
-                  </label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Бренд</span><input type="text" class="evaluation__input" placeholder="Наприклад: Rolex" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Модель/REF</span><input type="text" class="evaluation__input" placeholder="Якщо немає, фото з усіх боків" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Ім'я</span><input type="text" class="evaluation__input" placeholder="Вкажіть, як до вас звертатись" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Номер телефону</span><input type="tel" class="evaluation__input" placeholder="+38 (000) 000 00 00" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Email</span><input type="email" class="evaluation__input" placeholder="На яку адресу надіслати відповідь" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">В якій країні ви перебуваєте?</span><select class="evaluation__input"><option>Україна</option><option>Польща</option><option>Німеччина</option></select></label>
                 </div>
-
                 <div class="evaluation__grid evaluation__grid-bottom">
-                  <div class="evaluation__group">
-                    <span class="evaluation__label-title"
-                      >Наявність коробки</span
-                    >
-                    <div class="evaluation__radio-group">
-                      <label class="evaluation__radio-label">
-                        <input
-                          type="radio"
-                          name="has_box"
-                          value="yes"
-                          checked
-                        />
-                        <span class="evaluation__radio-custom"></span> Так
-                      </label>
-                      <label class="evaluation__radio-label">
-                        <input type="radio" name="has_box" value="no" />
-                        <span class="evaluation__radio-custom"></span> Ні
-                      </label>
+                    <div class="evaluation__group">
+                        <span class="evaluation__label-title">Наявність коробки</span>
+                        <div class="evaluation__radio-group">
+                            <label class="evaluation__radio-label"><input type="radio" name="box_w" checked /> Так</label>
+                            <label class="evaluation__radio-label"><input type="radio" name="box_w" /> Ні</label>
+                        </div>
                     </div>
-                  </div>
-                  <div class="evaluation__group">
-                    <span class="evaluation__label-title"
-                      >Наявність документів</span
-                    >
-                    <div class="evaluation__radio-group">
-                      <label class="evaluation__radio-label">
-                        <input
-                          type="radio"
-                          name="has_docs"
-                          value="yes"
-                          checked
-                        />
-                        <span class="evaluation__radio-custom"></span> Так
-                      </label>
-                      <label class="evaluation__radio-label">
-                        <input type="radio" name="has_docs" value="no" />
-                        <span class="evaluation__radio-custom"></span> Ні
-                      </label>
+                    <div class="evaluation__group">
+                        <span class="evaluation__label-title">Наявність документів</span>
+                        <div class="evaluation__radio-group">
+                            <label class="evaluation__radio-label"><input type="radio" name="doc_w" checked /> Так</label>
+                            <label class="evaluation__radio-label"><input type="radio" name="doc_w" /> Ні</label>
+                        </div>
                     </div>
-                  </div>
                 </div>
-
-                <label class="evaluation__label">
-                  <span class="evaluation__label-title">Короткий опис</span>
-                  <textarea
-                    class="evaluation__textarea"
-                    placeholder="Опишіть детальніше..."
-                  ></textarea>
-                </label>
-
-                <div class="evaluation__photos">
-                  <div class="evaluation__photo-item">
-                    <div class="evaluation__photo-img">
-                      <img src="assets/img/form_img1.png" alt="photo" />
-                    </div>
-                    <div class="evaluation__photo-overlay">
-                      <button type="button" class="evaluation__icon-btn">
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="white"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
-                          ></path>
-                          <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
-                      </button>
-                      <button type="button" class="evaluation__icon-btn">
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="white"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <polyline points="3 6 5 6 21 6"></polyline>
-                          <path
-                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-                          ></path>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="evaluation__photo-item">
-                    <div class="evaluation__photo-img">
-                      <img src="assets/img/form_img1.png" alt="photo" />
-                    </div>
-                    <div class="evaluation__photo-overlay">
-                      <button type="button" class="evaluation__icon-btn">
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="white"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path
-                            d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
-                          ></path>
-                          <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
-                      </button>
-                      <button type="button" class="evaluation__icon-btn">
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="white"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <polyline points="3 6 5 6 21 6"></polyline>
-                          <path
-                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-                          ></path>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                  <label class="evaluation__photo-add">
-                    <input type="file" hidden multiple accept="image/*" />
-                    <span class="evaluation__photo-add-icon">+</span>
-                    <span class="evaluation__photo-add-text"
-                      >Добавити<br />фото</span
-                    >
-                  </label>
-                </div>
-
-                <button type="submit" class="evaluation__submit">
-                  ВІДПРАВИТИ
-                </button>
+                <textarea class="evaluation__textarea" placeholder="Короткий опис"></textarea>
+                <button type="submit" class="evaluation__submit">ВІДПРАВИТИ</button>
               </form>
             </div>
           </div>
+
+          <div id="eval-jewelry" class="evaluation__inner eval-content-block" style="display: none;">
+            <div class="evaluation__left"><img src="assets/img/jewerly_evaluation.jpg" class="evaluation__left-img" alt="" /></div>
+            <div class="evaluation__right">
+              <form class="evaluation__form">
+                <div class="evaluation__grid">
+                  <label class="evaluation__label"><span class="evaluation__label-title">Бренд</span><input type="text" class="evaluation__input" placeholder="Наприклад: Pandora" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Вага</span><input type="text" class="evaluation__input" placeholder="Вкажіть вагу виробу у грамах" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Проба</span><input type="text" class="evaluation__input" placeholder="Вкажіть пробу металу" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Каратність</span><input type="text" class="evaluation__input" placeholder="Якщо не знаєте, введіть Ні" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Ім'я</span><input type="text" class="evaluation__input" placeholder="Вкажіть, як до вас звертатись" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Номер телефону</span><input type="tel" class="evaluation__input" placeholder="+38 (000) 000 00 00" /></label>
+                </div>
+                <textarea class="evaluation__textarea" placeholder="Короткий опис"></textarea>
+                <button type="submit" class="evaluation__submit">ВІДПРАВИТИ</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="eval-diamonds" class="evaluation__inner eval-content-block" style="display: none;">
+            <div class="evaluation__left"><img src="assets/img/placeholder.jpg" class="evaluation__left-img" alt="" /></div>
+            <div class="evaluation__right">
+              <form class="evaluation__form">
+                <div class="evaluation__grid">
+                  <label class="evaluation__label"><span class="evaluation__label-title">Тип огранювання</span><select class="evaluation__input"><option>Оберіть...</option><option>Кругле</option><option>Овал</option></select></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Колір</span><input type="text" class="evaluation__input" placeholder="Вкажіть колір каменю" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Чистота</span><input type="text" class="evaluation__input" placeholder="Вкажіть чистоту" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Ім'я</span><input type="text" class="evaluation__input" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Номер телефону</span><input type="tel" class="evaluation__input" placeholder="+38 (000) 000 00 00" /></label>
+                  <label class="evaluation__label"><span class="evaluation__label-title">Наявність гемологічного сертифікату</span>
+                    <div class="evaluation__radio-group">
+                        <label class="evaluation__radio-label"><input type="radio" name="cert_d" checked /> Так</label>
+                        <label class="evaluation__radio-label"><input type="radio" name="cert_d" /> Ні</label>
+                    </div>
+                  </label>
+                </div>
+                <textarea class="evaluation__textarea" placeholder="Короткий опис"></textarea>
+                <button type="submit" class="evaluation__submit">ВІДПРАВИТИ</button>
+              </form>
+            </div>
+          </div>
+
         </div>
       </section>
     </main>
-    <div class="search-overlay"></div>
-
-    <div class="search-block" id="search_block">
-      <div class="search-block_wrapper">
-        <input
-          type="text"
-          placeholder="Search"
-          name="search_input"
-          id="search_input"
-          class="search-block_input"
-        />
-      </div>
-    </div>
-
-    <div class="stock-overlay"></div>
-
-    <div class="stock-block" id="stock_block">
-      <a href="#" class="stock-block-item">
-        <img
-          src="assets/img/stock_img_1.png"
-          alt=""
-          class="stock-block-item-img"
-        />
-        <p class="stock-block-item-name">Брендові годинники</p>
-      </a>
-      <a href="#" class="stock-block-item">
-        <img
-          src="assets/img/stock_img_2.png"
-          alt=""
-          class="stock-block-item-img"
-        />
-        <p class="stock-block-item-name">Ювелірні вироби</p>
-      </a>
-      <a href="#" class="stock-block-item">
-        <img
-          src="assets/img/stock_img_3.png"
-          alt=""
-          class="stock-block-item-img"
-        />
-        <p class="stock-block-item-name">Антикваріат</p>
-      </a>
-      <a href="#" class="stock-block-item">
-        <img
-          src="assets/img/stock_img_4.png"
-          alt=""
-          class="stock-block-item-img"
-        />
-        <p class="stock-block-item-name">Предмети розкоші</p>
-      </a>
-    </div>
 
     <footer class="footer" id="footer">
       <div class="container">
         <div class="footer__inner">
           <div class="footer__left">
-            <a href="#" class="footer__logo">
-              <img src="assets/img/footer_logo.png" alt="vipgold logo" />
-            </a>
-            <p class="footer__left-text">
-              Наша компанія пропонує повний спектр робіт з вторинним ринком
-              коштовностей – це викуп годинників і ювелірних виробів, продаж,
-              професійна оцінка, ремонт, реставрація та репассаж.
-            </p>
-          </div>
-          <div class="footer__sell">
-            <a href="#" class="footer__sell-item">
-              <img
-                src="assets/img/footer_watches.svg"
-                alt="watches icon"
-                class="footer__sell-item-icon"
-              />
-              <p>Продаж годинники</p>
-            </a>
-            <a href="#" class="footer__sell-item">
-              <img
-                src="assets/img/footer_jewerly.svg"
-                alt="jewerly icon"
-                class="footer__sell-item-icon"
-              />
-              <p>Продаж прикраси</p>
-            </a>
-            <a href="#" class="footer__sell-item">
-              <img
-                src="assets/img/footer_diamonds.svg"
-                alt="diamonds icon"
-                class="footer__sell-item-icon"
-              />
-              <p>Продаж діаманти</p>
-            </a>
-          </div>
-          <div class="footer__menu">
-            <a href="#" class="footer__menu-item">Ломбард</a>
-            <a href="#" class="footer__menu-item">Бренди</a>
-            <a href="#" class="footer__menu-item">Послуги</a>
-            <a href="#" class="footer__menu-item">Блог</a>
-            <a href="#" class="footer__menu-item">Контакти</a>
-          </div>
-          <div class="footer__mobile-phone">
-            <p>
-              <img
-                src="assets/img/footer_mobile_phone_icon.png"
-                alt=""
-                class="footer__mobile-phone-icon"
-              />+38 (066) 000-06-06
-            </p>
+            <a href="#" class="footer__logo"><img src="assets/img/footer_logo.png" alt="vipgold logo" /></a>
+            <p class="footer__left-text">Наша компанія пропонує повний спектр робіт з вторинним ринком коштовностей – це викуп годинників і ювелірних виробів, продаж, професійна оцінка, ремонт, реставрація та репассаж.</p>
           </div>
           <div class="footer__social">
-            <a href="callto:+380660000606" class="footer__social-item">
-              <img
-                src="assets/img/footer_phone_icon.png"
-                alt="phone icon"
-                class="footer__social-item-icon"
-              />
-              <p>+38 (066) 000-06-06</p>
-            </a>
-            <a href="#" class="footer__social-item">
-              <img
-                src="assets/img/footer_tiktok_icon.png"
-                alt="tiktok icon"
-                class="footer__social-item-icon"
-              />
-              <p>Tik Tok</p>
-            </a>
-            <a href="#" class="footer__social-item">
-              <img
-                src="assets/img/footer_threads_icon.png"
-                alt="threads icon"
-                class="footer__social-item-icon"
-              />
-              <p>Threads</p>
-            </a>
-            <a href="#" class="footer__social-item">
-              <img
-                src="assets/img/footer_twitter_icon.png"
-                alt="twitter icon"
-                class="footer__social-item-icon"
-              />
-              <p>X (Twitter)</p>
-            </a>
-            <a href="#" class="footer__social-item">
-              <img
-                src="assets/img/footer_facebook_icon.png"
-                alt="facebook icon"
-                class="footer__social-item-icon"
-              />
-              <p>Facebook</p>
-            </a>
-            <a href="#" class="footer__social-item">
-              <img
-                src="assets/img/footer_telegram_icon.png"
-                alt="telegram icon"
-                class="footer__social-item-icon"
-              />
-              <p>Telegram</p>
-            </a>
-          </div>
+            <a href="callto:+380660000606" class="footer__social-item"><img src="assets/img/footer_phone_icon.png" alt="" /><p>+38 (066) 000-06-06</p></a>
+            </div>
         </div>
-        <div class="footer__bottom">
-          <p class="footer__bottom-left">
-            © 2025 VIPGOLD. All rights reserved.
-          </p>
-          <div class="footer__bottom-right">
-            <a href="#" class="footer__bottom-right-item">Privacy Policy</a>
-            <a href="#" class="footer__bottom-right-item">Terms of Service</a>
-            <a href="#" class="footer__bottom-right-item">Cookies Settings</a>
-          </div>
-        </div>
+        <div class="footer__bottom"><p>© 2025 VIPGOLD. All rights reserved.</p></div>
       </div>
     </footer>
-    <script
-      src="https://code.jquery.com/jquery-4.0.0.min.js"
-      integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
-      crossorigin="anonymous"
-    ></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="assets/js/main.js" type="text/javascript"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
