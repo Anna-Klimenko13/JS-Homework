@@ -1,46 +1,16 @@
-/* ВИПРАВЛЕННЯ ОНЛАЙН ОЦІНКИ */
-.eval-content-block {
-    display: none; /* Спочатку ховаємо всі блоки */
-    gap: 80px;
-    align-items: flex-start;
+/* ИСПРАВЛЕНИЕ ХЛЕБНЫХ КРОШЕК ПО МАКЕТУ */
+.heading__top-item, 
+.heading__top-item a {
+    color: #646A69 !important; /* Серый цвет из Figma */
+    font-family: "Inter Tight", sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    text-decoration: none !important;
 }
 
-.eval-content-block.active {
-    display: flex !important; /* Показуємо тільки активний блок */
-}
-
-.evaluation__left {
-    flex: 0 0 540px;
-}
-
-.evaluation__left img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Кнопки перемикачі за макетом */
-.evaluation__type-options {
-    display: flex;
-    gap: 20px;
-    width: 100%;
-}
-
-.evaluation__type-btn {
-    flex: 1; /* Width: Fill */
-    height: 38px !important;
-    background: #F8F8F8 !important;
-    border: 1px solid #E0E0E0 !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: #A0A0A0;
-    cursor: pointer;
-}
-
-.evaluation__type-input:checked + .evaluation__type-btn {
-    background: #FFFFFF !important;
-    border: 1px solid #262626 !important;
-    color: #262626;
+/* Цвет для ссылки 'Головна' при наведении */
+.heading__top-item a:hover {
+    color: #262626 !important;
+    text-decoration: underline !important;
 }
