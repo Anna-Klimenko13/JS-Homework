@@ -1,16 +1,23 @@
-/* ИСПРАВЛЕНИЕ ХЛЕБНЫХ КРОШЕК ПО МАКЕТУ */
-.heading__top-item, 
-.heading__top-item a {
-    color: #646A69 !important; /* Серый цвет из Figma */
-    font-family: "Inter Tight", sans-serif !important;
-    font-size: 12px !important;
-    font-weight: 400 !important;
-    line-height: 24px !important;
-    text-decoration: none !important;
+/* ИСПРАВЛЕНИЕ РАЗМЕРА ПОИСКОВОЙ СТРОКИ */
+.search-block {
+    padding: 60px 0 !important; /* Увеличиваем внутренние отступы блока */
 }
 
-/* Цвет для ссылки 'Головна' при наведении */
-.heading__top-item a:hover {
-    color: #262626 !important;
-    text-decoration: underline !important;
+.search-block__form {
+    max-width: 1200px !important; /* Делаем форму поиска шире (по контейнеру) */
+    width: 90% !important;
+    margin: 0 auto !important;
+}
+
+.search-block__input {
+    height: 80px !important; /* Делаем саму строку поиска значительно выше */
+    font-size: 24px !important; /* Увеличиваем размер текста при вводе */
+    border-bottom: 2px solid #262626 !important; /* Делаем линию подчеркивания четче */
+    padding: 10px 0 !important;
+}
+
+/* Увеличиваем иконку поиска внутри строки, если она есть */
+.search-block__btn img {
+    width: 30px !important;
+    height: 30px !important;
 }
