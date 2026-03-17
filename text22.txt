@@ -1,27 +1,31 @@
-/* ЯДЕРНЫЙ ВАРИАНТ ДЛЯ БРЕНДОВ */
+/* ФІНАЛЬНЕ ВИПРАВЛЕННЯ БРЕНДІВ */
 
-/* Прячем вторую картинку всегда */
-.brands__item img:nth-child(2) {
-  display: none !important;
+/* 1. Стан за замовчуванням */
+.brands__item .brand-color {
+  display: none !important; /* Повністю прибираємо кольорову */
 }
 
-/* Показываем первую картинку всегда */
-.brands__item img:nth-child(1) {
-  display: block !important;
+.brands__item .brand-gray {
+  display: block !important; /* Гарантуємо видимість сірої */
+  opacity: 1 !important;
   margin: 0 auto !important;
 }
 
-/* ПРИ НАВЕДЕНИИ */
-.brands__item:hover img:nth-child(1) {
-  display: none !important; /* Прячем первую */
-}
-
-.brands__item:hover img:nth-child(2) {
-  display: block !important; /* Показываем вторую */
-  margin: 0 auto !important;
-}
-
+/* 2. Стан при наведенні (Hover) */
 .brands__item:hover {
   border: 1px solid #262626 !important;
-  background-color: #fff !important;
+  background-color: #ffffff !important;
+}
+
+.brands__item:hover .brand-gray {
+  display: none !important; /* Ховаємо сіру */
+}
+
+.brands__item:hover .brand-color {
+  display: block !important;  /* Показуємо кольорову */
+  position: static !important; /* Вибиваємо її з absolute */
+  margin: 0 auto !important;
+  opacity: 1 !important;
+  width: auto !important;     /* Щоб не розтягувало */
+  max-height: 45px !important; /* Обмежуємо висоту як у макеті */
 }
