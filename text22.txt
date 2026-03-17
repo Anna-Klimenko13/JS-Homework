@@ -1,90 +1,46 @@
-/* ============================================================
-   ФИНАЛЬНЫЕ ПРАВКИ: БРЕНДЫ + ОНЛАЙН ОЦЕНКА (ПО МАКЕТУ 100%)
-   ============================================================ */
-
-/* 1. БРЕНДЫ: Исправляем ховер и центрирование */
-.brands__item {
-    position: relative !important;
-    background: #fff !important;
-    transition: 0.3s !important;
-}
-.brands__item .brand-gray { 
-    display: block !important; 
-    opacity: 1 !important; 
-    margin: 0 auto !important;
-}
-.brands__item .brand-color { 
-    display: none !important; 
-}
-.brands__item:hover { 
-    border: 1px solid #262626 !important; 
-}
-.brands__item:hover .brand-gray { 
-    display: none !important; 
-}
-.brands__item:hover .brand-color { 
-    display: block !important; 
-    margin: 0 auto !important; 
-    max-height: 45px !important; 
-    width: auto !important;
-    position: static !important;
+/* ВИПРАВЛЕННЯ ОНЛАЙН ОЦІНКИ */
+.eval-content-block {
+    display: none; /* Спочатку ховаємо всі блоки */
+    gap: 80px;
+    align-items: flex-start;
 }
 
-/* 2. КНОПКИ ТИПА ОЦЕНКИ: Точно по Figma (38px, серый фон) */
+.eval-content-block.active {
+    display: flex !important; /* Показуємо тільки активний блок */
+}
+
+.evaluation__left {
+    flex: 0 0 540px;
+}
+
+.evaluation__left img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Кнопки перемикачі за макетом */
 .evaluation__type-options {
-    display: flex !important;
-    gap: 20px !important;
-    margin-bottom: 40px !important;
-    max-width: 740px !important;
+    display: flex;
+    gap: 20px;
+    width: 100%;
 }
-.evaluation__type-label { flex: 1 !important; }
+
 .evaluation__type-btn {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 10px !important;
+    flex: 1; /* Width: Fill */
     height: 38px !important;
     background: #F8F8F8 !important;
     border: 1px solid #E0E0E0 !important;
-    color: #A0A0A0 !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    padding: 9px 16px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #A0A0A0;
+    cursor: pointer;
 }
+
 .evaluation__type-input:checked + .evaluation__type-btn {
     background: #FFFFFF !important;
     border: 1px solid #262626 !important;
-    color: #262626 !important;
-}
-
-/* 3. СЕТКА ФОРМЫ И КАРТИНКА */
-.eval-content-block {
-    display: flex !important;
-    gap: 80px !important;
-    align-items: flex-start !important;
-}
-.evaluation__left { 
-    flex: 0 0 540px !important; 
-    max-height: 600px !important;
-    overflow: hidden !important;
-}
-.evaluation__left img { 
-    width: 100% !important; 
-    height: auto !important; 
-    object-fit: cover !important; 
-}
-.evaluation__right { flex: 1 !important; }
-
-/* Сетка полей (2 колонки) */
-.evaluation__grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 24px 32px !important;
-    margin-bottom: 24px !important;
-}
-
-@media (max-width: 991px) {
-    .eval-content-block { flex-direction: column !important; gap: 30px !important; }
-    .evaluation__left { flex: none !important; width: 100% !important; }
-    .evaluation__grid { grid-template-columns: 1fr !important; }
+    color: #262626;
 }
