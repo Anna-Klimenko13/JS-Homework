@@ -1,49 +1,25 @@
-PS C:\Users\annak\Desktop\ai-project> npm create vite@5 ai-card-generator -- --template react
-Need to install the following packages:
-create-vite@5.5.5
-Ok to proceed? (y) y
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
 
 
-> npx
-> cva ai-card-generator --template react
 
 
-Scaffolding project in C:\Users\annak\Desktop\ai-project\ai-card-generator...
 
-Done. Now run:
 
-  cd ai-card-generator
-  npm install
-  npm run dev
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-PS C:\Users\annak\Desktop\ai-project> cd ai-card-generator
-PS C:\Users\annak\Desktop\ai-project\ai-card-generator> npm install
 
-added 268 packages, and audited 269 packages in 40s
 
-113 packages are looking for funding
-  run `npm fund` for details
 
-8 vulnerabilities (1 moderate, 7 high)
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-PS C:\Users\annak\Desktop\ai-project\ai-card-generator> npm install -D tailwindcss autoprefixer
-
-added 4 packages, and audited 273 packages in 5s
-
-115 packages are looking for funding
-  run `npm fund` for details
-
-8 vulnerabilities (1 moderate, 7 high)
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-PS C:\Users\annak\Desktop\ai-project\ai-card-generator> npx tailwindcss init -p
-npm error could not determine executable to run
-npm error A complete log of this run can be found in: C:\Users\annak\AppData\Local\npm-cache\_logs\2026-07-28T21_25_56_519Z-debug-0.log
-PS C:\Users\annak\Desktop\ai-project\ai-card-generator> 
+npm run dev
