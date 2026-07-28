@@ -1,11 +1,250 @@
-PS C:\Users\annak\Desktop\ai-project\ai-card-generator> npm run dev 
+import React, { useState } from 'react';
+import { Sparkles, Copy, Check, RefreshCw, AlertCircle } from 'lucide-react';
 
-> ai-card-generator@0.0.0 dev
-> vite
+export default function App() {
+  // Состояния для хранения ввода пользователя
+  const [productName, setProductName] = useState('');
+  const [keywords, setKeywords] = useState('');
+  const [tone, setTone] = useState('selling');
+  const [apiKey, setApiKey] = useState('');
+  
+  // Состояния для процесса генерации и результата
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState(null);
+  const [copied, setCopied] = useState(false);
 
+  // Функция-имитатор (Mock Mode) для демонстрации в портфолио
+  const generateMockData = () => {
+    return {
+      title: `[ПРОДАЮЩИЙ ХИТ] ${productName || 'Товар'} — Высокое качество, идеальный выбор`,
+      description: `Ищете идеальный вариант? Наш ${productName || 'товар'} создан с учетом всех современных стандартов. Благодаря ключевым особенностям (${keywords || 'надежность, качество'}), он станет незаменимым помощником в повседневной жизни. Отличный подарок и выгодная покупка!`,
+      bullets: [
+        'Премиальные материалы и высокая долговечность',
+        'Эргономичный и современный дизайн',
+        'Простота в использовании и обслуживании',
+        'Идеальное соотношение цены и качества'
+      ]
+    };
+  };
 
-  VITE v5.4.21  ready in 966 ms
+  // Обработчик нажатия на кнопку "Сгенерировать"
+  const handleGenerate = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setResult(null);
+    setCopied(false);
 
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-  ➜  press h + enter to show help
+    // Имитируем задержку сети (1.5 секунды), чтобы показать анимацию загрузки
+    setTimeout(() => {
+      const data = generateMockData();
+      setResult(data);
+      setLoading(false);
+    }, 1500);
+  };
+
+  // Функция копирования в буфер обмена
+  const handleCopy = () => {
+    if (!result) return;
+    const textToCopy = `${result.title}\n\n${result.description}\n\nПреимущества:\n- ${result.bullets.join('\n- ')}`;
+    navigator.clipboard.writeText(textToCopy);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-900 text-slate-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
+        
+        {/* Шапка проекта */}
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-4">
+            <Sparkles className="w-4 h-4" />
+            <span className="text-sm font-medium">AI E-Commerce Assistant</span>
+          </div>
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">
+            Генератор SEO-карточек для маркетплейсов
+          </h1>
+          <p className="mt-3 text-lg text-slate-400">
+            Создавайте продающие названия, описания и преимущества для Ozon, WB и Amazon за секунды.
+          </p>
+        </div>
+
+        {/* Основной сетка: Слева форма, Справа результат */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          {/* ЛЕВАЯ КОЛОНКА: Форма ввода (5 колонок из 12) */}
+          <div className="lg:col-span-5 bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 backdrop-blur-xl h-fit shadow-xl">
+            <form onSubmit={handleGenerate} className="space-y-5">
+              
+              <div>
+                <label className="block text-sm font-medium text-slate-300 mb-1">
+                  Название товара <span className="text-red-400">*</span>
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Например: Беспроводные наушники Pro"
+                  value={productName}
+                  onChange={(e) => setProductName(e.target.value)}
+                  className="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-300 mb-1">
+                  Ключевые слова (SEO)
+                </label>
+                <textarea
+                  rows="3"
+                  placeholder="шумоподавление, bluetooth 5.3, для спорта, бас"
+                  value={keywords}
+                  onChange={(e) => setKeywords(e.target.value)}
+                  className="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition resize-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-300 mb-1">
+                  Тон описания
+                </label>
+                <select
+                  value={tone}
+                  onChange={(e) => setTone(e.target.value)}
+                  className="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition text-slate-200"
+                >
+                  <option value="selling">🔥 Продающий (максимум конверсии)</option>
+                  <option value="professional">👔 Строгий и профессиональный</option>
+                  <option value="emotional">✨ Эмоциональный и вовлекающий</option>
+                </select>
+              </div>
+
+              {/* Поле для API ключа (опционально для демо) */}
+              <div className="pt-2 border-t border-slate-700/50">
+                <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-1">
+                  <AlertCircle className="w-3.5 h-3.5 text-amber-400" />
+                  <span>API Ключ OpenAI (необязательно для демо)</span>
+                </div>
+                <input
+                  type="password"
+                  placeholder="sk-..."
+                  value={apiKey}
+                  onChange={(e) => setApiKey(e.target.value)}
+                  className="w-full px-3 py-1.5 text-sm bg-slate-900/50 border border-slate-700/80 rounded-lg focus:outline-none focus:border-blue-500 transition text-slate-400"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading || !productName}
+                className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-xl font-medium shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transition duration-200"
+              >
+                {loading ? (
+                  <>
+                    <RefreshCw className="w-5 h-5 animate-spin" />
+                    <span>Нейросеть пишет текст...</span>
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="w-5 h-5" />
+                    <span>Сгенерировать карточку</span>
+                  </>
+                )}
+              </button>
+            </form>
+          </div>
+
+          {/* ПРАВАЯ КОЛОНКА: Вывод результата (7 колонок из 12) */}
+          <div className="lg:col-span-7 bg-slate-800/30 border border-slate-700/50 rounded-2xl p-6 backdrop-blur-xl min-h-[400px] flex flex-col justify-between">
+            
+            {loading ? (
+              // Состояние загрузки (скелетон)
+              <div className="flex-1 flex flex-col items-center justify-center text-center p-8 space-y-4">
+                <div className="w-16 h-16 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 animate-pulse">
+                  <Sparkles className="w-8 h-8 animate-spin" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium text-slate-200">Анализируем ключевые слова...</h3>
+                  <p className="text-sm text-slate-400 max-w-sm mt-1">
+                    Подбираем оптимальную SEO-структуру для максимального охвата в поиске.
+                  </p>
+                </div>
+              </div>
+            ) : result ? (
+              // Готовый результат
+              <div className="space-y-6 animate-fadeIn">
+                <div className="flex items-center justify-between border-b border-slate-700/60 pb-4">
+                  <h2 className="text-lg font-semibold text-slate-200">Результат генерации:</h2>
+                  <button
+                    onClick={handleCopy}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-700/60 hover:bg-slate-700 text-sm font-medium transition text-slate-200"
+                  >
+                    {copied ? (
+                      <>
+                        <Check className="w-4 h-4 text-emerald-400" />
+                        <span className="text-emerald-400">Скопировано!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-4 h-4" />
+                        <span>Скопировать всё</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                {/* Блок: Название */}
+                <div className="space-y-1">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-blue-400">
+                    SEO-Название (Title)
+                  </span>
+                  <div className="p-3.5 bg-slate-900/80 border border-slate-700/80 rounded-xl text-slate-100 font-medium">
+                    {result.title}
+                  </div>
+                </div>
+
+                {/* Блок: Описание */}
+                <div className="space-y-1">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-blue-400">
+                    Продающее описание
+                  </span>
+                  <div className="p-3.5 bg-slate-900/80 border border-slate-700/80 rounded-xl text-slate-300 text-sm leading-relaxed whitespace-pre-wrap">
+                    {result.description}
+                  </div>
+                </div>
+
+                {/* Блок: Буллеты (Преимущества) */}
+                <div className="space-y-1">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-blue-400">
+                    Ключевые преимущества (Bullet Points)
+                  </span>
+                  <ul className="p-3.5 bg-slate-900/80 border border-slate-700/80 rounded-xl space-y-2 text-sm text-slate-300">
+                    {result.bullets.map((bullet, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-blue-400 font-bold">•</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              // Пустое состояние (до генерации)
+              <div className="flex-1 flex flex-col items-center justify-center text-center p-8 border-2 border-dashed border-slate-700/60 rounded-xl">
+                <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-500 mb-3">
+                  <Sparkles className="w-6 h-6" />
+                </div>
+                <h3 className="text-base font-medium text-slate-300">Здесь появится результат</h3>
+                <p className="text-sm text-slate-500 max-w-xs mt-1">
+                  Заполните форму слева и нажмите «Сгенерировать», чтобы создать карточку товара.
+                </p>
+              </div>
+            )}
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  );
+}
