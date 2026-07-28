@@ -1,354 +1,129 @@
-import React, { useState, useEffect } from 'react';
-import { Sparkles, Copy, Check, RefreshCw, AlertCircle, ShoppingBag, History, Trash2 } from 'lucide-react';
+00:52:34 ч. [vite] Internal server error: C:\Users\annak\Desktop\ai-project\ai-card-generator\src\App.jsx: Unexpected token, expected "{" (22:55)
 
-export default function App() {
-  // Основные состояния формы
-  const [productName, setProductName] = useState('');
-  const [keywords, setKeywords] = useState('');
-  const [tone, setTone] = useState('selling');
-  const [marketplace, setMarketplace] = useState('wb');
-  const [apiKey, setApiKey] = useState('');
-  
-  // Состояния процесса и истории
-  const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState(null);
-  const [copied, setCopied] = useState(false);
-  const [history, setHistory] = useState([]);
+  20 |     const saved = localStorage.getItem('ai_cards_history');
+  21 |     if (saved) {
+> 22 |       try { setHistory(JSON.parse(saved)); } catch (e) => {}
+     |                                                        ^
+  23 |     }
+  24 |   }, []);
+  25 |
+  Plugin: vite:react-babel
+  File: C:/Users/annak/Desktop/ai-project/ai-card-generator/src/App.jsx:22:55
+  20 |      const saved = localStorage.getItem('ai_cards_history');
+  21 |      if (saved) {
+  22 |        try { setHistory(JSON.parse(saved)); } catch (e) => {}
+     |                                                         ^
+  23 |      }
+  24 |    }, []);
+      at constructor (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:365:19)
+      at JSXParserMixin.raise (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:6616:19)
+      at JSXParserMixin.unexpected (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:6636:16)
+      at JSXParserMixin.expect (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:6916:12)
+      at JSXParserMixin.parseBlock (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13310:10)
+      at C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13235:72
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12420:14)
+      at JSXParserMixin.parseTryStatement (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13235:26)
+      at JSXParserMixin.parseStatementContent (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12821:21)
+      at JSXParserMixin.parseStatementLike (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12784:17)
+      at JSXParserMixin.parseStatementListItem (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12764:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13333:61)
+      at JSXParserMixin.parseBlockBody (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13326:10)
+      at JSXParserMixin.parseBlock (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13314:10)
+      at JSXParserMixin.parseStatementContent (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12875:21)
+      at JSXParserMixin.parseStatementLike (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12784:17)
+      at JSXParserMixin.parseStatementOrSloppyAnnexBFunctionDeclaration (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12774:17)
+      at JSXParserMixin.parseIfStatement (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13147:28)
+      at JSXParserMixin.parseStatementContent (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12813:21)
+      at JSXParserMixin.parseStatementLike (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12784:17)
+      at JSXParserMixin.parseStatementListItem (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12764:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13333:61)
+      at JSXParserMixin.parseBlockBody (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13326:10)
+      at JSXParserMixin.parseBlock (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13314:10)
+      at JSXParserMixin.parseFunctionBody (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12117:24)
+      at JSXParserMixin.parseArrowExpression (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12092:10)
+      at JSXParserMixin.parseParenAndDistinguishExpression (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11704:12)
+      at JSXParserMixin.parseExprAtom (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11348:23)
+      at JSXParserMixin.parseExprAtom (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:4776:20)
+      at JSXParserMixin.parseExprSubscripts (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11098:23)
+      at JSXParserMixin.parseUpdate (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11083:21)
+      at JSXParserMixin.parseMaybeUnary (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11063:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:10916:61)
+      at JSXParserMixin.parseExprOps (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:10921:23)
+      at JSXParserMixin.parseMaybeConditional (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:10898:23)
+      at JSXParserMixin.parseMaybeAssign (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:10848:21)
+      at C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:10817:39
+      at JSXParserMixin.allowInAnd (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12443:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:10817:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12510:17)
+      at JSXParserMixin.parseExprListItem (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12192:18)
+      at JSXParserMixin.parseCallExpressionArguments (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11269:22)
+      at JSXParserMixin.parseCoverCallAndAsyncArrowHead (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11203:29)
+      at JSXParserMixin.parseSubscript (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11137:19)
+      at JSXParserMixin.parseSubscripts (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11111:19)
+      at JSXParserMixin.parseExprSubscripts (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11102:17)
+      at JSXParserMixin.parseUpdate (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11083:21)
+00:52:34 ч. [vite] Internal server error: C:\Users\annak\Desktop\ai-project\ai-card-generator\src\App.jsx: Unexpected token, expected "{" (22:55)
 
-  // Загружаем историю из памяти браузера при старте
-  useEffect(() => {
-    const saved = localStorage.getItem('ai_cards_history');
-    if (saved) {
-      try { setHistory(JSON.parse(saved)); } catch (e) => {}
-    }
-  }, []);
-
-  // Сохраняем в историю
-  const saveToHistory = (newItem) => {
-    const updated = [newItem, ...history].slice(0, 3); // Храним только 3 последних
-    setHistory(updated);
-    localStorage.setItem('ai_cards_history', JSON.stringify(updated));
-  };
-
-  // Очистка истории
-  const clearHistory = () => {
-    setHistory([]);
-    localStorage.removeItem('ai_cards_history');
-  };
-
-  // Умная генерация на основе выбранных параметров (Mock AI)
-  const generateSmartData = () => {
-    const keysArray = keywords ? keywords.split(',').map(k => k.trim()).filter(Boolean) : ['высокое качество', 'новинка сезона'];
-    const mainKey = keysArray[0] || 'хит продаж';
-    const secondKey = keysArray[1] || 'надежность';
-
-    let titlePrefix = '';
-    let descIntro = '';
-    let bulletStyle = '';
-
-    // Настройка под маркетплейс
-    if (marketplace === 'wb') titlePrefix = `[ХИТ WB] `;
-    if (marketplace === 'ozon') titlePrefix = `[OZON PREMIUM] `;
-    if (marketplace === 'amazon') titlePrefix = `[BESTSELLER] `;
-
-    // Настройка под тон речи
-    if (tone === 'selling') {
-      descIntro = `🔥 Взрыв продаж! Представляем идеальный выбор для тех, кто ценит ${mainKey}.`;
-      bulletStyle = 'Увеличивает эффективность и дарит комфорт с первых секунд';
-    } else if (tone === 'professional') {
-      descIntro = `Профессиональное решение. Модель разработана с акцентом на ${mainKey} и строгое соответствие стандартам качества.`;
-      bulletStyle = 'Сертифицированные материалы и повышенная износостойкость';
-    } else {
-      descIntro = `✨ Влюбитесь с первого взгляда! Этот ${productName || 'товар'} подарит вам невероятное ощущение уюта благодаря свойству "${mainKey}".`;
-      bulletStyle = 'Дарит яркие эмоции и идеально подходит в качестве подарка';
-    }
-
-    return {
-      id: Date.now(),
-      productName: productName || 'Товар',
-      marketplace: marketplace.toUpperCase(),
-      title: `${titlePrefix}${productName || 'Товар'} / ${mainKey} / ${secondKey}`,
-      description: `${descIntro} Наш ${productName || 'продукт'} обеспечивает идеальный баланс: ${keysArray.join(', ')}. Забудьте о компромиссах — выбирайте проверенное качество, которое уже оценили тысячи покупателей!`,
-      bullets: [
-        `Главное преимущество: ${mainKey} на высшем уровне`,
-        `Технология защиты и долгий срок службы (${secondKey})`,
-        bulletStyle,
-        'Быстрая доставка и надежная заводская упаковка'
-      ]
-    };
-  };
-
-  const handleGenerate = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setResult(null);
-    setCopied(false);
-
-    setTimeout(() => {
-      const data = generateSmartData();
-      setResult(data);
-      saveToHistory(data);
-      setLoading(false);
-    }, 1200);
-  };
-
-  const handleCopy = (textData) => {
-    const target = textData || result;
-    if (!target) return;
-    const textToCopy = `${target.title}\n\n${target.description}\n\nПреимущества:\n- ${target.bullets.join('\n- ')}`;
-    navigator.clipboard.writeText(textToCopy);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 py-10 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto space-y-10">
-        
-        {/* Шапка */}
-        <div className="text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-4">
-            <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">React • Tailwind • AI Integration</span>
-          </div>
-          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">
-            Генератор SEO-карточек для маркетплейсов
-          </h1>
-          <p className="mt-3 text-base text-slate-400 max-w-2xl mx-auto">
-            Интелектуальное создание продающих описаний с оптимизацией под поисковые алгоритмы Wildberries, Ozon и Amazon.
-          </p>
-        </div>
-
-        {/* Сетка */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* ЛЕВАЯ КОЛОНКА: Форма (5 колонок) */}
-          <div className="lg:col-span-5 bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 backdrop-blur-xl shadow-xl space-y-6">
-            
-            {/* Выбор площадки */}
-            <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                Выберите маркетплейс
-              </label>
-              <div className="grid grid-cols-3 gap-2">
-                {[
-                  { id: 'wb', label: 'Wildberries', color: 'hover:border-purple-500 active:bg-purple-500/20' },
-                  { id: 'ozon', label: 'Ozon', color: 'hover:border-blue-500 active:bg-blue-500/20' },
-                  { id: 'amazon', label: 'Amazon', color: 'hover:border-amber-500 active:bg-amber-500/20' },
-                ].map((item) => (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => setMarketplace(item.id)}
-                    className={`py-2 px-3 rounded-xl border text-sm font-medium transition flex items-center justify-center gap-1.5 ${
-                      marketplace === item.id
-                        ? item.id === 'wb' ? 'bg-purple-600/20 border-purple-500 text-purple-300' : item.id === 'ozon' ? 'bg-blue-600/20 border-blue-500 text-blue-300' : 'bg-amber-600/20 border-amber-500 text-amber-300'
-                        : 'bg-slate-900/50 border-slate-700 text-slate-400 hover:border-slate-600'
-                    }`}
-                  >
-                    <ShoppingBag className="w-3.5 h-3.5" />
-                    <span>{item.label}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <form onSubmit={handleGenerate} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1">
-                  Название товара <span className="text-red-400">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Например: Робот-пылесос CleanPro"
-                  value={productName}
-                  onChange={(e) => setProductName(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition text-slate-100 placeholder-slate-500"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1">
-                  Ключевые слова (через запятую)
-                </label>
-                <textarea
-                  rows="3"
-                  placeholder="влажная уборка, лидар, мощность 4000Pa, тихий"
-                  value={keywords}
-                  onChange={(e) => setKeywords(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition resize-none text-slate-100 placeholder-slate-500 text-sm"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1">
-                  Тон описания
-                </label>
-                <select
-                  value={tone}
-                  onChange={(e) => setTone(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition text-slate-200 text-sm"
-                >
-                  <option value="selling">🔥 Продающий (максимум конверсии и эмоций)</option>
-                  <option value="professional">👔 Строгий (акцент на характеристики и факты)</option>
-                  <option value="emotional">✨ Эмоциональный (упор на уют и заботу)</option>
-                </select>
-              </div>
-
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  disabled={loading || !productName}
-                  className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-xl font-medium shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 transition duration-200"
-                >
-                  {loading ? (
-                    <>
-                      <RefreshCw className="w-5 h-5 animate-spin" />
-                      <span>Нейросеть генерирует...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Sparkles className="w-5 h-5" />
-                      <span>Создать карточку</span>
-                    </>
-                  )}
-                </button>
-              </div>
-            </form>
-          </div>
-
-          {/* ПРАВАЯ КОЛОНКА: Вывод результата (7 колонок) */}
-          <div className="lg:col-span-7 space-y-6">
-            
-            {/* Главный блок результата */}
-            <div className="bg-slate-800/30 border border-slate-700/50 rounded-2xl p-6 backdrop-blur-xl min-h-[420px] flex flex-col justify-between shadow-xl">
-              {loading ? (
-                <div className="flex-1 flex flex-col items-center justify-center text-center p-8 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 animate-pulse">
-                    <Sparkles className="w-8 h-8 animate-spin" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-medium text-slate-200">Анализируем алгоритмы {marketplace.toUpperCase()}...</h3>
-                    <p className="text-sm text-slate-400 max-w-sm mt-1">
-                      Встраиваем ключевые слова и формируем продающую структуру.
-                    </p>
-                  </div>
-                </div>
-              ) : result ? (
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between border-b border-slate-700/60 pb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm text-slate-400">Площадка:</span>
-                      <span className="px-2.5 py-0.5 rounded-md text-xs font-bold bg-slate-700 text-blue-300">
-                        {result.marketplace}
-                      </span>
-                    </div>
-                    <button
-                      onClick={() => handleCopy()}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-sm font-medium transition text-white shadow-md shadow-indigo-600/20"
-                    >
-                      {copied ? (
-                        <>
-                          <Check className="w-4 h-4 text-emerald-300" />
-                          <span>Скопировано!</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="w-4 h-4" />
-                          <span>Скопировать всё</span>
-                        </>
-                      )}
-                    </button>
-                  </div>
-
-                  <div className="space-y-1">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-indigo-400">
-                      SEO-Название (Title)
-                    </span>
-                    <div className="p-3.5 bg-slate-900/80 border border-slate-700/80 rounded-xl text-slate-100 font-medium">
-                      {result.title}
-                    </div>
-                  </div>
-
-                  <div className="space-y-1">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-indigo-400">
-                      Продающее описание
-                    </span>
-                    <div className="p-3.5 bg-slate-900/80 border border-slate-700/80 rounded-xl text-slate-300 text-sm leading-relaxed whitespace-pre-wrap">
-                      {result.description}
-                    </div>
-                  </div>
-
-                  <div className="space-y-1">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-indigo-400">
-                      Преимущества (Bullet Points)
-                    </span>
-                    <ul className="p-3.5 bg-slate-900/80 border border-slate-700/80 rounded-xl space-y-2 text-sm text-slate-300">
-                      {result.bullets.map((bullet, index) => (
-                        <li key={index} className="flex items-start gap-2">
-                          <span className="text-indigo-400 font-bold">•</span>
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex-1 flex flex-col items-center justify-center text-center p-8 border-2 border-dashed border-slate-700/60 rounded-xl">
-                  <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-500 mb-3">
-                    <Sparkles className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-base font-medium text-slate-300">Здесь появится результат</h3>
-                  <p className="text-sm text-slate-500 max-w-xs mt-1">
-                    Выберите маркетплейс, введите данные о товаре и нажмите «Создать карточку».
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* Блок истории (Появляется, если есть история) */}
-            {history.length > 0 && (
-              <div className="bg-slate-800/20 border border-slate-700/40 rounded-2xl p-5 backdrop-blur-xl">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2 text-sm font-medium text-slate-300">
-                    <History className="w-4 h-4 text-slate-400" />
-                    <span>Недавние генерации (Сохранено в браузере)</span>
-                  </div>
-                  <button
-                    onClick={clearHistory}
-                    className="text-xs text-slate-500 hover:text-red-400 flex items-center gap-1 transition"
-                  >
-                    <Trash2 className="w-3.5 h-3.5" />
-                    <span>Очистить</span>
-                  </button>
-                </div>
-
-                <div className="space-y-2">
-                  {history.map((item) => (
-                    <div
-                      key={item.id}
-                      onClick={() => setResult(item)}
-                      className="p-3 bg-slate-900/50 hover:bg-slate-900 border border-slate-700/50 rounded-xl cursor-pointer transition flex items-center justify-between group"
-                    >
-                      <div className="truncate pr-4">
-                        <span className="text-xs font-bold text-indigo-400 mr-2">[{item.marketplace}]</span>
-                        <span className="text-sm text-slate-300 group-hover:text-white transition">{item.productName}</span>
-                      </div>
-                      <span className="text-xs text-slate-500 group-hover:text-blue-400 transition whitespace-nowrap">
-                        Открыть →
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  );
-}
+  20 |     const saved = localStorage.getItem('ai_cards_history');
+  21 |     if (saved) {
+> 22 |       try { setHistory(JSON.parse(saved)); } catch (e) => {}
+     |                                                        ^
+  23 |     }
+  24 |   }, []);
+  25 |
+  Plugin: vite:react-babel
+  File: C:/Users/annak/Desktop/ai-project/ai-card-generator/src/App.jsx:22:55
+  20 |      const saved = localStorage.getItem('ai_cards_history');
+  21 |      if (saved) {
+  22 |        try { setHistory(JSON.parse(saved)); } catch (e) => {}
+     |                                                         ^
+  23 |      }
+  24 |    }, []);
+      at constructor (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:365:19)
+      at JSXParserMixin.raise (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:6616:19)
+      at JSXParserMixin.unexpected (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:6636:16)
+      at JSXParserMixin.expect (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:6916:12)
+      at JSXParserMixin.parseBlock (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13310:10)
+      at C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13235:72
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12420:14)
+      at JSXParserMixin.parseTryStatement (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13235:26)
+      at JSXParserMixin.parseStatementContent (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12821:21)
+      at JSXParserMixin.parseStatementLike (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12784:17)
+      at JSXParserMixin.parseStatementListItem (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12764:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13333:61)
+      at JSXParserMixin.parseBlockBody (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13326:10)
+      at JSXParserMixin.parseBlock (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13314:10)
+      at JSXParserMixin.parseStatementContent (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12875:21)
+      at JSXParserMixin.parseStatementLike (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12784:17)
+      at JSXParserMixin.parseStatementOrSloppyAnnexBFunctionDeclaration (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12774:17)
+      at JSXParserMixin.parseIfStatement (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13147:28)
+      at JSXParserMixin.parseStatementContent (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12813:21)
+      at JSXParserMixin.parseStatementLike (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12784:17)
+      at JSXParserMixin.parseStatementListItem (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12764:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13333:61)
+      at JSXParserMixin.parseBlockBody (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13326:10)
+      at JSXParserMixin.parseBlock (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:13314:10)
+      at JSXParserMixin.parseFunctionBody (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12117:24)
+      at JSXParserMixin.parseArrowExpression (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12092:10)
+      at JSXParserMixin.parseParenAndDistinguishExpression (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11704:12)
+      at JSXParserMixin.parseExprAtom (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11348:23)
+      at JSXParserMixin.parseExprAtom (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:4776:20)
+      at JSXParserMixin.parseExprSubscripts (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11098:23)
+      at JSXParserMixin.parseUpdate (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11083:21)
+      at JSXParserMixin.parseMaybeUnary (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11063:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:10916:61)
+      at JSXParserMixin.parseExprOps (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:10921:23)
+      at JSXParserMixin.parseMaybeConditional (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:10898:23)
+      at JSXParserMixin.parseMaybeAssign (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:10848:21)
+      at C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:10817:39
+      at JSXParserMixin.allowInAnd (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12443:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:10817:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12510:17)
+      at JSXParserMixin.parseExprListItem (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:12192:18)
+      at JSXParserMixin.parseCallExpressionArguments (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11269:22)
+      at JSXParserMixin.parseCoverCallAndAsyncArrowHead (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11203:29)
+      at JSXParserMixin.parseSubscript (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11137:19)
+      at JSXParserMixin.parseSubscripts (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11111:19)
+      at JSXParserMixin.parseExprSubscripts (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11102:17)
+      at JSXParserMixin.parseUpdate (C:\Users\annak\Desktop\ai-project\ai-card-generator\node_modules\@babel\parser\lib\index.js:11083:21)
+00:52:48 ч. [vite] hmr update /src/App.jsx, /src/index.css
