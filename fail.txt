@@ -1,2 +1,1 @@
-Deployment
-ai-ecommerce-card-generator-8pro9v41u-anna-klimenko13s-projects.vercel.app
+https://ai-ecommerce-card-generator.vercel.app/
