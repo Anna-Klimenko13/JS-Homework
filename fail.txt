@@ -1,25 +1,11 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+PS C:\Users\annak\Desktop\ai-project\ai-card-generator> npm run dev 
+
+> ai-card-generator@0.0.0 dev
+> vite
 
 
+  VITE v5.4.21  ready in 966 ms
 
-
-
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-
-
-npm run dev
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
