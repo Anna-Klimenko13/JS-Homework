@@ -1,1 +1,8 @@
 git commit -m "Initial commit: AI E-Commerce Card Generator"
+
+
+
+
+git remote add origin https://github.com/Anna-Klimenko13/ai-ecommerce-card-generator.git
+git branch -M main
+git push -u origin main
