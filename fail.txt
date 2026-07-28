@@ -5,15 +5,14 @@ export default function App() {
   const [productName, setProductName] = useState('');
   const [keywords, setKeywords] = useState('');
   const [tone, setTone] = useState('selling');
-  const [marketplace, setMarketplace] = useState('wb');
-  const [price, setPrice] = useState('3 490');
+  const [marketplace, setMarketplace] = useState('amazon');
+  const [price, setPrice] = useState('49.99');
   
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [copied, setCopied] = useState(false);
   const [history, setHistory] = useState([]);
   
-  // Переключатель вкладок: 'text' (текст для копирования) или 'preview' (визуал карточки)
   const [activeTab, setActiveTab] = useState('text');
 
   useEffect(() => {
@@ -35,41 +34,42 @@ export default function App() {
   };
 
   const generateSmartData = () => {
-    const keysArray = keywords ? keywords.split(',').map(k => k.trim()).filter(Boolean) : ['высокое качество', 'новинка'];
-    const mainKey = keysArray[0] || 'хит продаж';
-    const secondKey = keysArray[1] || 'надежность';
+    const keysArray = keywords ? keywords.split(',').map(k => k.trim()).filter(Boolean) : ['premium quality', 'eco-friendly'];
+    const mainKey = keysArray[0] || 'top rated';
+    const secondKey = keysArray[1] || 'high durability';
 
     let titlePrefix = '';
     let descIntro = '';
     let bulletStyle = '';
 
-    if (marketplace === 'wb') titlePrefix = `[ХИТ WB] `;
-    if (marketplace === 'ozon') titlePrefix = `[OZON PREMIUM] `;
-    if (marketplace === 'amazon') titlePrefix = `[BESTSELLER] `;
+    if (marketplace === 'amazon') titlePrefix = `[AMAZON CHOICE] `;
+    if (marketplace === 'shopify') titlePrefix = `[TRENDING BRAND] `;
+    if (marketplace === 'etsy') titlePrefix = `[UNIQUE & HANDMADE] `;
 
     if (tone === 'selling') {
-      descIntro = `🔥 Взрыв продаж! Представляем идеальный выбор для тех, кто ценит ${mainKey}.`;
-      bulletStyle = 'Увеличивает эффективность и дарит комфорт с первых секунд';
+      descIntro = `🔥 Максимум продаж! Представляем идеальный выбор для тех, кто ищет ${mainKey}.`;
+      bulletStyle = 'Повышает комфорт с первых секунд использования';
     } else if (tone === 'professional') {
-      descIntro = `Профессиональное решение. Модель разработана с акцентом на ${mainKey} и строгое соответствие стандартам качества.`;
-      bulletStyle = 'Сертифицированные материалы и повышенная износостойкость';
+      descIntro = `Профессиональное качество. Модель разработана с акцентом на ${mainKey} и строгое соответствие международным стандартам.`;
+      bulletStyle = 'Сертифицированные материалы и высокая износостойкость';
     } else {
-      descIntro = `✨ Влюбитесь с первого взгляда! Этот ${productName || 'товар'} подарит вам невероятное ощущение уюта благодаря свойству "${mainKey}".`;
-      bulletStyle = 'Дарит яркие эмоции и идеально подходит в качестве подарка';
+      descIntro = `✨ Влюбитесь с первого взгляда! Этот ${productName || 'товар'} подарит вам невероятное ощущение уюта и стиля благодаря особенности "${mainKey}".`;
+      bulletStyle = 'Идеально подходит в качестве подарка для близких';
     }
 
     return {
       id: Date.now(),
       productName: productName || 'Товар',
       marketplace: marketplace.toUpperCase(),
-      price: price || '2 990',
+      price: price || '39.99',
+      currency: marketplace === 'etsy' ? '€' : '$',
       title: `${titlePrefix}${productName || 'Товар'} / ${mainKey} / ${secondKey}`,
-      description: `${descIntro} Наш ${productName || 'продукт'} обеспечивает идеальный баланс: ${keysArray.join(', ')}. Забудьте о компромиссах — выбирайте проверенное качество, которое уже оценили тысячи покупателей!`,
+      description: `${descIntro} Наш ${productName || 'продукт'} обеспечивает идеальный баланс: ${keysArray.join(', ')}. Забудьте о компромиссах — выбирайте проверенное качество, которое уже оценили покупатели по всему миру!`,
       bullets: [
         `Главное преимущество: ${mainKey} на высшем уровне`,
-        `Технология защиты и долгий срок службы (${secondKey})`,
+        `Защитные технологии и долговечность (${secondKey})`,
         bulletStyle,
-        'Быстрая доставка и надежная заводская упаковка'
+        'Быстрая и безопасная международная доставка'
       ]
     };
   };
@@ -85,7 +85,7 @@ export default function App() {
       setResult(data);
       saveToHistory(data);
       setLoading(false);
-      setActiveTab('preview'); // Сразу переключаем на красивое визуальное превью!
+      setActiveTab('preview');
     }, 1200);
   };
 
@@ -106,13 +106,13 @@ export default function App() {
         <div className="text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 mb-4">
             <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">React • Tailwind • AI Integration</span>
+            <span className="text-sm font-medium">React • Tailwind • Global E-Commerce AI</span>
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">
             Генератор SEO-карточек для маркетплейсов
           </h1>
           <p className="mt-3 text-base text-slate-400 max-w-2xl mx-auto">
-            Создавайте продающие описания и мгновенно смотрите, как товар будет выглядеть в каталоге Wildberries, Ozon или Amazon.
+            Интеллектуальное создание продающих описаний с оптимизацией под поисковые алгоритмы Amazon, Shopify и Etsy.
           </p>
         </div>
 
@@ -124,13 +124,13 @@ export default function App() {
             
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                Выберите маркетплейс
+                Выберите платформу
               </label>
               <div className="grid grid-cols-3 gap-2">
                 {[
-                  { id: 'wb', label: 'Wildberries' },
-                  { id: 'ozon', label: 'Ozon' },
                   { id: 'amazon', label: 'Amazon' },
+                  { id: 'shopify', label: 'Shopify' },
+                  { id: 'etsy', label: 'Etsy' },
                 ].map((item) => (
                   <button
                     key={item.id}
@@ -138,7 +138,7 @@ export default function App() {
                     onClick={() => setMarketplace(item.id)}
                     className={`py-2 px-3 rounded-xl border text-sm font-medium transition flex items-center justify-center gap-1.5 ${
                       marketplace === item.id
-                        ? item.id === 'wb' ? 'bg-purple-600/20 border-purple-500 text-purple-300' : item.id === 'ozon' ? 'bg-blue-600/20 border-blue-500 text-blue-300' : 'bg-amber-600/20 border-amber-500 text-amber-300'
+                        ? item.id === 'amazon' ? 'bg-amber-600/20 border-amber-500 text-amber-300' : item.id === 'shopify' ? 'bg-emerald-600/20 border-emerald-500 text-emerald-300' : 'bg-orange-600/20 border-orange-500 text-orange-300'
                         : 'bg-slate-900/50 border-slate-700 text-slate-400 hover:border-slate-600'
                     }`}
                   >
@@ -157,24 +157,24 @@ export default function App() {
                 <input
                   type="text"
                   required
-                  placeholder="Например: Робот-пылесос CleanPro"
+                  placeholder="Например: Wireless Noise-Canceling Headphones"
                   value={productName}
                   onChange={(e) => setProductName(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 transition text-slate-100"
+                  className="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 transition text-slate-100 placeholder-slate-500 text-sm"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-slate-300 mb-1">
-                    Цена (руб / $)
+                    Цена ($ / €)
                   </label>
                   <input
                     type="text"
-                    placeholder="3 490"
+                    placeholder="49.99"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
-                    className="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 transition text-slate-100"
+                    className="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 transition text-slate-100 text-sm"
                   />
                 </div>
                 <div>
@@ -199,10 +199,10 @@ export default function App() {
                 </label>
                 <textarea
                   rows="3"
-                  placeholder="влажная уборка, лидар, мощность 4000Pa, тихий"
+                  placeholder="bluetooth 5.3, deep bass, 30h battery life, ergonomic"
                   value={keywords}
                   onChange={(e) => setKeywords(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 transition resize-none text-slate-100 text-sm"
+                  className="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 transition resize-none text-slate-100 placeholder-slate-500 text-sm"
                 />
               </div>
 
@@ -240,14 +240,13 @@ export default function App() {
                   <div>
                     <h3 className="text-lg font-medium text-slate-200">Создаем визуал и тексты для {marketplace.toUpperCase()}...</h3>
                     <p className="text-sm text-slate-400 max-w-sm mt-1">
-                      Оптимизируем под поисковые алгоритмы маркетплейса.
+                      Оптимизируем структуру под международные стандарты e-commerce.
                     </p>
                   </div>
                 </div>
               ) : result ? (
                 <div className="space-y-6">
                   
-                  {/* Переключатель вкладок и кнопка копирования */}
                   <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-700/60 pb-4">
                     <div className="flex bg-slate-900/80 p-1 rounded-xl border border-slate-700/60">
                       <button
@@ -288,43 +287,40 @@ export default function App() {
                     </button>
                   </div>
 
-                  {/* СОДЕРЖИМОЕ ВКЛАДКИ 1: ВИЗУАЛЬНОЕ ПРЕВЬЮ (КАК НА САЙТЕ) */}
                   {activeTab === 'preview' ? (
                     <div className="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-5 shadow-inner space-y-6 animate-fadeIn">
                       <div className="flex items-center justify-between">
                         <span className="px-2.5 py-1 rounded text-xs font-black tracking-wider bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
-                          {result.marketplace} CATALOG PREVIEW
+                          {result.marketplace} GLOBAL STORE
                         </span>
                         <div className="flex items-center gap-1 text-amber-400 text-sm font-bold">
                           <Star className="w-4 h-4 fill-amber-400" />
                           <span>4.9</span>
-                          <span className="text-slate-500 font-normal text-xs">(142 отзыва)</span>
+                          <span className="text-slate-500 font-normal text-xs">(142 reviews)</span>
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-start">
-                        {/* Имитация фото товара */}
                         <div className="sm:col-span-5 aspect-square bg-gradient-to-br from-slate-800 to-slate-800/40 border border-slate-700/60 rounded-xl flex flex-col items-center justify-center p-4 text-center relative group">
                           <ShoppingBag className="w-16 h-16 text-slate-600 mb-2 group-hover:scale-110 transition duration-300" />
-                          <span className="text-xs text-slate-500 font-medium">Фото товара</span>
+                          <span className="text-xs text-slate-500 font-medium">Product Image</span>
                           <button className="absolute top-3 right-3 p-2 rounded-full bg-slate-900/60 text-slate-400 hover:text-red-400 transition">
                             <Heart className="w-4 h-4" />
                           </button>
                         </div>
 
-                        {/* Инфо товара */}
                         <div className="sm:col-span-7 space-y-4">
                           <h2 className="text-base font-bold text-white leading-snug">
                             {result.title}
                           </h2>
 
                           <div className="flex items-baseline gap-2">
-                            <span className="text-2xl font-black text-emerald-400">{result.price} {result.marketplace === 'AMAZON' ? '$' : '₽'}</span>
-                            <span className="text-sm text-slate-500 line-through">4 990</span>
+                            <span className="text-2xl font-black text-emerald-400">{result.currency}{result.price}</span>
+                            <span className="text-sm text-slate-500 line-through">{result.currency}69.99</span>
                           </div>
 
                           <div className="space-y-1.5">
-                            <span className="text-xs font-semibold text-slate-400 uppercase">Особенности:</span>
+                            <span className="text-xs font-semibold text-slate-400 uppercase">Highlights:</span>
                             <ul className="space-y-1 text-xs text-slate-300">
                               {result.bullets.slice(0, 3).map((b, i) => (
                                 <li key={i} className="flex items-center gap-1.5">
@@ -337,20 +333,19 @@ export default function App() {
 
                           <button className="w-full py-2.5 px-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-sm font-semibold shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 transition">
                             <ShoppingCart className="w-4 h-4" />
-                            <span>Добавить в корзину</span>
+                            <span>Add to Cart</span>
                           </button>
                         </div>
                       </div>
 
                       <div className="border-t border-slate-800 pt-4 space-y-2">
-                        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Описание от продавца:</h4>
+                        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Product Description:</h4>
                         <p className="text-xs text-slate-300 leading-relaxed bg-slate-800/40 p-3.5 rounded-xl border border-slate-800/80">
                           {result.description}
                         </p>
                       </div>
                     </div>
                   ) : (
-                    /* СОДЕРЖИМОЕ ВКЛАДКИ 2: ТЕКСТ ДЛЯ КОПИРОВАНИЯ (СТАРЫЙ ВИД) */
                     <div className="space-y-5 animate-fadeIn">
                       <div className="space-y-1">
                         <span className="text-xs font-semibold uppercase tracking-wider text-indigo-400">SEO-Название (Title)</span>
