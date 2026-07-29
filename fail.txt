@@ -48,3 +48,112 @@ body {
 
 
 npm run dev
+
+
+
+error
+
+
+
+
+PS C:\Users\annak\Desktop\мои проекты\nutri-q> npm create vite@latest . -- --template react
+
+> npx
+> create-vite . --template react
+
+│
+◇  Which linter to use?
+│  Oxlint
+│
+◇  Install with npm and start now?
+│  Yes
+│
+◇  Scaffolding project in C:\Users\annak\Desktop\мои проекты\nutri-q...
+│
+◇  Installing dependencies with npm...
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: '@vitejs/plugin-react@6.0.4',
+npm warn EBADENGINE   required: { node: '^20.19.0 || >=22.12.0' },
+npm warn EBADENGINE   current: { node: 'v20.16.0', npm: '10.8.1' }
+npm warn EBADENGINE }
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: 'vite@8.1.5',
+npm warn EBADENGINE   required: { node: '^20.19.0 || >=22.12.0' },
+npm warn EBADENGINE   current: { node: 'v20.16.0', npm: '10.8.1' }
+npm warn EBADENGINE }
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: 'oxlint@1.76.0',
+npm warn EBADENGINE   required: { node: '^20.19.0 || >=22.12.0' },
+npm warn EBADENGINE   current: { node: 'v20.16.0', npm: '10.8.1' }
+npm warn EBADENGINE }
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: 'rolldown@1.1.5',
+npm warn EBADENGINE   required: { node: '^20.19.0 || >=22.12.0' },
+npm warn EBADENGINE   current: { node: 'v20.16.0', npm: '10.8.1' }
+npm warn EBADENGINE }
+
+added 22 packages, and audited 23 packages in 11s
+
+9 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+│
+◇  Starting dev server...
+
+> nutri-q@0.0.0 dev
+> vite
+
+file:///C:/Users/annak/Desktop/%D0%BC%D0%BE%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/nutri-q/node_modules/rolldown/dist/shared/binding-TuFFIE_J.mjs:509
+                        const error = /* @__PURE__ */ new Error("Cannot find native binding. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.");
+                                                      ^
+
+Error: Cannot find native binding. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+    at file:///C:/Users/annak/Desktop/%D0%BC%D0%BE%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/nutri-q/node_modules/rolldown/dist/shared/binding-TuFFIE_J.mjs:509:34
+    at file:///C:/Users/annak/Desktop/%D0%BC%D0%BE%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/nutri-q/node_modules/rolldown/dist/shared/binding-TuFFIE_J.mjs:9:49
+    ... 2 lines matching cause stack trace ...
+    at async ModuleLoader.import (node:internal/modules/esm/loader:316:24) {
+  cause: Error: Cannot find module '@rolldown/binding-win32-x64-msvc'
+  Require stack:
+  - C:\Users\annak\Desktop\мои проекты\nutri-q\node_modules\rolldown\dist\shared\binding-TuFFIE_J.mjs
+      at Module._resolveFilename (node:internal/modules/cjs/loader:1145:15)
+      ... 2 lines matching cause stack trace ...
+      at require (node:internal/modules/helpers:179:18)
+      at requireNative (file:///C:/Users/annak/Desktop/%D0%BC%D0%BE%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/nutri-q/node_modules/rolldown/dist/shared/binding-TuFFIE_J.mjs:147:21)
+      at file:///C:/Users/annak/Desktop/%D0%BC%D0%BE%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/nutri-q/node_modules/rolldown/dist/shared/binding-TuFFIE_J.mjs:475:18
+      at file:///C:/Users/annak/Desktop/%D0%BC%D0%BE%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/nutri-q/node_modules/rolldown/dist/shared/binding-TuFFIE_J.mjs:9:49
+      at file:///C:/Users/annak/Desktop/%D0%BC%D0%BE%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/nutri-q/node_modules/rolldown/dist/shared/parse-D4dtlfWy.mjs:3:46
+      at ModuleJob.run (node:internal/modules/esm/module_job:222:25)
+      at async ModuleLoader.import (node:internal/modules/esm/loader:316:24) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\annak\\Desktop\\мои проекты\\nutri-q\\node_modules\\rolldown\\dist\\shared\\binding-TuFFIE_J.mjs'
+    ],
+    cause: Error: Cannot find module './rolldown-binding.win32-x64-msvc.node'
+    Require stack:
+    - C:\Users\annak\Desktop\мои проекты\nutri-q\node_modules\rolldown\dist\shared\binding-TuFFIE_J.mjs
+        at Module._resolveFilename (node:internal/modules/cjs/loader:1145:15)
+        at Module._load (node:internal/modules/cjs/loader:986:27)
+        at Module.require (node:internal/modules/cjs/loader:1233:19)
+        at require (node:internal/modules/helpers:179:18)
+        at requireNative (file:///C:/Users/annak/Desktop/%D0%BC%D0%BE%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/nutri-q/node_modules/rolldown/dist/shared/binding-TuFFIE_J.mjs:142:12)
+        at file:///C:/Users/annak/Desktop/%D0%BC%D0%BE%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/nutri-q/node_modules/rolldown/dist/shared/binding-TuFFIE_J.mjs:475:18
+        at file:///C:/Users/annak/Desktop/%D0%BC%D0%BE%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/nutri-q/node_modules/rolldown/dist/shared/binding-TuFFIE_J.mjs:9:49
+        at file:///C:/Users/annak/Desktop/%D0%BC%D0%BE%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B/nutri-q/node_modules/rolldown/dist/shared/parse-D4dtlfWy.mjs:3:46
+        at ModuleJob.run (node:internal/modules/esm/module_job:222:25)
+        at async ModuleLoader.import (node:internal/modules/esm/loader:316:24) {
+      code: 'MODULE_NOT_FOUND',
+      requireStack: [
+        'C:\\Users\\annak\\Desktop\\мои проекты\\nutri-q\\node_modules\\rolldown\\dist\\shared\\binding-TuFFIE_J.mjs'
+      ]
+    }
+  }
+}
+
+Node.js v20.16.0
+npm error code 1
+npm error path C:\Users\annak\Desktop\мои проекты\nutri-q
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c create-vite . --template react
+npm error A complete log of this run can be found in: C:\Users\annak\AppData\Local\npm-cache\_logs\2026-07-29T10_13_00_130Z-debug-0.log
+PS C:\Users\annak\Desktop\мои проекты\nutri-q> 
