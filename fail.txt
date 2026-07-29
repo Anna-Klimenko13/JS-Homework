@@ -8,9 +8,10 @@ function App() {
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
   
-  // НОВОЕ: Состояние для цели
+  // НОВОЕ: Состояние для активности (по умолчанию - легкая)
+  const [activity, setActivity] = useState('1.375');
+  
   const [goal, setGoal] = useState('maintain');
-
   const [results, setResults] = useState(null);
 
   const calculateNutrition = () => {
@@ -23,15 +24,15 @@ function App() {
     const h = parseFloat(height);
     const a = parseFloat(age);
 
-    // 1. Базовый обмен веществ (формула Миффлина-Сан Жеора)
+    // 1. Базовый обмен веществ (BMR)
     let bmr = (10 * w) + (6.25 * h) - (5 * a) + (gender === 'male' ? 5 : -161);
 
-    // 2. Коэффициент активности (пока берем легкую активность 1.375)
-    let targetCalories = Math.round(bmr * 1.375);
+    // 2. НОВОЕ: Умножаем на выбранный коэффициент активности
+    let targetCalories = Math.round(bmr * parseFloat(activity));
 
-    // 3. НОВОЕ: Корректировка по цели пользователя
-    if (goal === 'lose') targetCalories = Math.round(targetCalories * 0.85); // Дефицит 15%
-    if (goal === 'gain') targetCalories = Math.round(targetCalories * 1.15); // Профицит 15%
+    // 3. Корректировка по цели
+    if (goal === 'lose') targetCalories = Math.round(targetCalories * 0.85);
+    if (goal === 'gain') targetCalories = Math.round(targetCalories * 1.15);
 
     // 4. Расчет БЖУ
     const protein = Math.round((targetCalories * 0.3) / 4);
@@ -46,18 +47,16 @@ function App() {
     setStep('form');
   };
 
-  // Вспомогательная функция, которая запрещает вводить минус и букву "e" (экспоненту)
   const blockInvalidChars = (e) => {
     if (e.key === '-' || e.key === 'e' || e.key === 'E') {
       e.preventDefault();
     }
   };
 
-  // Общий стиль для инпутов, скрывающий системные стрелочки
   const inputStyles = "w-full bg-dark text-white p-4 rounded-xl outline-none border border-transparent focus:border-primary transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none";
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6">
+    <div className="min-h-screen flex flex-col items-center justify-center p-6 pb-12">
       
       {/* --- ЭКРАН 1: СТАРТОВЫЙ --- */}
       {step === 'welcome' && (
@@ -82,7 +81,6 @@ function App() {
         <div className="bg-card w-full max-w-md p-8 rounded-3xl shadow-2xl animate-fade-in">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">Ваши параметры</h2>
           
-          {/* Переключатель пола */}
           <div className="flex bg-dark rounded-xl p-1 mb-6">
             <button 
               onClick={() => setGender('male')}
@@ -102,13 +100,8 @@ function App() {
             <div>
               <label className="block text-textGray text-sm font-medium mb-2">Возраст (лет)</label>
               <input 
-                type="number" 
-                min="1"
-                value={age} 
-                onChange={(e) => setAge(e.target.value)}
-                onKeyDown={blockInvalidChars}
-                placeholder="Например: 25" 
-                className={inputStyles}
+                type="number" min="1" value={age} onChange={(e) => setAge(e.target.value)} onKeyDown={blockInvalidChars}
+                placeholder="25" className={inputStyles}
               />
             </div>
             
@@ -116,30 +109,35 @@ function App() {
               <div className="flex-1">
                 <label className="block text-textGray text-sm font-medium mb-2">Рост (см)</label>
                 <input 
-                  type="number" 
-                  min="1"
-                  value={height} 
-                  onChange={(e) => setHeight(e.target.value)}
-                  onKeyDown={blockInvalidChars}
-                  placeholder="175" 
-                  className={inputStyles}
+                  type="number" min="1" value={height} onChange={(e) => setHeight(e.target.value)} onKeyDown={blockInvalidChars}
+                  placeholder="175" className={inputStyles}
                 />
               </div>
               <div className="flex-1">
                 <label className="block text-textGray text-sm font-medium mb-2">Вес (кг)</label>
                 <input 
-                  type="number" 
-                  min="1"
-                  value={weight} 
-                  onChange={(e) => setWeight(e.target.value)}
-                  onKeyDown={blockInvalidChars}
-                  placeholder="70" 
-                  className={inputStyles}
+                  type="number" min="1" value={weight} onChange={(e) => setWeight(e.target.value)} onKeyDown={blockInvalidChars}
+                  placeholder="70" className={inputStyles}
                 />
               </div>
             </div>
 
-            {/* НОВОЕ: Выбор цели */}
+            {/* НОВОЕ: Выбор активности */}
+            <div className="pt-2">
+              <label className="block text-textGray text-sm font-medium mb-2">Активность</label>
+              <select 
+                value={activity}
+                onChange={(e) => setActivity(e.target.value)}
+                className="w-full bg-dark text-white p-4 rounded-xl outline-none border border-transparent focus:border-primary transition-colors cursor-pointer appearance-none"
+              >
+                <option value="1.2">Минимум (сидячая работа, без спорта)</option>
+                <option value="1.375">Слабая (тренировки 1-3 раза в неделю)</option>
+                <option value="1.55">Средняя (тренировки 3-5 раз в неделю)</option>
+                <option value="1.725">Высокая (тренировки 6-7 раз в неделю)</option>
+                <option value="1.9">Экстремальная (тяжелая физ. работа)</option>
+              </select>
+            </div>
+
             <div className="pt-2">
               <label className="block text-textGray text-sm font-medium mb-2">Ваша цель</label>
               <div className="flex flex-col gap-2">
