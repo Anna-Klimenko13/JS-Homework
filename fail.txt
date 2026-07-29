@@ -1,14 +1,57 @@
 import React, { useState } from 'react';
 
 function App() {
-  // 1. Создаем "память" для нашего приложения
-  const [step, setStep] = useState('welcome'); // Начинаем с экрана 'welcome'
+  const [step, setStep] = useState('welcome');
   
-  // 2. Память для данных пользователя
   const [gender, setGender] = useState('male');
   const [age, setAge] = useState('');
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
+
+  // Состояние для хранения результатов
+  const [results, setResults] = useState(null);
+
+  // Функция расчета калорий и БЖУ
+  const calculateNutrition = () => {
+    // 1. Проверка: все ли поля заполнены
+    if (!age || !height || !weight) {
+      alert('Пожалуйста, заполните все параметры (Возраст, Рост, Вес)!');
+      return;
+    }
+
+    const w = parseFloat(weight);
+    const h = parseFloat(height);
+    const a = parseFloat(age);
+
+    // 2. Базовый обмен веществ (формула Миффлина-Сан Жеора)
+    let bmr = 0;
+    if (gender === 'male') {
+      bmr = (10 * w) + (6.25 * h) - (5 * a) + 5;
+    } else {
+      bmr = (10 * w) + (6.25 * h) - (5 * a) - 161;
+    }
+
+    // 3. Добавляем коэффициент легкой активности (1.375)
+    const tdee = Math.round(bmr * 1.375);
+
+    // 4. Расчет БЖУ (Белки: 30%, Жиры: 30%, Углеводы: 40%)
+    // 1г белка/углеводов = 4 ккал, 1г жира = 9 ккал
+    const protein = Math.round((tdee * 0.3) / 4);
+    const fat = Math.round((tdee * 0.3) / 9);
+    const carbs = Math.round((tdee * 0.4) / 4);
+
+    // Сохраняем результаты и переключаем экран
+    setResults({ calories: tdee, protein, fat, carbs });
+    setStep('result');
+  };
+
+  // Функция для возврата назад
+  const resetForm = () => {
+    setAge('');
+    setHeight('');
+    setWeight('');
+    setStep('form');
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6">
@@ -22,8 +65,6 @@ function App() {
           <p className="text-textGray max-w-sm mb-10">
             Умный AI-расчет калорий и генератор персонального меню для достижения вашей цели.
           </p>
-          
-          {/* При клике меняем состояние step на 'form' */}
           <button 
             onClick={() => setStep('form')}
             className="bg-primary hover:bg-primaryHover text-dark font-bold text-lg py-4 px-10 rounded-full transition-colors shadow-[0_0_20px_rgba(0,255,102,0.3)]"
@@ -35,10 +76,9 @@ function App() {
 
       {/* --- ЭКРАН 2: ФОРМА ПАРАМЕТРОВ --- */}
       {step === 'form' && (
-        <div className="bg-card w-full max-w-md p-8 rounded-3xl shadow-2xl">
+        <div className="bg-card w-full max-w-md p-8 rounded-3xl shadow-2xl animate-fade-in">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">Ваши параметры</h2>
           
-          {/* Кастомный переключатель пола */}
           <div className="flex bg-dark rounded-xl p-1 mb-6">
             <button 
               onClick={() => setGender('male')}
@@ -54,7 +94,6 @@ function App() {
             </button>
           </div>
 
-          {/* Поля ввода (Инпуты) */}
           <div className="space-y-4">
             <div>
               <label className="block text-textGray text-sm font-medium mb-2">Возраст (лет)</label>
@@ -91,9 +130,50 @@ function App() {
             </div>
           </div>
 
-          {/* Кнопка перехода к результатам */}
-          <button className="w-full mt-8 bg-primary hover:bg-primaryHover text-dark font-bold text-lg py-4 rounded-xl transition-colors">
+          <button 
+            onClick={calculateNutrition}
+            className="w-full mt-8 bg-primary hover:bg-primaryHover text-dark font-bold text-lg py-4 rounded-xl transition-colors"
+          >
             Рассчитать
+          </button>
+        </div>
+      )}
+
+      {/* --- ЭКРАН 3: РЕЗУЛЬТАТЫ --- */}
+      {step === 'result' && results && (
+        <div className="bg-card w-full max-w-md p-8 rounded-3xl shadow-2xl animate-fade-in text-center">
+          <h2 className="text-2xl font-bold text-white mb-2">Ваша норма</h2>
+          <p className="text-textGray mb-8">С учетом базовой активности</p>
+          
+          {/* Главная цифра калорий */}
+          <div className="mb-10">
+            <span className="text-7xl font-black text-primary drop-shadow-[0_0_15px_rgba(0,255,102,0.3)]">
+              {results.calories}
+            </span>
+            <span className="text-xl text-textGray ml-2 block mt-2">ккал / день</span>
+          </div>
+
+          {/* Плашки БЖУ */}
+          <div className="flex justify-between gap-4 mb-8">
+            <div className="bg-dark flex-1 p-4 rounded-2xl border border-gray-800">
+              <div className="text-textGray text-sm mb-1">Белки</div>
+              <div className="text-white font-bold text-xl">{results.protein}г</div>
+            </div>
+            <div className="bg-dark flex-1 p-4 rounded-2xl border border-gray-800">
+              <div className="text-textGray text-sm mb-1">Жиры</div>
+              <div className="text-white font-bold text-xl">{results.fat}г</div>
+            </div>
+            <div className="bg-dark flex-1 p-4 rounded-2xl border border-gray-800">
+              <div className="text-textGray text-sm mb-1">Углеводы</div>
+              <div className="text-white font-bold text-xl">{results.carbs}г</div>
+            </div>
+          </div>
+
+          <button 
+            onClick={resetForm}
+            className="w-full bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-dark font-bold text-lg py-4 rounded-xl transition-all"
+          >
+            Рассчитать заново
           </button>
         </div>
       )}
