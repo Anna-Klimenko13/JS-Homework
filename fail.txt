@@ -7,13 +7,13 @@ function App() {
   const [age, setAge] = useState('');
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
+  
+  // НОВОЕ: Состояние для цели
+  const [goal, setGoal] = useState('maintain');
 
-  // Состояние для хранения результатов
   const [results, setResults] = useState(null);
 
-  // Функция расчета калорий и БЖУ
   const calculateNutrition = () => {
-    // 1. Проверка: все ли поля заполнены
     if (!age || !height || !weight) {
       alert('Пожалуйста, заполните все параметры (Возраст, Рост, Вес)!');
       return;
@@ -23,35 +23,38 @@ function App() {
     const h = parseFloat(height);
     const a = parseFloat(age);
 
-    // 2. Базовый обмен веществ (формула Миффлина-Сан Жеора)
-    let bmr = 0;
-    if (gender === 'male') {
-      bmr = (10 * w) + (6.25 * h) - (5 * a) + 5;
-    } else {
-      bmr = (10 * w) + (6.25 * h) - (5 * a) - 161;
-    }
+    // 1. Базовый обмен веществ (формула Миффлина-Сан Жеора)
+    let bmr = (10 * w) + (6.25 * h) - (5 * a) + (gender === 'male' ? 5 : -161);
 
-    // 3. Добавляем коэффициент легкой активности (1.375)
-    const tdee = Math.round(bmr * 1.375);
+    // 2. Коэффициент активности (пока берем легкую активность 1.375)
+    let targetCalories = Math.round(bmr * 1.375);
 
-    // 4. Расчет БЖУ (Белки: 30%, Жиры: 30%, Углеводы: 40%)
-    // 1г белка/углеводов = 4 ккал, 1г жира = 9 ккал
-    const protein = Math.round((tdee * 0.3) / 4);
-    const fat = Math.round((tdee * 0.3) / 9);
-    const carbs = Math.round((tdee * 0.4) / 4);
+    // 3. НОВОЕ: Корректировка по цели пользователя
+    if (goal === 'lose') targetCalories = Math.round(targetCalories * 0.85); // Дефицит 15%
+    if (goal === 'gain') targetCalories = Math.round(targetCalories * 1.15); // Профицит 15%
 
-    // Сохраняем результаты и переключаем экран
-    setResults({ calories: tdee, protein, fat, carbs });
+    // 4. Расчет БЖУ
+    const protein = Math.round((targetCalories * 0.3) / 4);
+    const fat = Math.round((targetCalories * 0.3) / 9);
+    const carbs = Math.round((targetCalories * 0.4) / 4);
+
+    setResults({ calories: targetCalories, protein, fat, carbs });
     setStep('result');
   };
 
-  // Функция для возврата назад
   const resetForm = () => {
-    setAge('');
-    setHeight('');
-    setWeight('');
     setStep('form');
   };
+
+  // Вспомогательная функция, которая запрещает вводить минус и букву "e" (экспоненту)
+  const blockInvalidChars = (e) => {
+    if (e.key === '-' || e.key === 'e' || e.key === 'E') {
+      e.preventDefault();
+    }
+  };
+
+  // Общий стиль для инпутов, скрывающий системные стрелочки
+  const inputStyles = "w-full bg-dark text-white p-4 rounded-xl outline-none border border-transparent focus:border-primary transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none";
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6">
@@ -79,6 +82,7 @@ function App() {
         <div className="bg-card w-full max-w-md p-8 rounded-3xl shadow-2xl animate-fade-in">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">Ваши параметры</h2>
           
+          {/* Переключатель пола */}
           <div className="flex bg-dark rounded-xl p-1 mb-6">
             <button 
               onClick={() => setGender('male')}
@@ -99,10 +103,12 @@ function App() {
               <label className="block text-textGray text-sm font-medium mb-2">Возраст (лет)</label>
               <input 
                 type="number" 
+                min="1"
                 value={age} 
                 onChange={(e) => setAge(e.target.value)}
+                onKeyDown={blockInvalidChars}
                 placeholder="Например: 25" 
-                className="w-full bg-dark text-white p-4 rounded-xl outline-none border border-transparent focus:border-primary transition-colors"
+                className={inputStyles}
               />
             </div>
             
@@ -111,23 +117,53 @@ function App() {
                 <label className="block text-textGray text-sm font-medium mb-2">Рост (см)</label>
                 <input 
                   type="number" 
+                  min="1"
                   value={height} 
                   onChange={(e) => setHeight(e.target.value)}
+                  onKeyDown={blockInvalidChars}
                   placeholder="175" 
-                  className="w-full bg-dark text-white p-4 rounded-xl outline-none border border-transparent focus:border-primary transition-colors"
+                  className={inputStyles}
                 />
               </div>
               <div className="flex-1">
                 <label className="block text-textGray text-sm font-medium mb-2">Вес (кг)</label>
                 <input 
                   type="number" 
+                  min="1"
                   value={weight} 
                   onChange={(e) => setWeight(e.target.value)}
+                  onKeyDown={blockInvalidChars}
                   placeholder="70" 
-                  className="w-full bg-dark text-white p-4 rounded-xl outline-none border border-transparent focus:border-primary transition-colors"
+                  className={inputStyles}
                 />
               </div>
             </div>
+
+            {/* НОВОЕ: Выбор цели */}
+            <div className="pt-2">
+              <label className="block text-textGray text-sm font-medium mb-2">Ваша цель</label>
+              <div className="flex flex-col gap-2">
+                <button 
+                  onClick={() => setGoal('lose')}
+                  className={`py-3 px-4 rounded-xl font-bold transition-all text-left border ${goal === 'lose' ? 'bg-dark border-primary text-primary' : 'bg-dark border-transparent text-textGray hover:text-white'}`}
+                >
+                  📉 Похудение (-15% ккал)
+                </button>
+                <button 
+                  onClick={() => setGoal('maintain')}
+                  className={`py-3 px-4 rounded-xl font-bold transition-all text-left border ${goal === 'maintain' ? 'bg-dark border-primary text-primary' : 'bg-dark border-transparent text-textGray hover:text-white'}`}
+                >
+                  ⚖️ Поддержание веса
+                </button>
+                <button 
+                  onClick={() => setGoal('gain')}
+                  className={`py-3 px-4 rounded-xl font-bold transition-all text-left border ${goal === 'gain' ? 'bg-dark border-primary text-primary' : 'bg-dark border-transparent text-textGray hover:text-white'}`}
+                >
+                  💪 Набор массы (+15% ккал)
+                </button>
+              </div>
+            </div>
+
           </div>
 
           <button 
@@ -143,9 +179,12 @@ function App() {
       {step === 'result' && results && (
         <div className="bg-card w-full max-w-md p-8 rounded-3xl shadow-2xl animate-fade-in text-center">
           <h2 className="text-2xl font-bold text-white mb-2">Ваша норма</h2>
-          <p className="text-textGray mb-8">С учетом базовой активности</p>
+          <p className="text-textGray mb-8">
+            {goal === 'lose' && 'Для комфортного похудения'}
+            {goal === 'maintain' && 'Для поддержания формы'}
+            {goal === 'gain' && 'Для набора мышечной массы'}
+          </p>
           
-          {/* Главная цифра калорий */}
           <div className="mb-10">
             <span className="text-7xl font-black text-primary drop-shadow-[0_0_15px_rgba(0,255,102,0.3)]">
               {results.calories}
@@ -153,7 +192,6 @@ function App() {
             <span className="text-xl text-textGray ml-2 block mt-2">ккал / день</span>
           </div>
 
-          {/* Плашки БЖУ */}
           <div className="flex justify-between gap-4 mb-8">
             <div className="bg-dark flex-1 p-4 rounded-2xl border border-gray-800">
               <div className="text-textGray text-sm mb-1">Белки</div>
@@ -173,7 +211,7 @@ function App() {
             onClick={resetForm}
             className="w-full bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-dark font-bold text-lg py-4 rounded-xl transition-all"
           >
-            Рассчитать заново
+            Изменить параметры
           </button>
         </div>
       )}
