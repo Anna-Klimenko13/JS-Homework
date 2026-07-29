@@ -1,3 +1,7 @@
-PS C:\Users\annak\Desktop\nutri-q> npx tailwindcss init -p
-npm error could not determine executable to run
-npm error A complete log of this run can be found in: C:\Users\annak\AppData\Local\npm-cache\_logs\2026-07-29T10_38_05_978Z-debug-0.log
+npm install -D tailwindcss postcss autoprefixer --force
+
+
+
+npx tailwindcss init -p
+
+
