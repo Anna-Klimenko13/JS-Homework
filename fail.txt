@@ -1,7 +1,48 @@
-npm install -D tailwindcss postcss autoprefixer --force
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
 
 
 
-npx tailwindcss init -p
+
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        dark: '#0B1120',
+        card: '#1E293B',
+        primary: '#00FF66',
+        primaryHover: '#00CC52',
+        textGray: '#94A3B8'
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'], 
+      }
+    },
+  },
+  plugins: [],
+}
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #0B1120;
+  color: #F8FAFC;
+}
+
 
 
