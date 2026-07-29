@@ -1,10 +1,7 @@
-npm create vite@latest nutri-q -- --template react
+npm create vite@5 . -- --template react
 
 
-cd nutri-q
-
-
-npm install --force
+npm install
 
 
 npm install -D tailwindcss postcss autoprefixer
@@ -14,13 +11,3 @@ npx tailwindcss init -p
 
 
 npm run dev
-
-
-
-Node.js v20.16.0
-npm error code 1
-npm error path C:\Users\annak\Desktop\nutri-q
-npm error command failed
-npm error command C:\WINDOWS\system32\cmd.exe /d /s /c create-vite nutri-q --template react
-npm error A complete log of this run can be found in: C:\Users\annak\AppData\Local\npm-cache\_logs\2026-07-29T10_25_12_004Z-debug-0.log
-PS C:\Users\annak\Desktop\nutri-q> 
