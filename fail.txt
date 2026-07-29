@@ -1,13 +1,1 @@
-git commit -m "feat: complete final build of NutriQ app with menu and languages"
-
-
-
-git branch -M main
-
-
-
-git remote add origin https://github.com/Anna-Klimenko13/nutri-q.git
-
-
-
-git push -u origin main
+https://nutri-q-six.vercel.app/
