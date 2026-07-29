@@ -1,16 +1,16 @@
-cd C:\Users\annak\Desktop
-
-
-mkdir Projects
-
-
-cd Projects
-
-
 npm create vite@latest nutri-q -- --template react
 
 
 cd nutri-q
-npm install
+
+
+npm install --force
+
+
 npm install -D tailwindcss postcss autoprefixer
+
+
 npx tailwindcss init -p
+
+
+npm run dev
