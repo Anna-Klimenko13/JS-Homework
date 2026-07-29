@@ -1,67 +1,35 @@
 import React, { useState } from 'react';
 
-// --- СЛОВАРЬ ПЕРЕВОДОВ ---
 const translations = {
   ru: {
-    titleSub: "Умный AI-расчет калорий и генератор персонального меню.",
-    btnStart: "Рассчитать норму",
-    paramsTitle: "Ваши параметры",
-    male: "Мужчина", female: "Женщина",
-    age: "Возраст (лет)", height: "Рост (см)", weight: "Вес (кг)",
-    activity: "Активность",
+    titleSub: "Умный AI-расчет калорий и генератор персонального меню.", btnStart: "Рассчитать норму", paramsTitle: "Ваши параметры",
+    male: "Мужчина", female: "Женщина", age: "Возраст (лет)", height: "Рост (см)", weight: "Вес (кг)", activity: "Активность",
     act1: "Минимум (сидячая работа)", act2: "Слабая (1-3 тренировки)", act3: "Средняя (3-5 тренировок)", act4: "Высокая (6-7 тренировок)",
-    goal: "Ваша цель",
-    lose: "📉 Похудение", maintain: "⚖️ Поддержание веса", gain: "💪 Набор массы",
-    pace: "Темп достижения цели",
-    pace1: "Легкий (10%)", pace2: "Норма (15%)", pace3: "Быстрый (20%)",
-    btnCalc: "Рассчитать",
-    loading: "Анализ данных...", loadingSub: "NutriQ подбирает идеальные пропорции",
-    normTitle: "Ваша норма", kcal: "ккал / день",
-    protein: "Белки", fat: "Жиры", carbs: "Углеводы",
+    goal: "Ваша цель", lose: "📉 Похудение", maintain: "⚖️ Поддержание веса", gain: "💪 Набор массы",
+    pace: "Темп достижения цели", pace1: "Легкий (10%)", pace2: "Норма (15%)", pace3: "Быстрый (20%)",
+    btnCalc: "Рассчитать", loading: "Анализ данных...", loadingSub: "NutriQ подбирает идеальные пропорции",
+    normTitle: "Ваша норма", kcal: "ккал / день", protein: "Белки", fat: "Жиры", carbs: "Углеводы",
     waterTitle: "Норма воды", waterSub: "Поддерживает метаболизм",
     noteBase: "* Расчет выполнен с учетом", noteMaintain: "нулевого дефицита для поддержания веса.", noteDeficit: "дефицита", noteSurplus: "профицита",
     btnRecalc: "Изменить параметры", alert: "Пожалуйста, заполните все параметры!",
-    
-    // НОВЫЕ ПЕРЕВОДЫ ДЛЯ МЕНЮ
-    btnGenMenu: "Сгенерировать меню",
-    menuSetup: "Настройка плана питания",
-    daysCount: "Количество дней:",
-    btnCreatePlan: "Создать план",
-    tabMenu: "🍽️ Меню",
-    tabList: "🛒 Список покупок",
-    dayTitle: "День",
-    breakfast: "Завтрак", lunch: "Обед", dinner: "Ужин", snack: "Перекус",
-    backToNorm: "Назад к норме"
+    btnGenMenu: "Сгенерировать меню", menuSetup: "Настройка плана питания", daysCount: "Количество дней:", btnCreatePlan: "Создать план",
+    tabMenu: "🍽️ Меню", tabList: "🛒 Список покупок", dayTitle: "День",
+    breakfast: "Завтрак", lunch: "Обед", dinner: "Ужин", snack: "Перекус", backToNorm: "Назад к норме"
   },
   en: {
-    titleSub: "Smart AI calorie calculation and personal menu generator.",
-    btnStart: "Calculate", paramsTitle: "Your Parameters",
-    male: "Male", female: "Female",
-    age: "Age (years)", height: "Height (cm)", weight: "Weight (kg)",
-    activity: "Activity Level",
+    titleSub: "Smart AI calorie calculation and personal menu generator.", btnStart: "Calculate", paramsTitle: "Your Parameters",
+    male: "Male", female: "Female", age: "Age (years)", height: "Height (cm)", weight: "Weight (kg)", activity: "Activity Level",
     act1: "Sedentary (office job)", act2: "Light (1-3 workouts)", act3: "Moderate (3-5 workouts)", act4: "Active (6-7 workouts)",
-    goal: "Your Goal",
-    lose: "📉 Weight Loss", maintain: "⚖️ Maintain Weight", gain: "💪 Muscle Gain",
-    pace: "Goal Pace",
-    pace1: "Slow (10%)", pace2: "Normal (15%)", pace3: "Fast (20%)",
-    btnCalc: "Calculate",
-    loading: "Analyzing data...", loadingSub: "NutriQ is calculating ideal macros",
-    normTitle: "Your Daily Target", kcal: "kcal / day",
-    protein: "Protein", fat: "Fats", carbs: "Carbs",
+    goal: "Your Goal", lose: "📉 Weight Loss", maintain: "⚖️ Maintain Weight", gain: "💪 Muscle Gain",
+    pace: "Goal Pace", pace1: "Slow (10%)", pace2: "Normal (15%)", pace3: "Fast (20%)",
+    btnCalc: "Calculate", loading: "Analyzing data...", loadingSub: "NutriQ is calculating ideal macros",
+    normTitle: "Your Daily Target", kcal: "kcal / day", protein: "Protein", fat: "Fats", carbs: "Carbs",
     waterTitle: "Water Intake", waterSub: "Supports metabolism",
     noteBase: "* Calculation based on", noteMaintain: "zero deficit for weight maintenance.", noteDeficit: "deficit", noteSurplus: "surplus",
     btnRecalc: "Change Parameters", alert: "Please fill in all parameters!",
-    
-    // NEW MENU TRANSLATIONS
-    btnGenMenu: "Generate Menu",
-    menuSetup: "Meal Plan Setup",
-    daysCount: "Number of days:",
-    btnCreatePlan: "Create Plan",
-    tabMenu: "🍽️ Meal Plan",
-    tabList: "🛒 Grocery List",
-    dayTitle: "Day",
-    breakfast: "Breakfast", lunch: "Lunch", dinner: "Dinner", snack: "Snack",
-    backToNorm: "Back to Target"
+    btnGenMenu: "Generate Menu", menuSetup: "Meal Plan Setup", daysCount: "Number of days:", btnCreatePlan: "Create Plan",
+    tabMenu: "🍽️ Meal Plan", tabList: "🛒 Grocery List", dayTitle: "Day",
+    breakfast: "Breakfast", lunch: "Lunch", dinner: "Dinner", snack: "Snack", backToNorm: "Back to Target"
   }
 };
 
@@ -78,10 +46,8 @@ function App() {
   const [goal, setGoal] = useState('maintain');
   const [intensity, setIntensity] = useState(15);
   const [results, setResults] = useState(null);
-
-  // Состояния для меню
   const [days, setDays] = useState(3);
-  const [activeTab, setActiveTab] = useState('menu'); // 'menu' или 'list'
+  const [activeTab, setActiveTab] = useState('menu');
 
   const toggleLanguage = () => setLang(lang === 'ru' ? 'en' : 'ru');
 
@@ -113,32 +79,25 @@ function App() {
 
   return (
     <div className="min-h-screen relative flex flex-col items-center justify-center p-6 pb-12">
-      
       <button onClick={toggleLanguage} className="absolute top-6 right-6 bg-card border border-gray-700 text-white font-bold py-2 px-4 rounded-full hover:border-primary hover:text-primary transition-all">
         {lang === 'ru' ? 'EN' : 'RU'}
       </button>
 
-      {/* --- 1. СТАРТОВЫЙ --- */}
       {step === 'welcome' && (
         <div className="text-center flex flex-col items-center animate-fade-in">
           <h1 className="text-5xl font-bold text-white mb-3">Nutri<span className="text-primary">Q</span></h1>
           <p className="text-textGray max-w-sm mb-10">{t.titleSub}</p>
-          <button onClick={() => setStep('form')} className="bg-primary hover:bg-primaryHover text-dark font-bold text-lg py-4 px-10 rounded-full transition-colors shadow-[0_0_20px_rgba(0,255,102,0.3)]">
-            {t.btnStart}
-          </button>
+          <button onClick={() => setStep('form')} className="bg-primary hover:bg-primaryHover text-dark font-bold text-lg py-4 px-10 rounded-full transition-colors shadow-[0_0_20px_rgba(0,255,102,0.3)]">{t.btnStart}</button>
         </div>
       )}
 
-      {/* --- 2. ФОРМА --- */}
       {step === 'form' && (
         <div className="bg-card w-full max-w-md p-8 rounded-3xl shadow-2xl animate-fade-in">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">{t.paramsTitle}</h2>
-          
           <div className="flex bg-dark rounded-xl p-1 mb-6">
             <button onClick={() => setGender('male')} className={`flex-1 py-2 rounded-lg font-bold transition-all ${gender === 'male' ? 'bg-primary text-dark shadow-md' : 'text-textGray hover:text-white'}`}>{t.male}</button>
             <button onClick={() => setGender('female')} className={`flex-1 py-2 rounded-lg font-bold transition-all ${gender === 'female' ? 'bg-primary text-dark shadow-md' : 'text-textGray hover:text-white'}`}>{t.female}</button>
           </div>
-
           <div className="space-y-4">
             <div>
               <label className="block text-textGray text-sm font-medium mb-2">{t.age}</label>
@@ -154,7 +113,6 @@ function App() {
                 <input type="number" min="1" value={weight} onChange={(e) => setWeight(e.target.value)} onKeyDown={blockInvalidChars} placeholder="70" className={inputStyles} />
               </div>
             </div>
-
             <div className="pt-2">
               <label className="block text-textGray text-sm font-medium mb-2">{t.activity}</label>
               <select value={activity} onChange={(e) => setActivity(e.target.value)} className={inputStyles}>
@@ -164,7 +122,6 @@ function App() {
                 <option value="1.725">{t.act4}</option>
               </select>
             </div>
-
             <div className="pt-2">
               <label className="block text-textGray text-sm font-medium mb-2">{t.goal}</label>
               <div className="flex flex-col gap-2 mb-4">
@@ -172,7 +129,6 @@ function App() {
                 <button onClick={() => setGoal('maintain')} className={`py-3 px-4 rounded-xl font-bold transition-all text-left border ${goal === 'maintain' ? 'bg-dark border-primary text-primary' : 'bg-dark border-transparent text-textGray hover:text-white'}`}>{t.maintain}</button>
                 <button onClick={() => setGoal('gain')} className={`py-3 px-4 rounded-xl font-bold transition-all text-left border ${goal === 'gain' ? 'bg-dark border-primary text-primary' : 'bg-dark border-transparent text-textGray hover:text-white'}`}>{t.gain}</button>
               </div>
-
               {goal !== 'maintain' && (
                 <div className="animate-fade-in">
                   <label className="block text-textGray text-sm font-medium mb-2">{t.pace}</label>
@@ -189,130 +145,104 @@ function App() {
         </div>
       )}
 
-      {/* --- 3. ПЛАВНАЯ ЗАГРУЗКА --- */}
       {step === 'loading' && (
         <div className="flex flex-col items-center justify-center">
           <div className="relative flex justify-center items-center mb-10 mt-10 w-48 h-48">
-            {/* Глубокая плавная пульсация вместо резкого радара */}
             <div className="absolute w-full h-full bg-primary/10 rounded-full animate-[pulse_3s_ease-in-out_infinite]"></div>
             <div className="absolute w-32 h-32 bg-primary/20 rounded-full animate-[pulse_2s_ease-in-out_infinite]"></div>
-            <h1 className="relative text-5xl font-bold text-white z-10 drop-shadow-[0_0_20px_rgba(0,255,102,0.8)]">
-              Nutri<span className="text-primary">Q</span>
-            </h1>
+            <h1 className="relative text-5xl font-bold text-white z-10 drop-shadow-[0_0_20px_rgba(0,255,102,0.8)]">Nutri<span className="text-primary">Q</span></h1>
           </div>
           <h2 className="text-2xl font-bold text-white mb-2">{t.loading}</h2>
           <p className="text-textGray">{t.loadingSub}</p>
         </div>
       )}
 
-      {/* --- 4. РЕЗУЛЬТАТЫ --- */}
       {step === 'result' && results && (
         <div className="bg-card w-full max-w-md p-8 rounded-3xl shadow-2xl animate-fade-in text-center">
           <h2 className="text-2xl font-bold text-white mb-2">{t.normTitle}</h2>
-          
           <div className="mb-8 mt-6">
             <span className="text-7xl font-black text-primary drop-shadow-[0_0_15px_rgba(0,255,102,0.3)]">{results.calories}</span>
             <span className="text-xl text-textGray ml-2 block mt-2">{t.kcal}</span>
           </div>
-
           <div className="flex justify-between gap-4 mb-6">
-            <div className="bg-dark flex-1 p-4 rounded-2xl border border-gray-800">
-              <div className="text-textGray text-sm mb-1">{t.protein}</div>
-              <div className="text-white font-bold text-xl">{results.protein}г</div>
-            </div>
-            <div className="bg-dark flex-1 p-4 rounded-2xl border border-gray-800">
-              <div className="text-textGray text-sm mb-1">{t.fat}</div>
-              <div className="text-white font-bold text-xl">{results.fat}г</div>
-            </div>
-            <div className="bg-dark flex-1 p-4 rounded-2xl border border-gray-800">
-              <div className="text-textGray text-sm mb-1">{t.carbs}</div>
-              <div className="text-white font-bold text-xl">{results.carbs}г</div>
-            </div>
+            <div className="bg-dark flex-1 p-4 rounded-2xl border border-gray-800"><div className="text-textGray text-sm mb-1">{t.protein}</div><div className="text-white font-bold text-xl">{results.protein}г</div></div>
+            <div className="bg-dark flex-1 p-4 rounded-2xl border border-gray-800"><div className="text-textGray text-sm mb-1">{t.fat}</div><div className="text-white font-bold text-xl">{results.fat}г</div></div>
+            <div className="bg-dark flex-1 p-4 rounded-2xl border border-gray-800"><div className="text-textGray text-sm mb-1">{t.carbs}</div><div className="text-white font-bold text-xl">{results.carbs}г</div></div>
           </div>
-
           <div className="bg-blue-900/20 border border-blue-500/30 p-4 rounded-2xl mb-8 flex items-center justify-between">
-            <div className="text-left">
-              <div className="text-blue-300 font-bold">{t.waterTitle}</div>
-              <div className="text-blue-200/70 text-sm">{t.waterSub}</div>
-            </div>
+            <div className="text-left"><div className="text-blue-300 font-bold">{t.waterTitle}</div><div className="text-blue-200/70 text-sm">{t.waterSub}</div></div>
             <div className="text-2xl font-bold text-blue-400">~{results.water} л</div>
           </div>
-
-          {/* НОВАЯ КНОПКА: Переход к генерации меню */}
-          <button onClick={() => setStep('menu-setup')} className="w-full bg-primary hover:bg-primaryHover text-dark font-bold text-lg py-4 rounded-xl transition-colors mb-4 shadow-[0_0_15px_rgba(0,255,102,0.2)]">
-            {t.btnGenMenu}
-          </button>
-          
-          <button onClick={() => setStep('form')} className="w-full bg-transparent text-textGray hover:text-white font-medium py-3 transition-all">
-            {t.btnRecalc}
-          </button>
+          <button onClick={() => setStep('menu-setup')} className="w-full bg-primary hover:bg-primaryHover text-dark font-bold text-lg py-4 rounded-xl transition-colors mb-4 shadow-[0_0_15px_rgba(0,255,102,0.2)]">{t.btnGenMenu}</button>
+          <button onClick={() => setStep('form')} className="w-full bg-transparent text-textGray hover:text-white font-medium py-3 transition-all">{t.btnRecalc}</button>
         </div>
       )}
 
-      {/* --- 5. НАСТРОЙКА МЕНЮ --- */}
       {step === 'menu-setup' && (
         <div className="bg-card w-full max-w-md p-8 rounded-3xl shadow-2xl animate-fade-in text-center">
           <h2 className="text-2xl font-bold text-white mb-6">{t.menuSetup}</h2>
-          
           <label className="block text-textGray mb-4">{t.daysCount} <span className="text-white font-bold text-xl ml-2">{days}</span></label>
-          
           <div className="flex justify-between gap-2 mb-10">
             {[1, 2, 3, 4, 5, 6, 7].map(num => (
-              <button 
-                key={num}
-                onClick={() => setDays(num)}
-                className={`w-12 h-12 rounded-full font-bold transition-all flex items-center justify-center ${days === num ? 'bg-primary text-dark shadow-[0_0_10px_rgba(0,255,102,0.5)]' : 'bg-dark text-textGray hover:text-white'}`}
-              >
-                {num}
-              </button>
+              <button key={num} onClick={() => setDays(num)} className={`w-12 h-12 rounded-full font-bold transition-all flex items-center justify-center ${days === num ? 'bg-primary text-dark shadow-[0_0_10px_rgba(0,255,102,0.5)]' : 'bg-dark text-textGray hover:text-white'}`}>{num}</button>
             ))}
           </div>
-
-          <button onClick={() => setStep('menu-result')} className="w-full bg-primary hover:bg-primaryHover text-dark font-bold text-lg py-4 rounded-xl transition-colors mb-4">
-            {t.btnCreatePlan}
-          </button>
-          <button onClick={() => setStep('result')} className="w-full bg-transparent text-textGray hover:text-white transition-all py-2">
-            {t.backToNorm}
-          </button>
+          <button onClick={() => setStep('menu-result')} className="w-full bg-primary hover:bg-primaryHover text-dark font-bold text-lg py-4 rounded-xl transition-colors mb-4">{t.btnCreatePlan}</button>
+          <button onClick={() => setStep('result')} className="w-full bg-transparent text-textGray hover:text-white transition-all py-2">{t.backToNorm}</button>
         </div>
       )}
 
-      {/* --- 6. ИТОГОВОЕ МЕНЮ И СПИСОК ПОКУПОК --- */}
+      {/* --- ОБНОВЛЕННЫЙ ЭКРАН: ИТОГОВОЕ МЕНЮ --- */}
       {step === 'menu-result' && (
-        <div className="bg-card w-full max-w-md p-6 rounded-3xl shadow-2xl animate-fade-in h-[80vh] flex flex-col">
+        <div className="bg-card w-full max-w-md p-6 rounded-3xl shadow-2xl animate-fade-in h-[85vh] flex flex-col">
           
-          {/* Переключатель вкладок (Табы) */}
           <div className="flex bg-dark rounded-xl p-1 mb-6 shrink-0">
             <button onClick={() => setActiveTab('menu')} className={`flex-1 py-3 rounded-lg font-bold transition-all ${activeTab === 'menu' ? 'bg-primary text-dark' : 'text-textGray'}`}>{t.tabMenu}</button>
             <button onClick={() => setActiveTab('list')} className={`flex-1 py-3 rounded-lg font-bold transition-all ${activeTab === 'list' ? 'bg-primary text-dark' : 'text-textGray'}`}>{t.tabList}</button>
           </div>
 
-          {/* Скроллируемая область контента */}
           <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
-            
-            {/* Вкладка 1: МЕНЮ */}
             {activeTab === 'menu' && (
               <div className="space-y-6">
                 {Array.from({ length: days }).map((_, i) => (
-                  <div key={i} className="bg-dark p-5 rounded-2xl border border-gray-800">
-                    <h3 className="text-primary font-bold text-lg mb-4 border-b border-gray-700 pb-2">{t.dayTitle} {i + 1}</h3>
+                  <div key={i} className="bg-dark p-1 rounded-2xl border border-gray-800">
+                    <h3 className="text-white font-bold text-lg p-4 bg-gray-800/50 rounded-t-xl">{t.dayTitle} {i + 1}</h3>
                     
-                    <div className="space-y-4">
-                      <div>
-                        <div className="text-xs text-textGray uppercase tracking-wider mb-1">{t.breakfast}</div>
-                        <div className="text-white text-sm">{lang === 'ru' ? 'Овсяноблин с творожным сыром и слабосоленой семгой' : 'Oatmeal pancake with cream cheese and salmon'}</div>
+                    <div className="p-4 space-y-3">
+                      {/* Карточка Завтрака */}
+                      <div className="bg-card/50 p-4 rounded-xl border border-gray-700/50 hover:border-gray-600 transition-all">
+                        <div className="flex justify-between items-center mb-2">
+                          <div className="text-xs text-textGray uppercase tracking-wider flex items-center gap-2"><span>🌅</span> {t.breakfast}</div>
+                          <span className="text-[10px] bg-primary/10 text-primary px-2 py-1 rounded-full font-bold">~350 {lang === 'ru' ? 'ккал' : 'kcal'}</span>
+                        </div>
+                        <div className="text-white text-sm font-medium">{lang === 'ru' ? 'Овсяноблин с творожным сыром и слабосоленой семгой' : 'Oatmeal pancake with cream cheese and salmon'}</div>
                       </div>
-                      <div>
-                        <div className="text-xs text-textGray uppercase tracking-wider mb-1">{t.snack}</div>
-                        <div className="text-white text-sm">{lang === 'ru' ? 'Горсть грецких орехов и зеленое яблоко' : 'Handful of walnuts and a green apple'}</div>
+
+                      {/* Карточка Перекуса */}
+                      <div className="bg-card/50 p-4 rounded-xl border border-gray-700/50 hover:border-gray-600 transition-all">
+                        <div className="flex justify-between items-center mb-2">
+                          <div className="text-xs text-textGray uppercase tracking-wider flex items-center gap-2"><span>🍎</span> {t.snack}</div>
+                          <span className="text-[10px] bg-primary/10 text-primary px-2 py-1 rounded-full font-bold">~150 {lang === 'ru' ? 'ккал' : 'kcal'}</span>
+                        </div>
+                        <div className="text-white text-sm font-medium">{lang === 'ru' ? 'Горсть грецких орехов и зеленое яблоко' : 'Handful of walnuts and a green apple'}</div>
                       </div>
-                      <div>
-                        <div className="text-xs text-textGray uppercase tracking-wider mb-1">{t.lunch}</div>
-                        <div className="text-white text-sm">{lang === 'ru' ? 'Куриное филе на гриле с киноа и свежими овощами' : 'Grilled chicken breast with quinoa and fresh veg'}</div>
+
+                      {/* Карточка Обеда */}
+                      <div className="bg-card/50 p-4 rounded-xl border border-gray-700/50 hover:border-gray-600 transition-all">
+                        <div className="flex justify-between items-center mb-2">
+                          <div className="text-xs text-textGray uppercase tracking-wider flex items-center gap-2"><span>🥗</span> {t.lunch}</div>
+                          <span className="text-[10px] bg-primary/10 text-primary px-2 py-1 rounded-full font-bold">~450 {lang === 'ru' ? 'ккал' : 'kcal'}</span>
+                        </div>
+                        <div className="text-white text-sm font-medium">{lang === 'ru' ? 'Куриное филе на гриле с киноа и свежими овощами' : 'Grilled chicken breast with quinoa and fresh veg'}</div>
                       </div>
-                      <div>
-                        <div className="text-xs text-textGray uppercase tracking-wider mb-1">{t.dinner}</div>
-                        <div className="text-white text-sm">{lang === 'ru' ? 'Запеченный лосось со спаржей под лимонным соком' : 'Baked salmon with asparagus and lemon juice'}</div>
+
+                      {/* Карточка Ужина */}
+                      <div className="bg-card/50 p-4 rounded-xl border border-gray-700/50 hover:border-gray-600 transition-all">
+                        <div className="flex justify-between items-center mb-2">
+                          <div className="text-xs text-textGray uppercase tracking-wider flex items-center gap-2"><span>🍲</span> {t.dinner}</div>
+                          <span className="text-[10px] bg-primary/10 text-primary px-2 py-1 rounded-full font-bold">~300 {lang === 'ru' ? 'ккал' : 'kcal'}</span>
+                        </div>
+                        <div className="text-white text-sm font-medium">{lang === 'ru' ? 'Запеченный лосось со спаржей под лимонным соком' : 'Baked salmon with asparagus and lemon juice'}</div>
                       </div>
                     </div>
                   </div>
@@ -320,19 +250,18 @@ function App() {
               </div>
             )}
 
-            {/* Вкладка 2: СПИСОК ПОКУПОК */}
+            {/* ОБНОВЛЕННЫЙ СПИСОК ПОКУПОК */}
             {activeTab === 'list' && (
               <div className="bg-dark p-5 rounded-2xl border border-gray-800">
                 <p className="text-textGray text-sm mb-6 pb-4 border-b border-gray-700">
                   {lang === 'ru' ? 'Ингредиенты рассчитаны на' : 'Ingredients calculated for'} {days} {lang === 'ru' ? 'дней' : 'days'}
                 </p>
-                
-                {/* Чекбоксы списка покупок */}
-                <div className="space-y-3">
+                <div className="space-y-1">
                   {['Овсяные хлопья / Oats', 'Творожный сыр / Cream cheese', 'Слабосоленая семга / Salted salmon', 'Грецкие орехи / Walnuts', 'Зеленые яблоки / Green apples', 'Куриное филе / Chicken breast', 'Киноа / Quinoa', 'Свежие огурцы и томаты / Cucumbers & tomatoes', 'Свежий лосось / Fresh salmon', 'Спаржа / Asparagus', 'Лимон / Lemon'].map((item, i) => (
-                    <label key={i} className="flex items-center gap-3 cursor-pointer group">
-                      <input type="checkbox" className="w-5 h-5 accent-primary bg-gray-700 border-gray-600 rounded cursor-pointer" />
-                      <span className="text-white group-hover:text-primary transition-colors">
+                    // Используем peer-классы Tailwind для эффекта зачеркивания
+                    <label key={i} className="flex items-center gap-3 cursor-pointer group p-3 hover:bg-gray-800/50 rounded-xl transition-colors">
+                      <input type="checkbox" className="peer w-5 h-5 accent-primary bg-gray-700 border-gray-600 rounded cursor-pointer" />
+                      <span className="text-white font-medium peer-checked:text-gray-600 peer-checked:line-through transition-all duration-300">
                         {lang === 'ru' ? item.split(' / ')[0] : item.split(' / ')[1]}
                       </span>
                     </label>
@@ -342,7 +271,6 @@ function App() {
             )}
           </div>
           
-          {/* Кнопка "Назад" в самом низу */}
           <button onClick={() => setStep('result')} className="w-full mt-4 bg-transparent border border-gray-700 text-textGray hover:text-white font-medium py-3 rounded-xl transition-all shrink-0">
             {t.backToNorm}
           </button>
