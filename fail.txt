@@ -1,13 +1,70 @@
-npm create vite@5 . -- --template react
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        dark: '#0B1120',         // Глубокий Индиго (основной фон)
+        card: '#1E293B',         // Цвет элементов и карточек
+        primary: '#00FF66',      // Яркий Лайм (кнопки, акценты)
+        primaryHover: '#00CC52', // Лайм при наведении мыши
+        textGray: '#94A3B8'      // Второстепенный текст (серый)
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'], 
+      }
+    },
+  },
+  plugins: [],
+}
 
 
-npm install
+
+--------
+----------
 
 
-npm install -D tailwindcss postcss autoprefixer
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #0B1120;
+  color: #F8FAFC;
+}
+
+--------
+-----------
 
 
-npx tailwindcss init -p
 
+import React from 'react';
 
-npm run dev
+function App() {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center p-6">
+      
+      {/* Логотип */}
+      <h1 className="text-5xl font-bold text-white mb-3">
+        Nutri<span className="text-primary">Q</span>
+      </h1>
+      
+      {/* Описание */}
+      <p className="text-textGray text-center max-w-sm mb-10">
+        Умный AI-расчет калорий и генератор персонального меню для достижения вашей цели.
+      </p>
+
+      {/* Кнопка старта */}
+      <button className="bg-primary hover:bg-primaryHover text-dark font-bold text-lg py-4 px-10 rounded-full transition-colors shadow-[0_0_20px_rgba(0,255,102,0.3)]">
+        Рассчитать норму
+      </button>
+
+    </div>
+  );
+}
+
+export default App;
