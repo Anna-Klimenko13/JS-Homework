@@ -1,12 +1,19 @@
+npm create vite@5 . -- --template react
+
+
+
+npm install
+
+
+npm install -D tailwindcss postcss autoprefixer
+
+
 export default {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
   },
 }
-
-
-
 
 
 /** @type {import('tailwindcss').Config} */
@@ -33,6 +40,8 @@ export default {
 }
 
 
+-------
+-------
 
 
 @tailwind base;
@@ -45,4 +54,35 @@ body {
 }
 
 
+-----------
+----------
 
+
+
+import React from 'react';
+
+function App() {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center p-6">
+      <h1 className="text-5xl font-bold text-white mb-3">
+        Nutri<span className="text-primary">Q</span>
+      </h1>
+      <p className="text-textGray text-center max-w-sm mb-10">
+        Умный AI-расчет калорий и генератор персонального меню для достижения вашей цели.
+      </p>
+      <button className="bg-primary hover:bg-primaryHover text-dark font-bold text-lg py-4 px-10 rounded-full transition-colors shadow-[0_0_20px_rgba(0,255,102,0.3)]">
+        Рассчитать норму
+      </button>
+    </div>
+  );
+}
+
+export default App;
+
+
+---------
+-----------
+
+
+
+npm run dev
