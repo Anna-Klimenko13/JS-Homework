@@ -1,20 +1,17 @@
-вот что получилось 
-
- PS C:\Users\annak\Desktop\HabitHero> npx surge dist
-Need to install the following packages:
-surge@0.40.2
-Ok to proceed? (y) y
-
-
-  Surge.sh ⚡ Static Web Publishing 0.40.2
-
-  dist (not a surge project yet)
-
-  PUBLISH
-    surge dist <domain>
-    surge dist publish
-
-  ADMIN
-    surge list      
-    surge account   <cmd>    whoami·login·logout·verify·card·plan·nuke
-    surge tokens    <cmd>    list·add·rem
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'self' https://web.telegram.org https://*.telegram.org telegram:;"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "ALLOWALL"
+        }
+      ]
+    }
+  ]
+}
