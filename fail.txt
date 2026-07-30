@@ -1,69 +1,81 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        tgBg: '#1c1c1d',
-        tgCard: '#2c2c2e',
-        tgPrimary: '#0a84ff',
-        tgText: '#ffffff',
-        tgGray: '#8e8e93'
-      }
-    },
-  },
-  plugins: [],
+import { useState, useEffect } from 'react';
+import { CheckCircle2, Circle, Plus, Home, BarChart3, Settings } from 'lucide-react';
+
+export default function App() {
+  const [userName, setUserName] = useState('Герой');
+  
+  const [habits, setHabits] = useState([
+    { id: 1, name: 'Выпить 2л воды', completed: false, streak: 3 },
+    { id: 2, name: 'Прочитать 15 страниц', completed: true, streak: 7 },
+    { id: 3, name: 'Тренировка', completed: false, streak: 1 },
+  ]);
+
+  useEffect(() => {
+    const tg = window.Telegram?.WebApp;
+    if (tg?.initDataUnsafe?.user?.first_name) {
+      setUserName(tg.initDataUnsafe.user.first_name);
+    }
+    if (tg) tg.ready(); 
+  }, []);
+
+  const toggleHabit = (id) => {
+    setHabits(habits.map(habit => 
+      habit.id === id ? { ...habit, completed: !habit.completed } : habit
+    ));
+  };
+
+  return (
+    <div className="min-h-screen bg-tgBg text-tgText pb-24 font-sans selection:bg-tgPrimary selection:text-white">
+      
+      <header className="p-5 bg-tgCard rounded-b-3xl shadow-lg mb-6">
+        <h1 className="text-2xl font-bold text-tgPrimary tracking-wide">Habit Hero</h1>
+        <p className="text-sm text-tgGray mt-1">Привет, {userName}! Твои цели на сегодня:</p>
+      </header>
+
+      <main className="px-4 space-y-3">
+        {habits.map(habit => (
+          <div 
+            key={habit.id} 
+            onClick={() => toggleHabit(habit.id)}
+            className={`flex items-center justify-between p-4 bg-tgCard rounded-2xl cursor-pointer border border-transparent transition-all active:scale-95 ${habit.completed ? 'opacity-60 border-tgPrimary/30' : 'hover:border-tgGray/30'}`}
+          >
+            <div className="flex items-center gap-4">
+              {habit.completed ? (
+                <CheckCircle2 className="text-tgPrimary w-7 h-7 transition-transform duration-300 scale-110" />
+              ) : (
+                <Circle className="text-tgGray w-7 h-7 transition-transform duration-300" />
+              )}
+              <span className={`text-[17px] font-medium transition-all duration-300 ${habit.completed ? "line-through text-tgGray" : "text-tgText"}`}>
+                {habit.name}
+              </span>
+            </div>
+            
+            <div className="flex items-center gap-1 bg-tgBg px-2.5 py-1.5 rounded-lg shadow-inner">
+              <span className="text-sm text-orange-500 font-bold">🔥 {habit.streak}</span>
+            </div>
+          </div>
+        ))}
+
+        <button className="w-full flex items-center justify-center gap-2 bg-tgPrimary text-white p-4 rounded-2xl font-semibold mt-6 active:scale-95 transition-transform shadow-lg shadow-tgPrimary/20">
+          <Plus className="w-6 h-6" />
+          Добавить новую
+        </button>
+      </main>
+
+      <nav className="fixed bottom-0 left-0 right-0 bg-tgCard/90 backdrop-blur-md pb-safe pt-2 px-6 flex justify-between items-center border-t border-gray-800">
+        <button className="flex flex-col items-center p-2 text-tgPrimary transition-colors">
+          <Home className="w-6 h-6 mb-1" />
+          <span className="text-[11px] font-medium">Главная</span>
+        </button>
+        <button className="flex flex-col items-center p-2 text-tgGray hover:text-tgText transition-colors">
+          <BarChart3 className="w-6 h-6 mb-1" />
+          <span className="text-[11px] font-medium">Прогресс</span>
+        </button>
+        <button className="flex flex-col items-center p-2 text-tgGray hover:text-tgText transition-colors">
+          <Settings className="w-6 h-6 mb-1" />
+          <span className="text-[11px] font-medium">Настройки</span>
+        </button>
+      </nav>
+    </div>
+  );
 }
------
-------
-
-
-export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-}
-
--------
-------
-
-
-
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  background-color: #1c1c1d;
-  color: #ffffff;
-}
-
--------
-----------
-
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Habit Hero</title>
-    <!-- Вот этот скрипт Telegram: -->
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
-
--------------
-----------
-
-npm run dev
