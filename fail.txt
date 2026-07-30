@@ -1,3 +1,17 @@
+Node.js v20.16.0
+npm error code 1
+npm error path C:\Users\annak\Desktop\HabitHero
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c create-vite habit-hero --template react
+npm error A complete log of this run can be found in: C:\Users\annak\AppData\Local\npm-cache\_logs\2026-07-30T18_53_22_062Z-debug-0.log
+PS C:\Users\annak\Desktop\HabitHero> 
+
+
+
+
+
+
+
 npm create vite@latest habit-hero -- --template react
 
 
