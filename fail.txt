@@ -1,43 +1,3 @@
-PS C:\Users\annak\Desktop\HabitHero> npx tailwindcss init -p
-npm error could not determine executable to run
-npm error A complete log of this run can be found in: C:\Users\annak\AppData\Local\npm-cache\_logs\2026-07-30T19_12_29_573Z-debug-0.log
-PS C:\Users\annak\Desktop\HabitHero> 
-
-
-
-
-Node.js v20.16.0
-npm error code 1
-npm error path C:\Users\annak\Desktop\HabitHero
-npm error command failed
-npm error command C:\WINDOWS\system32\cmd.exe /d /s /c create-vite habit-hero --template react
-npm error A complete log of this run can be found in: C:\Users\annak\AppData\Local\npm-cache\_logs\2026-07-30T18_53_22_062Z-debug-0.log
-PS C:\Users\annak\Desktop\HabitHero> 
-
-
-
-
-
-
-
-npm create vite@latest habit-hero -- --template react
-
-
-
-cd habit-hero
-
-npm install
-
-npm install -D tailwindcss postcss autoprefixer
-npm install lucide-react
-
-
-npx tailwindcss init -p
-
-
---------------------
---------------------
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -47,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        tgBg: '#1c1c1d', // Темный фон Telegram
-        tgCard: '#2c2c2e', // Цвет карточек
-        tgPrimary: '#0a84ff', // Синий цвет кнопок Apple/Telegram
+        tgBg: '#1c1c1d',
+        tgCard: '#2c2c2e',
+        tgPrimary: '#0a84ff',
         tgText: '#ffffff',
         tgGray: '#8e8e93'
       }
@@ -57,9 +17,21 @@ export default {
   },
   plugins: [],
 }
+-----
+------
 
---------------
---------------
+
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+
+-------
+------
+
+
 
 
 @tailwind base;
@@ -68,12 +40,16 @@ export default {
 
 body {
   background-color: #1c1c1d;
+  color: #ffffff;
 }
 
+-------
+----------
 
-----------------
 
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -81,9 +57,13 @@ body {
     <!-- Вот этот скрипт Telegram: -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
   </head>
----------------------
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
 
+-------------
+----------
 
 npm run dev
-
-----------------------
