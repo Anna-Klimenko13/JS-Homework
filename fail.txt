@@ -1,3 +1,11 @@
+PS C:\Users\annak\Desktop\HabitHero> npx tailwindcss init -p
+npm error could not determine executable to run
+npm error A complete log of this run can be found in: C:\Users\annak\AppData\Local\npm-cache\_logs\2026-07-30T19_12_29_573Z-debug-0.log
+PS C:\Users\annak\Desktop\HabitHero> 
+
+
+
+
 Node.js v20.16.0
 npm error code 1
 npm error path C:\Users\annak\Desktop\HabitHero
