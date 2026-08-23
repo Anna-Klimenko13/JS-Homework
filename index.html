@@ -1,128 +1,212 @@
-<!-- Поле 3: Регіон (Select з пошуком) -->
-                        <div class="lc-field-row" data-lc-field="region" x-data="{ isEditing: false, selOpen: false }" @click.outside="selOpen = false">
-                            <div class="lc-field-drag" aria-hidden="true">
-                                <svg class="w-4 h-4" data-icon="drag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="19" r="1"/></svg>
-                            </div>
-                            <div class="lc-field-content">
-                                <div class="lc-field-label">Регіон</div>
-                                
-                                <div class="lc-field-val" x-show="!(isEditing || editAll)" @click="isEditing = true" tabindex="0">
-                                    Київська обл.
+<!-- ===== partial: lead-card/feed ===== -->
+            <div class="lc-col-right">
+                
+                <div class="lc-composer" x-data="{ cTab: 'note', sms: '' }">
+                    <div class="lc-comp-tabs" role="tablist">
+                        <button type="button" class="lc-comp-tab" :class="{'is-active': cTab === 'note'}" @click="cTab = 'note'" role="tab">Нотатка</button>
+                        <button type="button" class="lc-comp-tab" :class="{'is-active': cTab === 'sms'}" @click="cTab = 'sms'" role="tab">SMS</button>
+                        <button type="button" class="lc-comp-tab" :class="{'is-active': cTab === 'task'}" @click="cTab = 'task'" role="tab">Завдання</button>
+                        <button type="button" class="lc-comp-tab" :class="{'is-active': cTab === 'call'}" @click="cTab = 'call'" role="tab">Дзвінок</button>
+                        <button type="button" class="lc-comp-tab" :class="{'is-active': cTab === 'doc'}" @click="cTab = 'doc'" role="tab">Договір</button>
+                    </div>
+                    
+                    <div class="lc-comp-body">
+                        <div x-show="cTab === 'note'">
+                            <label class="sr-only" for="c-note">Текст нотатки</label>
+                            <textarea id="c-note" class="lc-input lc-textarea" placeholder="Введіть текст нотатки..."></textarea>
+                            <div class="lc-comp-actions">
+                                <div class="lc-comp-tools">
+                                    <button type="button" class="lc-icon-btn"><svg class="w-4 h-4" data-icon="paperclip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg></button>
                                 </div>
-                                
-                                <div class="lc-field-edit" x-show="isEditing || editAll" x-cloak>
-                                    <div class="lc-select-wrap">
-                                        <button type="button" class="lc-select-btn" @click="selOpen = !selOpen" :aria-expanded="selOpen">
-                                            <span>Київська обл.</span>
-                                            <svg class="w-4 h-4" data-icon="chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                                        </button>
-                                        <div class="lc-select-menu" x-show="selOpen" x-transition.opacity x-cloak>
-                                            <div class="lc-select-search">
-                                                <input type="text" class="lc-input lc-input-sm" placeholder="Пошук регіону...">
+                                <div class="lc-comp-btns">
+                                    <button type="button" class="lc-btn">Скасувати</button>
+                                    <button type="button" class="lc-btn lc-btn-primary">Зберегти</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div x-show="cTab === 'sms'" x-cloak>
+                            <label class="sr-only" for="c-sms">Текст SMS</label>
+                            <textarea id="c-sms" class="lc-input lc-textarea" placeholder="Текст повідомлення..." x-model="sms"></textarea>
+                            <div class="lc-comp-actions">
+                                <div class="lc-comp-tools">
+                                    <span class="lc-char-count" :class="{'is-error': sms.length > 200}" x-text="`Знаків ${sms.length} з 200`"></span>
+                                </div>
+                                <div class="lc-comp-btns">
+                                    <button type="button" class="lc-btn">Скасувати</button>
+                                    <button type="button" class="lc-btn lc-btn-primary" :disabled="sms.length > 200">Відправити</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div x-show="cTab === 'task'" x-cloak>
+                            <label class="sr-only" for="c-task">Текст завдання</label>
+                            <textarea id="c-task" class="lc-input lc-textarea" placeholder="Що потрібно зробити?"></textarea>
+                            <div class="lc-comp-row">
+                                <input type="date" class="lc-input" aria-label="Термін">
+                                <select class="lc-input" aria-label="Виконавець">
+                                    <option>Ірина К.</option>
+                                    <option>Олексій М.</option>
+                                </select>
+                            </div>
+                            <div class="lc-comp-actions">
+                                <div></div>
+                                <div class="lc-comp-btns">
+                                    <button type="button" class="lc-btn">Скасувати</button>
+                                    <button type="button" class="lc-btn lc-btn-primary">Поставити</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div x-show="cTab === 'call' || cTab === 'doc'" x-cloak>
+                            <div class="lc-comp-dummy">Форма у розробці...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lc-chat-row">
+                    <div class="lc-chat-avatars">
+                        <div class="lc-avatar" style="background-color: var(--accent, #2563eb); z-index: 3;">Б</div>
+                        <div class="lc-avatar" style="background-color: var(--warning, #f59e0b); z-index: 2; margin-left: -8px;">І</div>
+                        <div class="lc-avatar" style="background-color: var(--success, #16a34a); z-index: 1; margin-left: -8px;">О</div>
+                    </div>
+                    <button type="button" class="lc-btn-text">Обговорити в чаті</button>
+                </div>
+
+                <div class="lc-todo">
+                    <h3 class="lc-todo-title">
+                        Що потрібно зробити
+                        <span class="lc-tab-count">1</span>
+                    </h3>
+                    <div class="lc-card">
+                        <div class="lc-todo-card">
+                            <label class="lc-toggle">
+                                <input type="checkbox" class="sr-only">
+                                <span class="lc-toggle-box"></span>
+                            </label>
+                            <div class="lc-todo-content">
+                                <div class="lc-todo-text">Підготувати чернетку договору</div>
+                                <div class="lc-todo-meta">Сьогодні, 16:00 • Ірина К.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lc-timeline">
+                    <div class="lc-tl-header">
+                        <div class="lc-tl-title-wrap">
+                            <h3 class="lc-tl-title">Історія подій</h3>
+                            <span class="lc-tl-subtitle">Останні зміни 12.10.2026</span>
+                        </div>
+                        <button type="button" class="lc-btn-text">Фільтр</button>
+                    </div>
+
+                    <div class="lc-timeline-list">
+                        
+                        <!-- Тип 1: Завдання -->
+                        <div class="lc-timeline-item">
+                            <div class="lc-tl-icon" style="background: var(--surface-2); color: var(--ink-2)" aria-hidden="true">
+                                <svg class="w-4 h-4" data-icon="check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <div class="lc-tl-content">
+                                <div class="lc-card">
+                                    <div class="lc-tl-head">
+                                        <div class="lc-tl-meta">Завдання виконано • 12.10.2026, 14:00</div>
+                                        <div class="lc-chip">Виконано</div>
+                                    </div>
+                                    <div class="lc-tl-body">
+                                        <div class="lc-kv-row">
+                                            <span class="lc-kv-key">Завдання:</span>
+                                            <span class="lc-kv-val">Зателефонувати клієнту</span>
+                                        </div>
+                                        <div class="lc-kv-row">
+                                            <span class="lc-kv-key">Виконавець:</span>
+                                            <div class="lc-tl-assignee">
+                                                <div class="lc-avatar" style="background-color: var(--success)">О</div>
+                                                <span>Олексій М.</span>
                                             </div>
-                                            <div class="lc-select-list">
-                                                <button type="button" class="lc-select-item is-selected">Київська обл.</button>
-                                                <button type="button" class="lc-select-item">Львівська обл.</button>
-                                                <button type="button" class="lc-select-item">Одеська обл.</button>
-                                            </div>
                                         </div>
+                                    </div>
+                                    <div class="lc-card-footer lc-tl-actions">
+                                        <button type="button" class="lc-btn-text">Редагувати</button>
+                                        <button type="button" class="lc-btn-text is-destructive">Видалити</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="lc-field-actions" aria-hidden="true"></div>
                         </div>
 
-                        <!-- Поле 4: Скинув після Юристи (Toggle/Checkbox) -->
-                        <div class="lc-field-row" data-lc-field="dropped" x-data="{ isEditing: false }">
-                            <div class="lc-field-drag" aria-hidden="true">
-                                <svg class="w-4 h-4" data-icon="drag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="19" r="1"/></svg>
+                        <!-- Тип 2: Пропущений дзвінок -->
+                        <div class="lc-timeline-item">
+                            <div class="lc-tl-icon" style="background: #fef2f2; color: var(--danger)" aria-hidden="true">
+                                <svg class="w-4 h-4" data-icon="phone-missed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="23" y1="1" x2="17" y2="7"></line><line x1="17" y1="1" x2="23" y2="7"></line><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             </div>
-                            <div class="lc-field-content">
-                                <div class="lc-field-label">Скинув після Юристи</div>
-                                
-                                <div class="lc-field-val" x-show="!(isEditing || editAll)" @click="isEditing = true" tabindex="0">
-                                    Увімкнено
-                                </div>
-                                
-                                <div class="lc-field-edit" x-show="isEditing || editAll" x-cloak>
-                                    <label class="lc-toggle">
-                                        <input type="checkbox" class="sr-only" checked>
-                                        <span class="lc-toggle-box"></span>
-                                        <span class="lc-toggle-label">Увімкнено</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="lc-field-actions" aria-hidden="true"></div>
-                        </div>
-
-                        <!-- Поле 5: Коментар (Textarea) -->
-                        <div class="lc-field-row" data-lc-field="comment" x-data="{ isEditing: false }">
-                            <div class="lc-field-drag" aria-hidden="true">
-                                <svg class="w-4 h-4" data-icon="drag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="19" r="1"/></svg>
-                            </div>
-                            <div class="lc-field-content">
-                                <div class="lc-field-label">Коментар / опис звернення</div>
-                                
-                                <div class="lc-field-val lc-val-clamp" x-show="!(isEditing || editAll)" @click="isEditing = true" tabindex="0">
-                                    Клієнт звернувся щодо поділу майна. Дуже незадоволений умовами колишньої дружини, просить термінову консультацію.
-                                </div>
-                                
-                                <div class="lc-field-edit" x-show="isEditing || editAll" x-cloak>
-                                    <label class="sr-only" for="f-comment">Коментар</label>
-                                    <textarea id="f-comment" class="lc-input lc-textarea">Клієнт звернувся щодо поділу майна. Дуже незадоволений умовами колишньої дружини, просить термінову консультацію.</textarea>
-                                </div>
-                            </div>
-                            <div class="lc-field-actions" aria-hidden="true"></div>
-                        </div>
-
-                        <!-- Поле 6: Спостерігачі (Chips) -->
-                        <div class="lc-field-row" data-lc-field="observers" x-data="{ isEditing: false }">
-                            <div class="lc-field-drag" aria-hidden="true">
-                                <svg class="w-4 h-4" data-icon="drag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="19" r="1"/></svg>
-                            </div>
-                            <div class="lc-field-content">
-                                <div class="lc-field-label">Спостерігачі</div>
-                                
-                                <div class="lc-field-chips" tabindex="0" @click="if(!editAll) isEditing = true">
-                                    <div class="lc-chip">
-                                        <div class="lc-avatar" style="background-color: var(--success, #16a34a)">О</div>
-                                        <div class="lc-chip-text">
-                                            <span class="lc-chip-name">Олексій М.</span>
-                                            <span class="lc-chip-role">Юрист</span>
-                                        </div>
+                            <div class="lc-tl-content">
+                                <div class="lc-card is-danger">
+                                    <div class="lc-tl-head">
+                                        <div class="lc-tl-meta">Вхідний дзвінок • 12.10.2026, 12:45</div>
+                                        <div class="lc-chip" style="color: var(--danger)">Пропущено</div>
                                     </div>
-                                    <div class="lc-chip">
-                                        <div class="lc-avatar" style="background-color: var(--warning, #f59e0b)">І</div>
-                                        <div class="lc-chip-text">
-                                            <span class="lc-chip-name">Ірина К.</span>
-                                            <span class="lc-chip-role">Керівник</span>
-                                        </div>
+                                    <div class="lc-card-footer lc-tl-actions">
+                                        <button type="button" class="lc-btn-text">Передзвонити</button>
+                                        <button type="button" class="lc-btn-text">Створити завдання</button>
                                     </div>
-                                    <button type="button" class="lc-btn-add" x-show="isEditing || editAll" x-cloak>
-                                        <svg class="w-3.5 h-3.5" data-icon="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                        Додати
-                                    </button>
                                 </div>
                             </div>
-                            <div class="lc-field-actions" aria-hidden="true"></div>
                         </div>
 
-                        <!-- Поле 7: Дата запису (Date) -->
-                        <div class="lc-field-row" data-lc-field="date" x-data="{ isEditing: false }">
-                            <div class="lc-field-drag" aria-hidden="true">
-                                <svg class="w-4 h-4" data-icon="drag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="19" r="1"/></svg>
+                        <!-- Тип 3: Зміна стадії -->
+                        <div class="lc-timeline-item">
+                            <div class="lc-tl-icon" style="background: var(--accent-subtle); color: var(--accent)" aria-hidden="true">
+                                <svg class="w-4 h-4" data-icon="refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
                             </div>
-                            <div class="lc-field-content">
-                                <div class="lc-field-label">Дата запису</div>
-                                
-                                <div class="lc-field-val" x-show="!(isEditing || editAll)" @click="isEditing = true" tabindex="0">
-                                    12.10.2026 14:30
-                                </div>
-                                
-                                <div class="lc-field-edit" x-show="isEditing || editAll" x-cloak>
-                                    <label class="sr-only" for="f-date">Дата запису</label>
-                                    <input type="datetime-local" id="f-date" class="lc-input" value="2026-10-12T14:30">
+                            <div class="lc-tl-content">
+                                <div class="lc-tl-stage-change">
+                                    <div class="lc-chip">В роботі</div>
+                                    <svg class="w-4 h-4" style="color: var(--ink-3)" data-icon="arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    <div class="lc-chip" style="background: var(--accent-subtle); color: var(--accent)">Кваліфікація</div>
+                                    <span class="lc-tl-meta" style="margin-left: 8px;">11.10.2026, 10:20</span>
                                 </div>
                             </div>
-                            <div class="lc-field-actions" aria-hidden="true"></div>
                         </div>
+
+                        <!-- Тип 4: SMS -->
+                        <div class="lc-timeline-item">
+                            <div class="lc-tl-icon" style="background: #f0fdf4; color: var(--success)" aria-hidden="true">
+                                <svg class="w-4 h-4" data-icon="message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </div>
+                            <div class="lc-tl-content">
+                                <div class="lc-tl-bubble">
+                                    Вітаємо! Ваша зустріч призначена на завтра о 15:00.
+                                </div>
+                                <div class="lc-tl-meta" style="margin-top: 4px;">Вихідне SMS • 10.10.2026, 18:00</div>
+                            </div>
+                        </div>
+
+                        <!-- Тип 5: Коментар -->
+                        <div class="lc-timeline-item">
+                            <div class="lc-tl-icon" style="background: var(--surface-2); color: var(--ink-2)" aria-hidden="true">
+                                <svg class="w-4 h-4" data-icon="edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </div>
+                            <div class="lc-tl-content">
+                                <div class="lc-tl-text">
+                                    Клієнт попросив зателефонувати ввечері, зараз не може говорити.
+                                </div>
+                                <div class="lc-tl-meta" style="margin-top: 4px;">Коментар • 09.10.2026, 11:30 • Виконав: Ірина К.</div>
+                            </div>
+                        </div>
+
+                        <!-- Порожній стан -->
+                        <div class="lc-timeline-item">
+                            <div class="lc-tl-icon" style="background: transparent; color: var(--border-2)" aria-hidden="true">
+                                <svg class="w-4 h-4" data-icon="circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg>
+                            </div>
+                            <div class="lc-tl-content">
+                                <div class="lc-tl-meta">Немає подій за обраним фільтром</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- ===== /partial: lead-card/feed ===== -->
