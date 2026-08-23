@@ -1,1 +1,65 @@
+<div class="lc-panel" role="dialog" aria-modal="true" aria-labelledby="lc-title" x-data="leadCard()">
+                
+                <!-- ===== partial: lead-card/header ===== -->
+                <header class="lc-head">
+                    <h1 id="lc-title" class="lc-name" tabindex="0" data-lc-name>Богдана Сергіївна</h1>
+                    
+                    <div class="lc-head-actions">
+                        <button type="button" class="lc-icon-btn" aria-label="Зателефонувати">
+                            <svg class="w-4 h-4" data-icon="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </button>
+                        
+                        <div class="lc-split-btn">
+                            <button type="button" class="lc-split-main">Документ</button>
+                            <button type="button" class="lc-split-caret" aria-label="Меню документа" aria-haspopup="true">
+                                <svg class="w-4 h-4" data-icon="chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </button>
+                        </div>
+                        
+                        <div class="lc-dropdown-wrap" x-data="{ menuOpen: false }" @click.outside="menuOpen = false" @keydown.escape.window="menuOpen = false">
+                            <button type="button" class="lc-icon-btn" aria-label="Дії з лідом" aria-haspopup="true" :aria-expanded="menuOpen" @click="menuOpen = !menuOpen">
+                                <svg class="w-4 h-4" data-icon="settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                            </button>
+                            <div class="lc-dropdown-menu" role="menu" x-show="menuOpen" x-transition.opacity x-cloak>
+                                <button type="button" role="menuitem" class="lc-dropdown-item">Редагувати</button>
+                                <button type="button" role="menuitem" class="lc-dropdown-item">Копіювати посилання</button>
+                                <button type="button" role="menuitem" class="lc-dropdown-item is-destructive">Видалити лід</button>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- ===== /partial: lead-card/header ===== -->
 
+                <!-- ===== partial: lead-card/pipeline ===== -->
+                <div class="lc-pipe-wrap" x-data="pipelineHover()" @mouseleave="resetHover()">
+                    <div class="lc-pipe-scroll" tabindex="0" aria-label="Воронка статусів">
+                        <button type="button" class="lc-step is-passed" @mouseenter="hoverTo(1)">
+                            <span class="lc-step-txt">Новий</span>
+                        </button>
+                        <button type="button" class="lc-step is-passed" @mouseenter="hoverTo(2)">
+                            <span class="lc-step-txt">В роботі</span>
+                        </button>
+                        <button type="button" class="lc-step is-current" @mouseenter="hoverTo(3)">
+                            <span class="lc-step-txt">Кваліфікація</span>
+                        </button>
+                        <button type="button" class="lc-step is-future" :class="{'is-hovered': hovered >= 4}" @mouseenter="hoverTo(4)">
+                            <span class="lc-step-txt">Зустріч призначена</span>
+                            <span class="lc-step-help" aria-label="Довідка" x-data="{ popOpen: false }" @mouseenter="popOpen = true" @mouseleave="popOpen = false" @click.stop>
+                                <svg class="w-3.5 h-3.5" data-icon="help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                <span class="lc-popover" role="tooltip" x-show="popOpen" x-transition.opacity x-cloak>
+                                    Узгодження часу з клієнтом
+                                </span>
+                            </span>
+                        </button>
+                        <button type="button" class="lc-step is-future" :class="{'is-hovered': hovered >= 5}" @mouseenter="hoverTo(5)">
+                            <span class="lc-step-txt">Зустріч відбулася</span>
+                        </button>
+                        <button type="button" class="lc-step is-future" :class="{'is-hovered': hovered >= 6}" @mouseenter="hoverTo(6)">
+                            <span class="lc-step-txt">Договір</span>
+                        </button>
+                        <button type="button" class="lc-step is-future is-success" :class="{'is-hovered': hovered >= 7}" @mouseenter="hoverTo(7)">
+                            <span class="lc-step-txt">Оплата</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- ===== /partial: lead-card/pipeline ===== -->
