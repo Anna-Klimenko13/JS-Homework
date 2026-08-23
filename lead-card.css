@@ -18,3 +18,43 @@
         z-index: 1;
     }
 }
+
+
+----------------
+----------------
+--------------
+
+
+
+/* ============================================================
+   Бонус (Рівень 3): Доступність (Reduced Motion) та Друк
+   ============================================================ */
+
+/* Вимикаємо анімації для тих, хто має в налаштуваннях ОС "Зменшити рух" */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Адаптація під друк на принтері (Ctrl+P) */
+@media print {
+    .lc-overlay { position: static; background: none; display: block; }
+    .lc-panel { height: auto; box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .lc-body { overflow: visible; display: block; }
+    
+    /* Ховаємо зайві кнопки дій, які не потрібні на папері */
+    .lc-head-actions, .lc-tabs-actions, .lc-field-actions, .lc-field-drag, 
+    .lc-btn-add, .lc-comp-actions, .lc-composer, .lc-dropdown-menu {
+        display: none !important;
+    }
+    
+    .lc-pipe-wrap, .lc-tabs-wrap { border-bottom: 2px solid #000; }
+    .lc-step { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    
+    /* Розкриваємо скроли, щоб на папері було видно все */
+    .lc-pipe-scroll, .lc-tabs-scroll { overflow: visible; flex-wrap: wrap; }
+}
