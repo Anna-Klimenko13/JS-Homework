@@ -1,7 +1,1 @@
-.lc-chat-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--surface-1, #ffffff); border: 1px solid var(--border-1, #e4e7ec); border-radius: 8px; }
-
-
-
-
-
-.lc-chat-avatars { display: flex; align-items: center; }
+https://www.jobs.bg/en/js_send_cv.php?job_sid=8631809&q_key=B56D0F23A8
